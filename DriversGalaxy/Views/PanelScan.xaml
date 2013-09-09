@@ -1,0 +1,302 @@
+﻿<UserControl x:Class="DriversGalaxy.Views.PanelScan"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 xmlns:b="clr-namespace:ScottLogic.Shapes"
+			 xmlns:lex="clr-namespace:WPFLocalizeExtension.Extensions;assembly=WPFLocalizeExtension"
+			 mc:Ignorable="d"
+			 d:DesignHeight="293"
+			 d:DesignWidth="645"
+			 Height="293"
+			 Width="645">
+	<Grid Background="{StaticResource MainAreaBackGround}">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="209" />
+			<ColumnDefinition Width="436" />
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="165" />
+			<RowDefinition Height="70" />
+			<RowDefinition Height="58" />
+		</Grid.RowDefinitions>
+		<StackPanel Margin="10,23,0,0"
+					VerticalAlignment="Top"
+					HorizontalAlignment="Left"
+					Grid.RowSpan="2">
+			<TextBlock Margin="23,0,0,0"
+					   FontFamily="/DriversGalaxy.Infrastructure;component/Fonts/#Helvetica Neue CE 75"
+					   FontSize="23"
+					   Foreground="#b3b3b3"
+					   HorizontalAlignment="Left"
+					   VerticalAlignment="Top"
+					   TextWrapping="WrapWithOverflow"
+					   Text="{lex:LocText DriversGalaxy:Resources:LastScan}">
+				<TextBlock.Effect>
+					<DropShadowEffect BlurRadius="1"
+									  Direction="-90"
+									  Color="#898989"
+									  ShadowDepth="1" />
+				</TextBlock.Effect>
+			</TextBlock>
+			<Grid Margin="6,8,0,0"
+				  HorizontalAlignment="Left"
+				  VerticalAlignment="Top">
+				<Ellipse Margin="0"
+						 Stroke="#000000"                         
+						 HorizontalAlignment="Left"
+                         Fill="#0d0d0d"
+						 Width="152"
+						 Height="152">
+                    <Ellipse.Effect>
+                        <DropShadowEffect Direction="0"
+										  ShadowDepth="0"
+										  Color="#212121"
+										  BlurRadius="3" />
+                    </Ellipse.Effect>
+                </Ellipse>
+                <Ellipse Margin="5 0 0 0"
+						 Width="142"
+						 Height="142"
+						 StrokeThickness="11"
+						 HorizontalAlignment="Left"
+						 Fill="Transparent"
+						 Name="Gradient">
+					<Ellipse.Stroke>
+						<ImageBrush ImageSource="/DriversGalaxy;component/Images/bg-circular-gradient.jpg"></ImageBrush>
+					</Ellipse.Stroke>
+				</Ellipse>
+
+				<b:PiePiece x:Name="DaysFromLastScanProgressBar"
+							CentreX="76"
+							CentreY="76"
+							HorizontalAlignment="Left"
+							RotationAngle="270"
+							WedgeAngle="90"
+							Radius="71"
+							InnerRadius="60"
+							Stroke="#0d0d0d"
+                            StrokeThickness="2"
+							Fill="#0d0d0d">
+				</b:PiePiece>
+				<Ellipse Margin="20,0,20,20"
+						 Stroke="#000000"
+						 Width="112"
+						 Height="112"
+						 Fill="#242424"
+						 HorizontalAlignment="Left"
+						 VerticalAlignment="Bottom">
+					<Ellipse.Effect>
+						<DropShadowEffect Direction="0"
+										  ShadowDepth="0"
+										  Color="#212121"
+										  BlurRadius="3" />
+					</Ellipse.Effect>
+				</Ellipse>
+
+				<TextBlock Name="MoreThan"
+						   Margin="0,35,0,0"
+						   FontFamily="/DriversGalaxy.Infrastructure;component/Fonts/#Helvetica Neue CE 75"
+						   FontSize="13"
+						   Foreground="#f8f8f8"
+						   HorizontalAlignment="Center"
+						   VerticalAlignment="Top"
+						   Visibility="Collapsed"
+						   Text="{lex:LocText DriversGalaxy:Resources:MoreThan}"></TextBlock>
+				<TextBlock Margin="2,38,0,0"
+						   FontFamily="/DriversGalaxy.Infrastructure;component/Fonts/#Helvetica Neue CE 75"
+						   FontSize="55"
+						   Text="0"
+						   Foreground="#f8f8f8"
+						   HorizontalAlignment="Center"
+						   VerticalAlignment="Top"
+						   Name="DaysFromLastScan" />
+				<TextBlock Margin="0,96,0,0"
+						   FontFamily="/DriversGalaxy.Infrastructure;component/Fonts/#Helvetica Neue CE 75"
+						   FontSize="13"
+						   Foreground="#f8f8f8"
+						   HorizontalAlignment="Center"
+						   VerticalAlignment="Top"
+                           Name="DaysAgoText"
+						   Text="{lex:LocText DriversGalaxy:Resources:DaysAgo}"></TextBlock>
+
+			</Grid>
+		</StackPanel>
+		<Border Grid.Row="2"
+				Style="{StaticResource BottomPanel}"
+				Margin="1,0,0,0"
+				Grid.ColumnSpan="2">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="48" />
+					<ColumnDefinition Width="385" />
+					<ColumnDefinition Width="209" />
+				</Grid.ColumnDefinitions>
+				<Image Style="{StaticResource FunctionalButtonImage}"
+					   Margin="2,2,0,0"                       
+					   Source="../Images/icon-lamp.png" />
+				<Grid Grid.Column="1"
+					  VerticalAlignment="Top">
+					<TextBlock Style="{StaticResource BottomPanelTitle}"
+							   Text="{lex:LocText DriversGalaxy:Resources:ScanFooter}"></TextBlock>
+					<TextBlock Style="{StaticResource BottomPanelText}"
+							   Text="{lex:LocText DriversGalaxy:Resources:ScanFooterText}"></TextBlock>
+				</Grid>
+                <Button Style="{StaticResource GreenRoundedButton}"                     
+						Grid.Column="2"                        
+						Command="{Binding ScanCommand}"						
+						Click="StartScan"
+                        Content="{lex:LocText DriversGalaxy:Resources:ScanForIssues}"/>
+			</Grid>
+		</Border>
+		<Border Grid.Column="1"
+				Margin="0,25,0,0"
+				VerticalAlignment="Top"
+				HorizontalAlignment="Left"
+				BorderThickness="1"
+				BorderBrush="{StaticResource ElementBorder}">
+			<StackPanel VerticalAlignment="Top"
+						HorizontalAlignment="Left">
+				<Border Style="{StaticResource CustomCheckBoxWrapBig}"
+						Grid.Column="1"
+						Grid.Row="1">
+					<CheckBox Style="{StaticResource CustomCheckBoxBig}"
+							  Margin="14,11,0,0"
+							  IsChecked="True"
+							  Name="AutoScan"
+							  Click="AutoScan_Click"
+							  Content="{lex:LocText DriversGalaxy:Resources:AutomatedScan}"></CheckBox>
+				</Border>
+				<Grid Width="429"
+					  Height="75"
+					  HorizontalAlignment="Left"
+					  VerticalAlignment="Top"
+					  Background="#212121">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="152*" />
+						<ColumnDefinition Width="133" />
+						<ColumnDefinition Width="145" />
+					</Grid.ColumnDefinitions>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="27" />
+						<RowDefinition Height="29" />
+					</Grid.RowDefinitions>
+					<TextBlock Margin="19,10,0,0"
+							   Text="{lex:LocText DriversGalaxy:Resources:Scan}"
+							   Style="{StaticResource ComboboxCaption}" Height="17" VerticalAlignment="Top" />
+                    <ComboBox Width="125"
+							  Margin="19,0,0,0"
+							  Grid.Row="1"
+							  Name="AutoScanPeriod"
+							  SelectionChanged="AutoScanPeriod_SelectionChanged"
+                              Background="#737373">
+                        <ComboBoxItem Content="{lex:LocText DriversGalaxy:Resources:EveryDay}"></ComboBoxItem>
+						<ComboBoxItem Content="{lex:LocText DriversGalaxy:Resources:EveryWeek}"></ComboBoxItem>
+						<ComboBoxItem Content="{lex:LocText DriversGalaxy:Resources:EveryMonth}"></ComboBoxItem>                        
+					</ComboBox>
+					<TextBlock Text="{lex:LocText DriversGalaxy:Resources:Day}"
+							   Grid.Column="1"
+							   Style="{StaticResource ComboboxCaption}" />
+					<ComboBox Width="125"
+							  Grid.Column="1"
+							  Grid.Row="1"
+							  Name="AutoScanDay"
+							  SelectionChanged="AutoScanDay_SelectionChanged">
+						<ComboBoxItem Content="{lex:LocText DriversGalaxy:Resources:Monday}"></ComboBoxItem>
+						<ComboBoxItem Content="{lex:LocText DriversGalaxy:Resources:Tuesday}"></ComboBoxItem>
+						<ComboBoxItem Content="{lex:LocText DriversGalaxy:Resources:Wednesday}"></ComboBoxItem>
+						<ComboBoxItem Content="{lex:LocText DriversGalaxy:Resources:Thursday}"></ComboBoxItem>
+						<ComboBoxItem Content="{lex:LocText DriversGalaxy:Resources:Friday}"></ComboBoxItem>
+						<ComboBoxItem Content="{lex:LocText DriversGalaxy:Resources:Saturday}"></ComboBoxItem>
+						<ComboBoxItem Content="{lex:LocText DriversGalaxy:Resources:Sunday}"></ComboBoxItem>
+						<ComboBoxItem Name="NADay"
+									  Content="{lex:LocText DriversGalaxy:Resources:NotApplicable}"></ComboBoxItem>
+					</ComboBox>
+					<ComboBox Width="125"
+							  Grid.Column="1"
+							  Grid.Row="1"
+							  Name="AutoScanDate"
+							  SelectedIndex="0"
+							  SelectionChanged="AutoScanDate_SelectionChanged"
+                              Background="#737373">
+						<ComboBoxItem Content="1"></ComboBoxItem>
+						<ComboBoxItem Content="2"></ComboBoxItem>
+						<ComboBoxItem Content="3"></ComboBoxItem>
+						<ComboBoxItem Content="4"></ComboBoxItem>
+						<ComboBoxItem Content="5"></ComboBoxItem>
+						<ComboBoxItem Content="6"></ComboBoxItem>
+						<ComboBoxItem Content="7"></ComboBoxItem>
+						<ComboBoxItem Content="8"></ComboBoxItem>
+						<ComboBoxItem Content="9"></ComboBoxItem>
+						<ComboBoxItem Content="10"></ComboBoxItem>
+						<ComboBoxItem Content="11"></ComboBoxItem>
+						<ComboBoxItem Content="12"></ComboBoxItem>
+						<ComboBoxItem Content="13"></ComboBoxItem>
+						<ComboBoxItem Content="14"></ComboBoxItem>
+						<ComboBoxItem Content="15"></ComboBoxItem>
+						<ComboBoxItem Content="16"></ComboBoxItem>
+						<ComboBoxItem Content="17"></ComboBoxItem>
+						<ComboBoxItem Content="18"></ComboBoxItem>
+						<ComboBoxItem Content="19"></ComboBoxItem>
+						<ComboBoxItem Content="20"></ComboBoxItem>
+						<ComboBoxItem Content="21"></ComboBoxItem>
+						<ComboBoxItem Content="22"></ComboBoxItem>
+						<ComboBoxItem Content="23"></ComboBoxItem>
+						<ComboBoxItem Content="24"></ComboBoxItem>
+						<ComboBoxItem Content="25"></ComboBoxItem>
+						<ComboBoxItem Content="26"></ComboBoxItem>
+						<ComboBoxItem Content="27"></ComboBoxItem>
+						<ComboBoxItem Content="28"></ComboBoxItem>
+						<ComboBoxItem Content="29"></ComboBoxItem>
+						<ComboBoxItem Content="30"></ComboBoxItem>
+						<ComboBoxItem Content="31"></ComboBoxItem>
+					</ComboBox>
+					<TextBlock Text="{lex:LocText DriversGalaxy:Resources:Time}"
+							   Grid.Column="2"
+							   Style="{StaticResource ComboboxCaption}" />
+					<ComboBox Width="125"
+							  Grid.Column="2"
+							  Grid.Row="1"
+							  Name="AutoScanTime"
+							  SelectionChanged="AutoScanTime_SelectionChanged"
+                              Background="#737373">
+						<ComboBoxItem Content="00:00"></ComboBoxItem>
+						<ComboBoxItem Content="01:00"></ComboBoxItem>
+						<ComboBoxItem Content="03:00"></ComboBoxItem>
+						<ComboBoxItem Content="04:00"></ComboBoxItem>
+						<ComboBoxItem Content="05:00"></ComboBoxItem>
+						<ComboBoxItem Content="06:00"></ComboBoxItem>
+						<ComboBoxItem Content="07:00"></ComboBoxItem>
+						<ComboBoxItem Content="08:00"></ComboBoxItem>
+						<ComboBoxItem Content="09:00"></ComboBoxItem>
+						<ComboBoxItem Content="10:00"></ComboBoxItem>
+						<ComboBoxItem Content="11:00"></ComboBoxItem>
+						<ComboBoxItem Content="12:00"></ComboBoxItem>
+						<ComboBoxItem Content="13:00"></ComboBoxItem>
+						<ComboBoxItem Content="14:00"></ComboBoxItem>
+						<ComboBoxItem Content="15:00"></ComboBoxItem>
+						<ComboBoxItem Content="16:00"></ComboBoxItem>
+						<ComboBoxItem Content="17:00"></ComboBoxItem>
+						<ComboBoxItem Content="18:00"></ComboBoxItem>
+						<ComboBoxItem Content="19:00"></ComboBoxItem>
+						<ComboBoxItem Content="20:00"></ComboBoxItem>
+						<ComboBoxItem Content="21:00"></ComboBoxItem>
+						<ComboBoxItem Content="22:00"></ComboBoxItem>
+						<ComboBoxItem Content="23:00"></ComboBoxItem>
+					</ComboBox>
+				</Grid>
+			</StackPanel>
+		</Border>
+		<Border Style="{StaticResource CustomCheckBoxWrapBig}"
+				Width="431"
+				BorderThickness="1"
+				Grid.Column="1"
+				Grid.Row="1">
+			<CheckBox Content="{lex:LocText DriversGalaxy:Resources:AutoUpdateDrivers}"
+					  Margin="14,11,0,0"
+					  Click="AutoUpdate_Click"
+					  Name="AutoUpdate"
+					  Style="{StaticResource CustomCheckBoxBig}" />
+		</Border>
+	</Grid>
+</UserControl>

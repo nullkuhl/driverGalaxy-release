@@ -1,0 +1,584 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:local="clr-namespace:DriversGalaxy.Infrastructure">
+
+	<Geometry x:Key="PathCloseButton">M 0,0 L 10,10 M 0,10 L 10,0</Geometry>
+	<Geometry x:Key="PathMinimizeButton">M 10,0 L 15,0</Geometry>
+	<Geometry x:Key="PathRestoreButton">M 10,0 H 10,0 V 10,10 H 0,10 V 0 0</Geometry>
+	<Geometry x:Key="BorPath">M 0,0 H 100 V 100 H 9.9 L 8.5,116 L 7.3,100 H 0 Z</Geometry>
+	<Geometry x:Key="ISign">M 0,8 L 0,8 M 0,10 L 0,15</Geometry>
+	<Geometry x:Key="HelpIcon">M 0 0 L .7 1 L 1.3 0 Z</Geometry>
+
+	<CornerRadius x:Key="WindowCornerRadius">12</CornerRadius>
+
+	<CornerRadius x:Key="WindowInnerCornerRadius">6</CornerRadius>
+
+	<SolidColorBrush x:Key="WindowBorderColor"
+					 Color="Black"
+					 Opacity="0.18" />
+	<SolidColorBrush x:Key="WindowTransparentBorderColor"
+					 Color="Black" />
+	<SolidColorBrush x:Key="ContentBackGround"
+					 Color="#1a1a1a" />
+	<SolidColorBrush x:Key="MainAreaBackGround"
+					 Color="#1a1a1a" />
+    <SolidColorBrush x:Key="DisableBackground"
+                     Color="LightGray" />
+
+	<Style x:Key="SeparatorStyle"
+		   TargetType="{x:Type Border}">
+		<Setter Property="Border.BorderThickness"
+				Value="0,0,1,0" />
+		<Setter Property="Border.BorderBrush"
+				Value="#FFC5C5C5" />
+		<Setter Property="FrameworkElement.Margin"
+				Value="0,0,0,0" />
+		<Setter Property="FrameworkElement.Width"
+				Value="2" />
+		<Setter Property="Panel.Background">
+			<Setter.Value>
+				<LinearGradientBrush EndPoint="0.5,1"
+									 StartPoint="0.5,0">
+					<GradientStop Color="#FFFEFEFE"
+								  Offset="0" />
+					<GradientStop Color="#FFEEEFF1"
+								  Offset="1" />
+				</LinearGradientBrush>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style x:Key="ButtonPath"
+		   TargetType="{x:Type Path}">
+		<Setter Property="FrameworkElement.Margin"
+				Value="4" />
+		<Setter Property="Shape.Stroke"
+				Value="#111111" />
+		<Setter Property="Shape.StrokeThickness"
+				Value="2" />
+		<Setter Property="Shape.StrokeStartLineCap"
+				Value="Round" />
+		<Setter Property="Shape.StrokeEndLineCap"
+				Value="Round" />
+		<Setter Property="Shape.Stretch"
+				Value="Uniform" />
+		<Setter Property="FrameworkElement.VerticalAlignment"
+				Value="Center" />
+		<Setter Property="FrameworkElement.HorizontalAlignment"
+				Value="Center" />
+	</Style>
+	<Style x:Key="TitleBarRadialButton"
+		   TargetType="{x:Type Button}">
+		<Setter Property="UIElement.SnapsToDevicePixels"
+				Value="True" />
+		<Setter Property="FrameworkElement.OverridesDefaultStyle"
+				Value="True" />
+		<Setter Property="FrameworkElement.Height"
+				Value="18" />
+		<Setter Property="Border.BorderBrush"
+				Value="#FFC0C0C0" />
+		<Setter Property="Border.BorderThickness"
+				Value=".65" />
+		<Setter Property="Control.VerticalContentAlignment"
+				Value="Center" />
+		<Setter Property="Control.HorizontalContentAlignment"
+				Value="Center" />
+		<Setter Property="FocusVisualStyle"
+				Value="{x:Null}" />
+	</Style>
+	<Style x:Key="HelpButton"
+		   TargetType="{x:Type Button}"
+		   BasedOn="{StaticResource TitleBarRadialButton}">
+		<Setter Property="TextElement.Foreground"
+				Value="#000000" />
+		<Setter Property="Panel.Background">
+			<Setter.Value>
+				<LinearGradientBrush EndPoint="0.5,1"
+									 StartPoint="0.5,0">
+                    <GradientStop Color="#515151"
+								  Offset="0" />
+                    <GradientStop Color="#3d3d3d"
+								  Offset="1" />
+				</LinearGradientBrush>
+			</Setter.Value>
+		</Setter>
+		<Setter Property="Border.BorderBrush"
+				Value="#000000" />
+		<Setter Property="Border.BorderThickness"
+				Value="1.2" />
+		<Setter Property="FrameworkElement.Width"
+				Value="18" />
+		<Setter Property="Control.HorizontalContentAlignment"
+				Value="Center" />
+		<Setter Property="Control.VerticalContentAlignment"
+				Value="Center" />
+		<Setter Property="FocusVisualStyle"
+				Value="{x:Null}" />
+		<Setter Property="Control.Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type Button}">
+					<Border CornerRadius="8"
+							Width="{TemplateBinding FrameworkElement.Width}"
+							Background="{TemplateBinding Panel.Background}"
+							BorderBrush="{TemplateBinding Border.BorderBrush}"
+							BorderThickness="{TemplateBinding Border.BorderThickness}">
+						<ContentPresenter Margin="{TemplateBinding Control.Padding}"
+										  TextElement.Foreground="{TemplateBinding TextElement.Foreground}"
+										  HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}"
+										  VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}" />
+					</Border>
+					<ControlTemplate.Triggers>
+						<Trigger Property="UIElement.IsMouseOver"
+								 Value="True">
+							<Setter Value="{DynamicResource MouseOverColor}"
+									Property="Border.BorderBrush" />
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style x:Key="HelpIconButton"
+		   TargetType="{x:Type Button}">
+		<Setter Property="UIElement.SnapsToDevicePixels"
+				Value="True" />
+		<Setter Property="FrameworkElement.OverridesDefaultStyle"
+				Value="True" />
+		<Setter Property="FrameworkElement.Height"
+				Value="17" />
+		<Setter Property="FrameworkElement.Width"
+				Value="17" />
+		<Setter Property="Panel.Background"
+				Value="#FFC0C0C0" />
+		<Setter Property="Border.BorderThickness"
+				Value=".7" />
+		<Setter Property="Control.VerticalContentAlignment"
+				Value="Center" />
+		<Setter Property="Control.HorizontalContentAlignment"
+				Value="Center" />
+		<Setter Property="FocusVisualStyle"
+				Value="{x:Null}" />
+		<Setter Property="Control.Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type Button}">
+					<Grid Height="{TemplateBinding FrameworkElement.Height}"
+						  Width="{TemplateBinding FrameworkElement.Width}">
+						<Rectangle RadiusX="2"
+								   RadiusY="2"
+								   Fill="#FFC0C0C0" />
+						<Border Name="_grid"
+								Margin="1,4,1,1"
+								Background="#FFFFFFFF"
+								CornerRadius="0,0,2,2">
+							<Grid>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width=".35*" />
+									<ColumnDefinition Width=".1*" />
+									<ColumnDefinition Width=".6*" />
+								</Grid.ColumnDefinitions>
+								<Border Grid.Column="0">
+									<Path Name="_path1"
+										  Stroke="#FF7C919E"
+										  StrokeThickness="3" />
+								</Border>
+								<Border Background="#FFC0C0C0"
+										Grid.Column="1" />
+								<Border Grid.Column="2">
+									<Path Name="_path"
+										  Stroke="#FF7C919E"
+										  StrokeThickness="1" />
+								</Border>
+							</Grid>
+						</Border>
+					</Grid>
+					<ControlTemplate.Triggers>
+						<Trigger Property="UIElement.IsMouseOver"
+								 Value="True">
+							<Setter Value="{DynamicResource MouseOverColor}"
+									TargetName="_grid"
+									Property="Border.BorderBrush" />
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style x:Key="MinimizeButton"
+		   TargetType="{x:Type Button}"
+		   BasedOn="{StaticResource TitleBarRadialButton}">
+		<Setter Property="TextElement.Foreground"
+				Value="#000000" />
+		<Setter Property="Panel.Background">
+			<Setter.Value>
+				<LinearGradientBrush EndPoint="0.5,1"
+									 StartPoint="0.5,0">
+                    <GradientStop Color="#515151"
+								  Offset="0" />
+                    <GradientStop Color="#3d3d3d"
+								  Offset="1" />
+				</LinearGradientBrush>
+			</Setter.Value>
+		</Setter>
+		<Setter Property="Border.BorderBrush"
+				Value="#000000" />
+		<Setter Property="Border.BorderThickness"
+				Value="1.3,1,0,1" />
+		<Setter Property="Control.HorizontalContentAlignment"
+				Value="Center" />
+		<Setter Property="Control.VerticalContentAlignment"
+				Value="Center" />
+		<Setter Property="FrameworkElement.Width"
+				Value="21" />
+		<Setter Property="FocusVisualStyle"
+				Value="{x:Null}" />
+		<Setter Property="Control.Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type Button}">
+					<Border Name="brdr"
+							CornerRadius="8,0,0,8"
+							Width="{TemplateBinding FrameworkElement.Width}"
+							Background="{TemplateBinding Panel.Background}"
+							BorderBrush="{TemplateBinding Border.BorderBrush}"
+							BorderThickness="{TemplateBinding Border.BorderThickness}">
+						<Path Name="_path"
+							  Style="{StaticResource ButtonPath}"
+							  Data="{StaticResource PathMinimizeButton}"
+							  Margin="7,6,6,0" />
+					</Border>
+					<ControlTemplate.Triggers>
+						<Trigger Property="UIElement.IsMouseOver"
+								 Value="True">
+							<Setter Value="{DynamicResource MouseOverColor}"
+									TargetName="brdr"
+									Property="Border.BorderBrush" />
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style x:Key="CloseButton"
+		   TargetType="{x:Type Button}"
+		   BasedOn="{StaticResource TitleBarRadialButton}">
+		<Setter Property="TextElement.Foreground"
+				Value="#000000" />
+		<Setter Property="Panel.Background">
+			<Setter.Value>
+				<LinearGradientBrush EndPoint="0.5,1"
+									 StartPoint="0.5,0">
+                    <GradientStop Color="#515151"
+								  Offset="0" />
+                    <GradientStop Color="#3d3d3d"
+								  Offset="0.1" />
+				</LinearGradientBrush>
+			</Setter.Value>
+		</Setter>
+		<Setter Property="Border.BorderBrush"
+				Value="#000000" />
+		<Setter Property="Border.BorderThickness"
+				Value="1,1,1.3,1" />
+		<Setter Property="Control.HorizontalContentAlignment"
+				Value="Center" />
+		<Setter Property="Control.VerticalContentAlignment"
+				Value="Center" />
+		<Setter Property="FrameworkElement.Width"
+				Value="23" />
+		<Setter Property="FocusVisualStyle"
+				Value="{x:Null}" />
+		<Setter Property="Control.Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type Button}">
+					<Border Name="brdr"
+							CornerRadius="0,8,8,0"
+							Width="{TemplateBinding FrameworkElement.Width}"
+							Background="{TemplateBinding Panel.Background}"
+							BorderBrush="{TemplateBinding Border.BorderBrush}"
+							BorderThickness="{TemplateBinding Border.BorderThickness}">
+						<Path Name="_path"
+							  Style="{StaticResource ButtonPath}"
+							  Data="{StaticResource PathCloseButton}"
+							  Margin="4,4,5,4" />
+					</Border>
+					<ControlTemplate.Triggers>
+						<Trigger Property="UIElement.IsMouseOver"
+								 Value="True">
+							<Setter Value="{DynamicResource MouseOverColor}"
+									TargetName="brdr"
+									Property="Border.BorderBrush" />
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	<Style x:Key="BaseWindowStyle"
+		   TargetType="{x:Type Window}">
+		<Setter Property="Window.WindowStyle"
+				Value="None" />
+		<Setter Property="Window.AllowsTransparency"
+				Value="True" />
+		<Setter Property="Background"
+				Value="Transparent" />
+		<Setter Property="SnapsToDevicePixels"
+				Value="True" />
+		<Setter Property="ResizeMode"
+				Value="NoResize" />
+	</Style>
+
+	<Style x:Key="MainWindowStyle"
+		   TargetType="{x:Type Window}"
+		   BasedOn="{StaticResource BaseWindowStyle}">
+		<Setter Property="FrameworkElement.Width"
+				Value="715" />
+		<Setter Property="FrameworkElement.Height"
+				Value="575" />
+	</Style>
+
+	<Style x:Key="WindowBorder"
+		   TargetType="{x:Type Border}">
+		<Setter Property="Border.CornerRadius"
+				Value="{StaticResource WindowCornerRadius}" />
+		<Setter Property="Padding"
+				Value="7" />
+		<Setter Property="Border.BorderBrush"
+				Value="{StaticResource WindowBorderColor}" />
+		<Setter Property="Border.BorderThickness"
+				Value="1" />
+		<Setter Property="Panel.Background"
+				Value="{StaticResource WindowTransparentBorderColor}" />
+	</Style>
+
+	<Style x:Key="WindowInnerBorder"
+		   TargetType="{x:Type Border}">
+		<Setter Property="Border.CornerRadius"
+				Value="{StaticResource WindowInnerCornerRadius}" />
+		<Setter Property="Background"
+				Value="{StaticResource MainAreaBackGround}" />
+		<Setter Property="Panel.Effect">
+			<Setter.Value>
+				<DropShadowEffect BlurRadius="3"
+								  ShadowDepth="0" />
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	<local:NoiseGenerator x:Key="Noise"
+						  Size="55">
+		<local:NoiseGenerator.Colors>
+			<local:ColorFrequency Color="#0CBABABA"
+								  Frequency="30" />
+			<local:ColorFrequency Color="#0C919191"
+								  Frequency="1" />
+			<local:ColorFrequency Color="#0C454545"
+								  Frequency="15" />
+			<local:ColorFrequency Color="#0C656565"
+								  Frequency="15" />
+		</local:NoiseGenerator.Colors>
+	</local:NoiseGenerator>
+
+	<ImageBrush ImageSource="{Binding Source={StaticResource Noise}, Path=NoiseImage}"
+				x:Key="NoiseBrush"
+				TileMode="Tile"
+				ViewportUnits="Absolute"
+				Viewport="0,0 55,55" />
+
+	<Style x:Key="PanelTitleWrap"
+		   TargetType="{x:Type Grid}">
+		<Setter Property="VerticalAlignment"
+				Value="Top" />
+		<Setter Property="HorizontalAlignment"
+				Value="Left" />
+		<Setter Property="Width"
+				Value="700" />
+		<Setter Property="Background"
+				Value="#E2F0F3" />
+		<Setter Property="ClipToBounds"
+				Value="True" />
+	</Style>
+
+	<Style x:Key="PanelTitle"
+		   TargetType="{x:Type Path}">
+		<Setter Property="Data"
+				Value="M0,0 L700,0 700,54.999996 69.650002,54.999996 69.650002,55.00156 61.322258,63.721001 53.000004,54.999996 0,54.999996 z" />
+		<Setter Property="HorizontalAlignment"
+				Value="Left" />
+		<Setter Property="Margin"
+				Value="-1,0,0,0" />
+		<Setter Property="Stretch"
+				Value="Fill" />
+		<Setter Property="StrokeThickness"
+				Value="1" />
+		<Setter Property="Stroke"
+				Value="#FFFFFF" />
+		<Setter Property="Width"
+				Value="702" />
+		<Setter Property="Fill">
+			<Setter.Value>
+				<LinearGradientBrush EndPoint="0.5,1"
+									 StartPoint="0.5,0">
+					<GradientStop Color="#FF006980" />
+					<GradientStop Color="#FF035F76"
+								  Offset="0.901" />
+					<GradientStop Color="#FF048EA7"
+								  Offset="0.091" />
+					<GradientStop Color="#FF000506"
+								  Offset="1" />
+				</LinearGradientBrush>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	<Style x:Key="PanelTitleNoisy"
+		   TargetType="{x:Type Path}"
+		   BasedOn="{StaticResource PanelTitle}">
+		<Setter Property="Fill"
+				Value="{StaticResource NoiseBrush}" />
+	</Style>
+
+	<Style x:Key="PanelTitleInnerBorder"
+		   TargetType="{x:Type Border}">
+		<Setter Property="Height"
+				Value="57" />
+		<Setter Property="VerticalAlignment"
+				Value="Top" />
+		<Setter Property="Margin"
+				Value="0" />
+	</Style>
+
+	<Style x:Key="PanelTitleFigure"
+		   TargetType="{x:Type Path}">
+		<Setter Property="Height"
+				Value="66.1">
+		</Setter>
+		<Setter Property="Data"
+				Value="M0,0 L710,0 710,57.000001 75.099998,57.000001 75.099998,57.00163 66.097031,66.099995 57.099998,57.000001 0,57.000001 z" />
+	</Style>
+
+	<Style x:Key="PanelTitleText"
+		   TargetType="{x:Type TextBlock}">
+		<Setter Property="FontFamily"
+				Value="/DriversGalaxy.Infrastructure;component/Fonts/#Helvetica Neue CE 75" />
+		<Setter Property="FontSize"
+				Value="21" />
+		<Setter Property="VerticalAlignment"
+				Value="Top" />
+		<Setter Property="Margin"
+				Value="30,15,0,0" />
+		<Setter Property="Foreground"
+				Value="#FFFFFF" />
+		<Setter Property="Panel.Effect">
+			<Setter.Value>
+				<DropShadowEffect BlurRadius="1"
+								  Color="#3D8EA0"
+								  Opacity=".8"
+								  ShadowDepth="1"
+								  Direction="90"
+								  RenderingBias="Performance" />
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	<Style x:Key="PanelMainBorder"
+		   TargetType="{x:Type Border}">
+		<Setter Property="VerticalAlignment"
+				Value="Top" />
+		<Setter Property="HorizontalAlignment"
+				Value="Left" />
+		<Setter Property="BorderBrush"
+				Value="#FDFDFD" />
+		<Setter Property="BorderThickness"
+				Value="0,0,0,1" />
+		<Setter Property="Background"
+				Value="#FFE2F0F3" />
+		<Setter Property="Padding"
+				Value="20,14,20,6" />
+	</Style>
+
+	<Style x:Key="PanelSwitcherBorder"
+		   TargetType="{x:Type Border}">
+		<Setter Property="BorderThickness"
+				Value="0,0,1,0" />
+		<Setter Property="BorderBrush"
+				Value="#FFFFFFFF" />
+		<Setter Property="Background"
+				Value="{StaticResource PanelSwitcherBorderBackground}" />
+	</Style>
+
+	<Style x:Key="PanelSwitcherImage"
+		   TargetType="{x:Type Image}">
+		<Setter Property="Stretch"
+				Value="None" />
+		<Setter Property="VerticalAlignment"
+				Value="Top" />
+		<Setter Property="HorizontalAlignment"
+				Value="Left" />
+		<Setter Property="SnapsToDevicePixels"
+				Value="True" />
+	</Style>
+
+	<Style x:Key="PanelSwitcherText"
+		   TargetType="{x:Type TextBlock}">
+		<Setter Property="FontFamily"
+				Value="/DriversGalaxy.Infrastructure;component/Fonts/#Helvetica CE 55 Roman" />
+		<Setter Property="Foreground"
+				Value="#afafaf" />
+		<Setter Property="FontSize"
+				Value="13" />
+		<Setter Property="Margin"
+				Value="0,13,0,0" />		
+	</Style>
+
+	<Style x:Key="PanelFooterBorder"
+		   TargetType="{x:Type Border}">
+		<Setter Property="CornerRadius"
+				Value="0,0,6,6" />
+		<Setter Property="Width"
+				Value="700" />
+		<Setter Property="Height"
+				Value="31" />
+		<Setter Property="VerticalAlignment"
+				Value="Top" />
+		<Setter Property="HorizontalAlignment"
+				Value="Left" />
+		<Setter Property="Background"
+				Value="{DynamicResource TitlePanelsBackgroundColor}" />
+	</Style>
+
+	<Style x:Key="PanelFooterBorderNoisy"
+		   TargetType="{x:Type Border}"
+		   BasedOn="{StaticResource PanelFooterBorder}">
+		<Setter Property="Background"
+				Value="{StaticResource NoiseBrush}" />
+	</Style>
+
+	<Style x:Key="PanelFooterText"
+		   TargetType="{x:Type TextBlock}">
+		<Setter Property="DockPanel.Dock"
+				Value="Right" />
+		<Setter Property="FontFamily"
+				Value="/DriversGalaxy.Infrastructure;component/Fonts/#Helvetica Neue CE 55" />
+		<Setter Property="Foreground"
+				Value="#FFFFFF" />
+		<Setter Property="Opacity"
+				Value=".65" />
+		<Setter Property="FontSize"
+				Value="11.03" />
+		<Setter Property="HorizontalAlignment"
+				Value="Right" />
+		<Setter Property="VerticalAlignment"
+				Value="Top" />
+		<Setter Property="Margin"
+				Value="0,9,10,0" />
+		<Setter Property="Panel.Effect">
+			<Setter.Value>
+				<DropShadowEffect BlurRadius="1"
+								  Color="#FF01697F"
+								  Direction="90"
+								  ShadowDepth="1"
+								  Opacity=".5"
+								  RenderingBias="Performance" />
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+</ResourceDictionary>

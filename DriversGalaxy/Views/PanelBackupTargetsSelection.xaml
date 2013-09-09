@@ -1,0 +1,166 @@
+﻿<UserControl x:Class="DriversGalaxy.Views.PanelBackupTargetsSelection"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 xmlns:lex="clr-namespace:WPFLocalizeExtension.Extensions;assembly=WPFLocalizeExtension"
+			 xmlns:routine="clr-namespace:DriversGalaxy.Routine"
+			 mc:Ignorable="d"
+			 d:DesignHeight="293"
+			 d:DesignWidth="645"
+			 Height="293"
+			 Width="645">
+	<UserControl.Resources>
+		<routine:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+        <routine:BackupTargetsProgressPercentageConverter x:Key="BackupTargetsProgressPercentageConverter" />
+	</UserControl.Resources>
+	<Grid Background="{StaticResource MainAreaBackGround}">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="235" />
+			<RowDefinition Height="58" />
+		</Grid.RowDefinitions>
+		<ListView Width="640"
+				  Height="201"
+				  Margin="0,19,0,0"
+				  ItemsSource="{Binding OrderedDeviceGroups}"
+				  ItemContainerStyle="{StaticResource ListViewItemSimple}"
+				  ScrollViewer.CanContentScroll="False"
+				  Name="DeviceGroups">
+			<ListView.View>
+				<GridView AllowsColumnReorder="False">
+					<GridView.Columns>
+
+						<GridViewColumn Header="{lex:LocText DriversGalaxy:Resources:SelectDriversForBackup}"
+										Width="600">
+							<GridViewColumn.CellTemplate>
+								<DataTemplate>
+									<Grid>
+										<Grid.RowDefinitions>
+											<RowDefinition Height="18" />
+											<RowDefinition />
+										</Grid.RowDefinitions>
+										<Grid.ColumnDefinitions>
+											<ColumnDefinition Width="23" />
+											<ColumnDefinition Width="23" />
+											<ColumnDefinition />
+										</Grid.ColumnDefinitions>
+
+										<ToggleButton Name="GroupToggler"
+													  Style="{StaticResource TreeViewToggleButton}" />
+
+										<CheckBox Grid.Column="1"
+												  Grid.ColumnSpan="2"
+												  Margin="0"
+												  IsChecked="{Binding GroupChecked}"
+												  Command="{Binding DataContext.CheckDevicesGroupCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}"
+												  CommandParameter="{Binding DeviceClass}">
+											<StackPanel Orientation="Horizontal"
+														VerticalAlignment="Top"
+														HorizontalAlignment="Left">
+												<Image Width="22"
+													   Stretch="None"
+													   HorizontalAlignment="Left"
+													   Source="{Binding DeviceClassImageSmall}" />
+                                                <TextBlock Text="{Binding DeviceClassName}" Foreground="#878787"/>
+											</StackPanel>
+										</CheckBox>
+
+										<ItemsControl Grid.Row="1"
+													  Grid.Column="3"
+													  ItemsSource="{Binding Devices}"
+													  Style="{StaticResource ItemsControlStyle}">
+											<ItemsControl.ItemTemplate>
+												<DataTemplate>
+
+													<CheckBox Height="18"
+															  Margin="0"
+															  IsChecked="{Binding SelectedForBackup}"
+															  Command="{Binding DataContext.CheckDeviceCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}"
+															  CommandParameter="{Binding Id}">
+														<StackPanel Orientation="Horizontal"
+																	VerticalAlignment="Top"
+																	HorizontalAlignment="Left">
+															<Image Width="22"
+																   Stretch="None"
+																   HorizontalAlignment="Left"
+																   Source="{Binding DeviceClassImageSmall}" />
+                                                            <TextBlock Grid.Column="2" Foreground="#878787"
+																	   Text="{Binding DeviceName}" />
+														</StackPanel>
+													</CheckBox>
+												</DataTemplate>
+											</ItemsControl.ItemTemplate>
+											<ItemsControl.ItemsPanel>
+												<ItemsPanelTemplate>
+													<StackPanel />
+												</ItemsPanelTemplate>
+											</ItemsControl.ItemsPanel>
+										</ItemsControl>
+									</Grid>
+								</DataTemplate>
+							</GridViewColumn.CellTemplate>
+						</GridViewColumn>
+
+					</GridView.Columns>
+				</GridView>
+			</ListView.View>
+		</ListView>
+		<TextBlock Text="{lex:LocText DriversGalaxy:Resources:InitialLoading}"
+				   Padding="9,55,0,2"
+				   Style="{StaticResource ListViewItemLoadingTextBlock}"
+				   Visibility="{Binding Path=InitialScanFinished, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=False}"></TextBlock>
+
+		<Border Grid.Row="1"
+				Style="{StaticResource BottomPanel}"
+				Margin="1,0,0,0">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="254" />
+					<ColumnDefinition Width="194" />
+					<ColumnDefinition Width="194" />
+				</Grid.ColumnDefinitions>
+                <Grid VerticalAlignment="Top" Width="230">
+                    <Border Style="{StaticResource ProgressBarOuther}" Visibility="{Binding Path=CreatingBackup, Converter={StaticResource BoolToVisibilityConverter}}" Width="230">
+                        <Border Style="{StaticResource ProgressBarWrap}" Width="230">
+                            <Border Style="{StaticResource ProgressBarContainer}" Width="230">
+
+                                <!--  Green animated ProgressBar  -->
+                                <Border 
+										Width="{Binding Path=Progress, Converter={StaticResource BackupTargetsProgressPercentageConverter}}"
+										Style="{StaticResource ProgressBarGreen}">
+                                    <!-- Visibility="{Binding Visibility, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}">
+									needed to activate Visibility changed trigger to start animation -->
+                                    <Border x:Name="GreenProgressBar" Style="{StaticResource ProgressBarInnerAnimated}"
+											Visibility="{Binding Visibility, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}">
+                                        <Border BorderThickness="0,1,0,0"
+												BorderBrush="#CADF84">
+                                        </Border>
+                                        <Border.RenderTransform>
+                                            <TranslateTransform X="0"
+																Y="0" />
+                                        </Border.RenderTransform>
+                                    </Border>
+                                </Border>
+                            </Border>
+                        </Border>
+                    </Border>
+                </Grid>
+                <Button Style="{StaticResource GreenRoundedButton}"
+                        Width="182"
+                        Height="43"
+						Grid.Column="1"
+						Command="{Binding BackupActionFinishedCommand}"
+						Content="{lex:LocText DriversGalaxy:Resources:Cancel}"></Button>
+                
+				<Button Style="{StaticResource GreenRoundedButton}"
+                        Width="182"
+                        Height="43"
+                    Grid.Column="2"
+						Command="{Binding BackupSelectedDriversCommand}"
+                        IsEnabled="{Binding CanBackup, UpdateSourceTrigger=PropertyChanged}"
+						Content="{lex:LocText DriversGalaxy:Resources:CreateBackup}"></Button>
+			</Grid>
+		</Border>
+
+	</Grid>
+</UserControl>

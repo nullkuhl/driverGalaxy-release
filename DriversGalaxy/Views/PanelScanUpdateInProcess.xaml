@@ -1,0 +1,112 @@
+﻿<UserControl x:Class="DriversGalaxy.Views.PanelScanUpdateInProcess"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 xmlns:routine="clr-namespace:DriversGalaxy.Routine"
+			 xmlns:lex="clr-namespace:WPFLocalizeExtension.Extensions;assembly=WPFLocalizeExtension"
+			 mc:Ignorable="d"
+			 d:DesignHeight="293"
+			 d:DesignWidth="645"
+			 Height="293"
+			 Width="645">
+	<UserControl.Resources>
+		<routine:ProgressPercentageConverter x:Key="ProgressPercentageConverter" />
+	</UserControl.Resources>
+	<Grid Background="{StaticResource MainAreaBackGround}">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="235" />
+			<RowDefinition Height="58" />
+		</Grid.RowDefinitions>
+		<ListView Width="640"
+				  Height="201"
+				  Margin="0,27,0,6"
+				  ItemsSource="{Binding DownloadedDrivers}"
+				  SelectionMode="Single"
+				  ScrollViewer.CanContentScroll="False"
+                  ScrollViewer.ScrollChanged="ListBox_ScrollChanged">
+			<ListView.View>
+				<GridView AllowsColumnReorder="False">
+					<GridView.Columns>
+						<GridViewColumn Header="{lex:LocText DriversGalaxy:Resources:InstallationProgress}">
+							<GridViewColumn.CellTemplate>
+								<DataTemplate>
+									<StackPanel Orientation="Horizontal"
+												Margin="4,0,0,0"
+												VerticalAlignment="Top"
+												HorizontalAlignment="Left"
+												Width="610">
+										<TextBlock Margin="5,0,0,0"
+												   Text="{Binding Path=Operation}"></TextBlock>
+										<TextBlock Margin="2,0,0,0"
+												   Background="{x:Null}"
+												   Text="{Binding Path=Device.DeviceName}" />
+									</StackPanel>
+								</DataTemplate>
+							</GridViewColumn.CellTemplate>
+						</GridViewColumn>
+					</GridView.Columns>
+				</GridView>
+			</ListView.View>
+		</ListView>
+		<Border Grid.Row="1"
+				Style="{StaticResource BottomPanel}"
+				Margin="1,0,0,0">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="55" />
+					<ColumnDefinition Width="425" />
+					<ColumnDefinition Width="162" />
+				</Grid.ColumnDefinitions>
+				<Image Style="{StaticResource FunctionalButtonImage}"
+					   Margin="5,13,0,0"
+					   Source="/DriversGalaxy;component/Images/icon-scan.png" />
+
+				<StackPanel Grid.Column="1"
+							VerticalAlignment="Top"
+							HorizontalAlignment="Left">
+					<Border Style="{StaticResource ProgressBarOuther}">
+						<Border Style="{StaticResource ProgressBarWrap}">
+							<Border Style="{StaticResource ProgressBarContainer}">
+
+								<!--  Green animated ProgressBar  -->
+								<Border Width="{Binding Path=Progress, Converter={StaticResource ProgressPercentageConverter}}"
+										Style="{StaticResource ProgressBarGreen}">
+									<!-- Visibility="{Binding Visibility, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}">
+									needed to activate Visibility changed trigger to start animation -->
+									<Border x:Name="GreenProgressBar"
+											Style="{StaticResource ProgressBarInnerAnimated}"
+											Visibility="{Binding Visibility, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}">
+										<Border BorderThickness="0,1,0,0"
+												BorderBrush="#CADF84">
+										</Border>
+										<Border.RenderTransform>
+											<TranslateTransform X="0"
+																Y="0" />
+										</Border.RenderTransform>
+									</Border>
+								</Border>
+
+							</Border>
+						</Border>
+					</Border>
+					<StackPanel Orientation="Horizontal"
+								Width="390"
+								HorizontalAlignment="Left"
+								ClipToBounds="True">
+						<TextBlock Style="{StaticResource ScanStatusTitle}"
+								   Text="{Binding ScanStatusTitle}"></TextBlock>
+						<TextBlock Style="{StaticResource ScanStatus}"
+								   Text="{Binding ScanStatusText}"></TextBlock>
+					</StackPanel>
+				</StackPanel>
+
+				<Button Style="{StaticResource GreenRoundedButton}"
+						Grid.Column="2"
+						Width="149"
+						Command="{Binding CancelUpdateCommand}"
+						Content="{lex:LocText DriversGalaxy:Resources:Cancel}"></Button>
+			</Grid>
+		</Border>
+	</Grid>
+</UserControl>

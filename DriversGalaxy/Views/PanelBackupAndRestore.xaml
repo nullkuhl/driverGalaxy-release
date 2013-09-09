@@ -1,0 +1,189 @@
+﻿<UserControl x:Class="DriversGalaxy.Views.PanelBackupAndRestore"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:lex="clr-namespace:WPFLocalizeExtension.Extensions;assembly=WPFLocalizeExtension"
+			 xmlns:routine="clr-namespace:DriversGalaxy.Routine"
+             xmlns:models="clr-namespace:DriversGalaxy.Models"
+			 mc:Ignorable="d"
+			 d:DesignHeight="293"
+			 d:DesignWidth="655"
+			 Height="293"
+			 Width="655">
+	<UserControl.Resources>
+		<routine:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+        <routine:ScanStatusToVisibilityConverter x:Key="ScanStatusToVisibilityConverter" />
+        <routine:FullBackupProgressPercentageConverter x:Key="FullBackupProgressPercentageConverter" />
+        <routine:BackupStatusEqualsToVisibilityConverter x:Key="BackupStatusEqualsToVisibilityConverter" />
+    </UserControl.Resources>
+    <Grid Background="{StaticResource MainAreaBackGround}">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="220" />
+			<ColumnDefinition />
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="46" />
+			<RowDefinition Height="72" />
+			<RowDefinition Height="26" />
+			<RowDefinition Height="91" />
+			<RowDefinition Height="58" />
+		</Grid.RowDefinitions>
+		<RadioButton Name="ActionBackup"
+					 Margin="0,22,0,0"
+					 Style="{StaticResource TitledRadioButton}"
+					 Content="{lex:LocText DriversGalaxy:Resources:BackupRadioBtnTitle}"
+					 IsChecked="True"
+					 Checked="BackupActionChanged" />
+		<TextBlock Style="{StaticResource RadioButtonText}"
+				   Grid.Row="1"
+				   Text="{lex:LocText DriversGalaxy:Resources:BackupText}" />
+		<RadioButton Grid.Row="2"
+					 Style="{StaticResource TitledRadioButton}"
+					 Content="{lex:LocText DriversGalaxy:Resources:RestoreRadioBtnTitle}"
+					 Checked="BackupActionChanged" />
+		<TextBlock Grid.Row="3"
+				   Style="{StaticResource RadioButtonText}"
+				   Text="{lex:LocText DriversGalaxy:Resources:RestoreText}" />
+		<Grid Grid.Column="1"
+			  Grid.RowSpan="4"
+			  Margin="0,19,0,0">
+
+			<!-- ItemsSource="{Binding BackupTypes}" -->
+			
+			<ListView Name="BackupTypesList"
+					  Width="427"
+					  Height="201"
+					  ItemsSource="{Binding BackupTypes}"
+					  Visibility="Visible"
+					  SelectionMode="Single"
+					  ScrollViewer.CanContentScroll="False">
+				<ListView.Resources>
+					<DataTemplate x:Key="BackupType">
+						<TextBlock Margin="2,0,0,0"
+								   Background="{x:Null}"
+								   Text="{Binding Path=Value}" />
+					</DataTemplate>
+				</ListView.Resources>
+				<ListView.View>
+					<GridView AllowsColumnReorder="False">
+						<GridViewColumn Width="260"
+										Header="{lex:LocText DriversGalaxy:Resources:BackupType}"
+										CellTemplate="{StaticResource BackupType}" />
+					</GridView>
+				</ListView.View>
+			</ListView>
+			<Grid Name="BackupItemsList"
+				  Visibility="Collapsed">
+				<ListView Width="427"
+						  Height="201"
+						  ItemsSource="{Binding BackupItems}"
+						  SelectionMode="Single"
+						  ScrollViewer.CanContentScroll="False"
+						  Name="BackupItems">
+					<ListView.Resources>
+						<DataTemplate x:Key="BackupType">
+							<TextBlock Margin="2,0,0,0"
+									   Background="{x:Null}"
+									   Text="{Binding Path=Type}" />
+						</DataTemplate>
+						<DataTemplate x:Key="TimeAndDate">
+							<TextBlock Margin="2,0,0,0"
+									   Background="{x:Null}">
+							<TextBlock.Text>
+								<Binding Path="Time"
+										 StringFormat="{}{0:dd/MM/yyyy - hh:mm:ss}" />
+							 </TextBlock.Text>
+							</TextBlock>
+						</DataTemplate>
+					</ListView.Resources>
+					<ListView.View>
+						<GridView AllowsColumnReorder="False">
+							<GridViewColumn Width="230"
+											Header="{lex:LocText DriversGalaxy:Resources:BackupType}"
+											CellTemplate="{StaticResource BackupType}" />
+							<GridViewColumn Header="{lex:LocText DriversGalaxy:Resources:TimeAndDate}"
+											CellTemplate="{StaticResource TimeAndDate}" />
+						</GridView>
+					</ListView.View>
+				</ListView>
+				<TextBlock Text="{lex:LocText DriversGalaxy:Resources:InitialLoading}"
+						   Style="{StaticResource ListViewItemLoadingTextBlock}"
+						   Visibility="{Binding Path=XMLItemsLoaded, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=False}" Margin="0,0,34,0"></TextBlock>
+            </Grid>
+		</Grid>
+        <Border Grid.Row="4"
+				Grid.ColumnSpan="2"
+				Style="{StaticResource BottomPanel}"
+				Margin="1,0,0,0">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="48" />
+					<ColumnDefinition Width="400" />
+					<ColumnDefinition Width="194" />
+				</Grid.ColumnDefinitions>
+				<Image Style="{StaticResource FunctionalButtonImage}"
+                       Visibility="{Binding Path=CreatingBackup, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=False}"
+					   Margin="2,2,0,0"
+					   Source="../Images/icon-lamp.png" />
+				<Grid Grid.Column="1"
+					  VerticalAlignment="Top">
+                    <Border Style="{StaticResource ProgressBarOuther}" Width="380" HorizontalAlignment="Left" 
+                        Visibility="{Binding Path=CreatingBackup, Converter={StaticResource BoolToVisibilityConverter}}" >
+                        <Border Style="{StaticResource ProgressBarWrap}">
+                            <Border Style="{StaticResource ProgressBarContainer}">
+
+                                <!--  Green animated ProgressBar  -->
+                                <Border 
+										Width="{Binding Path=Progress, Converter={StaticResource FullBackupProgressPercentageConverter}}"
+										Style="{StaticResource ProgressBarGreen}">
+                                    <!-- Visibility="{Binding Visibility, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}">
+									needed to activate Visibility changed trigger to start animation -->
+                                    <Border x:Name="GreenProgressBar" Style="{StaticResource ProgressBarInnerAnimated}"
+											Visibility="{Binding Visibility, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}">
+                                        <Border BorderThickness="0,1,0,0"
+												BorderBrush="#CADF84">
+                                        </Border>
+                                        <Border.RenderTransform>
+                                            <TranslateTransform X="0"
+																Y="0" />
+                                        </Border.RenderTransform>
+                                    </Border>
+                                </Border>
+                            </Border>
+                        </Border>
+                    </Border>
+                    
+                    <TextBlock Style="{StaticResource BottomPanelTitle}"
+							   Text="{lex:LocText DriversGalaxy:Resources:WhyCreateBackups}"
+                               Visibility="{Binding Path=CreatingBackup, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=False}"></TextBlock>
+					<TextBlock Style="{StaticResource BottomPanelText}"
+							   Text="{lex:LocText DriversGalaxy:Resources:WhyCreateBackupsText}"
+                               Visibility="{Binding Path=CreatingBackup, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=False}"></TextBlock>
+                </Grid>                
+				<Grid Grid.Column="2">
+					<Button Name="BackupButton"
+							Style="{StaticResource GreenRoundedButton}"
+                            Width="182"
+                            Height="43"
+							Visibility="Visible"
+							Command="{Binding SelectBackupTypeCommand}"
+							CommandParameter="{Binding ElementName=BackupTypesList, Path=SelectedItem}"
+							Content="{lex:LocText DriversGalaxy:Resources:NextStep}"></Button>
+					<Button Name="RestoreButton"
+							Visibility="Collapsed"
+							Style="{StaticResource GreenRoundedButton}"
+                            Width="182"
+                            Height="43"
+							Command="{Binding SelectDriversToRestoreCommand}"
+							CommandParameter="{Binding ElementName=BackupItems, Path=SelectedItem}"
+							Content="{lex:LocText DriversGalaxy:Resources:NextStep}"></Button>
+				</Grid>
+			</Grid>
+		</Border>
+        <Border BorderBrush="{x:Null}" Width="655" Height="293" Grid.ColumnSpan="2" Grid.RowSpan="4">
+            <TextBlock Background="#1a1a1a" Foreground="LightGray" FontFamily="/DriversGalaxy;component/Fonts/#Helvetica Neue CE 75" FontSize="25" VerticalAlignment="Center" Margin="0,0,11,0" Text="This function is disabled while scanning/downloading/updating." TextAlignment="Center" TextWrapping="Wrap" 
+                       Visibility="{Binding Path=Status, Converter={StaticResource ScanStatusToVisibilityConverter}}"/>
+        </Border>
+    </Grid>
+</UserControl>

@@ -1,0 +1,299 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AllDriversComposed" xml:space="preserve">
+    <value>Alle Treiber zusammengestellt</value>
+  </data>
+  <data name="CancelCompose" xml:space="preserve">
+    <value>Abbrechen</value>
+  </data>
+  <data name="CancelDownload" xml:space="preserve">
+    <value>Abbrechen</value>
+  </data>
+  <data name="CancelScan" xml:space="preserve">
+    <value>Scan abbrechen</value>
+  </data>
+  <data name="CheckDownloadFolder" xml:space="preserve">
+    <value>Auf temporäres Downloadverzeichnis - Documents/Freemium Utilites/Downloads
+ kann nicht zugegriffen werden. Bitte starten Sie dieses Programm mit Adminrechten.</value>
+  </data>
+  <data name="CheckPreferences" xml:space="preserve">
+    <value>Einstellungen prüfen</value>
+  </data>
+  <data name="ChooseDestination" xml:space="preserve">
+    <value>wählen Sie ein Zielverzeichnis</value>
+  </data>
+  <data name="ChooseDestinationDirectory" xml:space="preserve">
+    <value>Bitte wählen Sie ein Zielverzeichnis</value>
+  </data>
+  <data name="ChooseDestinationOS" xml:space="preserve">
+    <value>Bitte wählen Sie das Zielbetriebssystem</value>
+  </data>
+  <data name="ChooseDestOS" xml:space="preserve">
+    <value>Zielbetriebssystem auswählen</value>
+  </data>
+  <data name="ChooseDriversToDownload" xml:space="preserve">
+    <value>Wählen Sie die zu downloadenden Treiber aus</value>
+  </data>
+  <data name="ChooseOS" xml:space="preserve">
+    <value>Wählen Sie das Betriebssystem</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Schließen</value>
+  </data>
+  <data name="Compose" xml:space="preserve">
+    <value>Erstelle Datenbank</value>
+  </data>
+  <data name="ComposingDriver" xml:space="preserve">
+    <value>Treiber sammeln -</value>
+  </data>
+  <data name="ComposingDrivers" xml:space="preserve">
+    <value>Treiber sammeln</value>
+  </data>
+  <data name="ComposingProgress" xml:space="preserve">
+    <value>Status Treiberdatenbank</value>
+  </data>
+  <data name="ContactingServer" xml:space="preserve">
+    <value>kontaktiere Server</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="DownloadFinishedPressCompose" xml:space="preserve">
+    <value>Heruntergeladene Treiber.
+Bitte drücken Sie "Erstelle Datenbank" um die Treiber für die Migration auf Ihr neues Betriebssystem zusammen zu stellen</value>
+  </data>
+  <data name="DownloadingDriver" xml:space="preserve">
+    <value>Lade Treiber herunter für: </value>
+  </data>
+  <data name="DownloadingDrivers" xml:space="preserve">
+    <value>Lade Treiber herunter</value>
+  </data>
+  <data name="DriverScan" xml:space="preserve">
+    <value>Treiber Scan</value>
+  </data>
+  <data name="DriversDownloaded" xml:space="preserve">
+    <value>Treiber heruntergeladen</value>
+  </data>
+  <data name="DriversReadyToDownload" xml:space="preserve">
+    <value>Treiber fertig zum Download</value>
+  </data>
+  <data name="FooterText" xml:space="preserve">
+    <value>Mehr Freemium Produkte</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>Hilfe</value>
+  </data>
+  <data name="Minimize" xml:space="preserve">
+    <value>Minimieren</value>
+  </data>
+  <data name="NoDriversToDownload" xml:space="preserve">
+    <value>Keine Treiber zum Download vorhanden</value>
+  </data>
+  <data name="NowComposing" xml:space="preserve">
+    <value>Erstelle Datenbank:</value>
+  </data>
+  <data name="NowScanning" xml:space="preserve">
+    <value>Scan läuft:</value>
+  </data>
+  <data name="PostOn" xml:space="preserve">
+    <value>Werde Freund:</value>
+  </data>
+  <data name="SaveDriversTo" xml:space="preserve">
+    <value>Speichere Treiber nach</value>
+  </data>
+  <data name="ScanDrivers" xml:space="preserve">
+    <value>Treiberscan</value>
+  </data>
+  <data name="ScanFinishTitle" xml:space="preserve">
+    <value>Scan beendet</value>
+  </data>
+  <data name="ScanFooter" xml:space="preserve">
+    <value>Systemscan</value>
+  </data>
+  <data name="ScanFooterText" xml:space="preserve">
+    <value>Klick Sie auf scan um die Treiber zu sehen die Sie sichern können</value>
+  </data>
+  <data name="ScanForIssues" xml:space="preserve">
+    <value>Scan</value>
+  </data>
+  <data name="ScanningDevice" xml:space="preserve">
+    <value>Scanne Gerät -</value>
+  </data>
+  <data name="ScanProgress" xml:space="preserve">
+    <value>SCANFORTSCHRITT</value>
+  </data>
+  <data name="SelectAtLeastOneDriver" xml:space="preserve">
+    <value>Bitte wählen Sie mindestens einen Treiber aus.</value>
+  </data>
+  <data name="SelectDriversToDownloadFooter" xml:space="preserve">
+    <value>Klicken Sie "Download" um den Download der Treiber zu starten</value>
+  </data>
+  <data name="SelectDriversToDownloadFooterText" xml:space="preserve">
+    <value>Klicken Sie auf "Download" um die Treiber für Ihr Zielbetriebssystem zu laden</value>
+  </data>
+  <data name="SelectFolderForDownloads" xml:space="preserve">
+    <value>Wählen Sie ein Zielverzeichnis</value>
+  </data>
+  <data name="StartingDriversDownload" xml:space="preserve">
+    <value>Download der Treiber beginnt</value>
+  </data>
+  <data name="DownloadComplete" xml:space="preserve">
+    <value>Download abgeschlossen</value>
+  </data>
+  <data name="DownloadStatus" xml:space="preserve">
+    <value>Heruntergeladene {{0}} von {{1}}</value>
+  </data>
+  <data name="GoogleMargin" xml:space="preserve">
+    <value>-67</value>
+  </data>
+  <data name="TweetMargin" xml:space="preserve">
+    <value>-40</value>
+  </data>
+  <data name="FacebookLike" xml:space="preserve">
+    <value>Gefällt mir</value>
+  </data>
+  <data name="FBUrl" xml:space="preserve">
+    <value>http://www.freemium.com/fsu/facebook</value>
+  </data>
+  <data name="GooglePlusUrl" xml:space="preserve">
+    <value>http://www.freemium.com/fsu/googleplus</value>
+  </data>
+  <data name="Twitter" xml:space="preserve">
+    <value>Twittern</value>
+  </data>
+  <data name="TwitterUrl" xml:space="preserve">
+    <value>http://www.freemium.com/fsu/twitter</value>
+  </data>
+  <data name="UrlCannotBeOpenedMessage" xml:space="preserve">
+    <value>Link kann nicht automatisch geöffnet werden. Bitte öffnen Sie folgenden Link in Ihrem favorisierten Browser:</value>
+  </data>
+  <data name="UrlCannotBeOpenedTitle" xml:space="preserve">
+    <value>Link kann nicht automatisch geöffnet werden</value>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>Über</value>
+  </data>
+  <data name="AllRightsReserved" xml:space="preserve">
+    <value>Alle Rechte vorbehalten.</value>
+  </data>
+  <data name="RootUrl" xml:space="preserve">
+    <value>http://freemium.com/driversgalaxy/</value>
+  </data>
+</root>

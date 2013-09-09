@@ -1,0 +1,162 @@
+﻿<UserControl x:Class="DriversGalaxy.Views.PanelPaymentNeeded"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 xmlns:sys="clr-namespace:System;assembly=mscorlib"
+			 xmlns:routine="clr-namespace:DriversGalaxy.Routine"
+			 xmlns:lex="clr-namespace:WPFLocalizeExtension.Extensions;assembly=WPFLocalizeExtension"
+             xmlns:my="clr-namespace:PopUpUtils;assembly=DriversGalaxy.Infrastructure"
+			 mc:Ignorable="d"
+			 d:DesignHeight="293"
+			 d:DesignWidth="645"
+			 Height="576"
+			 Width="700"
+             Background="{StaticResource MainAreaBackGround}">
+	<UserControl.Resources>
+		<routine:ProgressPercentageConverter x:Key="ProgressPercentageConverter" />
+		<routine:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+	</UserControl.Resources>
+	<Grid Background="{StaticResource MainAreaBackGround}" Width="645">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="77" />
+            <RowDefinition Height="15" />
+            <RowDefinition Height="173" />
+            <RowDefinition Height="15" />
+			<RowDefinition Height="58" />
+            <RowDefinition Height="61" />
+		</Grid.RowDefinitions>
+        <Border Grid.Row="0"
+                Margin="0,19,0,0"
+				Style="{StaticResource BottomPanel}">
+            <Border.Background>
+                <SolidColorBrush Color="#fe4c32"/>
+            </Border.Background>
+            <Border.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1"
+									 StartPoint="0.5,0">
+                    <GradientStop Color="#fe735f"
+								  Offset="0" />
+                    <GradientStop Color="#db6554"
+								  Offset="1" />
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+            <Border BorderBrush="#fe4c32"
+					BorderThickness="0,1,0,0"
+					CornerRadius="8,28,28,8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="53" />
+                        <ColumnDefinition Width="589" />                        
+                    </Grid.ColumnDefinitions>
+                    <Image Style="{StaticResource FunctionalButtonImage}"
+						   Margin="11,0,0,0"
+						   Source="../Images/icon-exclaim.png" 
+                           VerticalAlignment="Center"/>
+                    <Grid Grid.Column="1"
+					  VerticalAlignment="Top">
+                        <TextBlock Margin="0,5,0,0"
+                               Foreground="White"
+                               FontFamily="/DriversGalaxy.Infrastructure;component/Fonts/#Helvetica Neue CE 75"                                                                                                 
+                               FontSize="20"
+                               FontWeight="Medium"
+                               VerticalAlignment="Top"
+							   HorizontalAlignment="Left"
+							   Text="{lex:LocText DriversGalaxy:Resources:Attention}"></TextBlock>
+                        <TextBlock Margin="1,29,0,0"
+                                   Foreground="White"
+                                   FontFamily="/DriversGalaxy.Infrastructure;component/Fonts/#Helvetica Neue CE 75"                                                                                                 
+                                   FontSize="14"
+                                   FontWeight="Medium"
+                                   VerticalAlignment="Top"
+							       HorizontalAlignment="Left"
+							       Text="{lex:LocText DriversGalaxy:Resources:AttentionFooterText}"></TextBlock>
+                    </Grid>                                        
+                </Grid>
+            </Border>
+        </Border>
+        <Border Grid.Row="2" Style="{StaticResource CustomCheckBoxWrapBig}" Height="173" Width="642"
+                TextBlock.FontFamily="/DriversGalaxy.Infrastructure;component/Fonts/#Helvetica CE 55">
+            <Grid Grid.Row ="2"
+              Margin="0,0,0,0"
+              Width="645"
+			  Height="173"
+			  HorizontalAlignment="Left"
+			  VerticalAlignment="Top"
+			  Background="#212121">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="53" />
+                    <ColumnDefinition Width="589" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0" VerticalAlignment="Top">
+                    <Image Height="29"
+                           Width="28"
+						   Margin="0,20,0,0"
+						   Source="../Images/icon-info.png" 
+                           VerticalAlignment="Center"/>
+                </Grid>
+                <Grid Grid.Column="1" VerticalAlignment="Top" Height="173">
+                    <TextBlock Foreground="#ebaf3c"
+                          FontSize="21"
+                          FontWeight="Medium"
+                          HorizontalAlignment="Left"
+                          Margin="0,20,0,0" Text="{lex:LocText DriversGalaxy:Resources:KeepUpToDate}"/>                    
+                    <TextBlock Foreground="#b3b3b3"
+                          FontSize="16"
+                          FontWeight="Medium"
+                          HorizontalAlignment="Left"
+                          Text="{lex:LocText DriversGalaxy:Resources:YourAdvantages}" Margin="0,50,0,0"/>                                                           
+                    <TextBlock Margin="0,75,0,0"
+                               Style="{StaticResource AdvantagesTextBlock}"
+                               Text="{lex:LocText DriversGalaxy:Resources:BestPrice}"/>
+                    <TextBlock Margin="0,95,0,0"
+                               Style="{StaticResource AdvantagesTextBlock}"
+                               Text="{lex:LocText DriversGalaxy:Resources:HardwareRun}"/>
+                    <TextBlock Margin="0,115,0,0"
+                               Style="{StaticResource AdvantagesTextBlock}"
+                               Text="{lex:LocText DriversGalaxy:Resources:FastUpdate}"/>
+                    <TextBlock Margin="0,135,0,0"
+                               Style="{StaticResource AdvantagesTextBlock}"
+                               Text="{lex:LocText DriversGalaxy:Resources:AccessDriverDatabase}"/>
+                </Grid>
+            </Grid>
+        </Border>
+        <Border Grid.Row="4"
+				Style="{StaticResource BottomPanel}"
+				Margin="0"
+                Grid.ColumnSpan="2">
+				<Grid>
+					<Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="48" />
+                    <ColumnDefinition Width="300" />
+                    <ColumnDefinition Width="294" />
+                </Grid.ColumnDefinitions>
+                    <Image Style="{StaticResource FunctionalButtonImage}"
+					   Margin="2,2,0,0"
+					   Source="../Images/icon-lamp.png" />
+                <Grid Grid.Column="1"
+					  VerticalAlignment="Top">
+                    <TextBlock Style="{StaticResource BottomPanelTitle}"
+							   Text="{lex:LocText DriversGalaxy:Resources:UpgradeFooter}"></TextBlock>
+                    <TextBlock Style="{StaticResource BottomPanelText}"
+							   Text="{lex:LocText DriversGalaxy:Resources:UpgradeFooterText}"></TextBlock>
+                </Grid>
+                <Button Style="{StaticResource GreenRoundedButton}"
+							Grid.Column="3"
+							Width="285"
+							Command="{Binding SubscribeCommand}"
+							Content="{lex:LocText DriversGalaxy:Resources:Subscribe}"
+                            Margin="3,3,0,0"
+                            />              
+				</Grid>			
+		</Border>
+        <Border Grid.Row="5" Background="Transparent">
+            <Button Style="{StaticResource TransparentButton}" Margin="0,10,0,0"
+                    Command="{Binding EnterLicenseKeyCommand}"
+                    Content="{lex:LocText DriversGalaxy:Resources:AlreadyHaveKey}"
+                    HorizontalAlignment="Center"                    
+                    Foreground="#b3b3b3">
+            </Button>            
+        </Border>
+    </Grid>
+</UserControl>

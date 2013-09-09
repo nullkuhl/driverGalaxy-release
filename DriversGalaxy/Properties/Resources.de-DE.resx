@@ -1,0 +1,654 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AllDriversAreUpToDate" xml:space="preserve">
+    <value>Alle Treiber sind auf dem neuesten Stand!</value>
+  </data>
+  <data name="AutomatedScan" xml:space="preserve">
+    <value>Automatischer Scan</value>
+  </data>
+  <data name="AutoUpdateDrivers" xml:space="preserve">
+    <value>Automatisches Treiber-Update</value>
+  </data>
+  <data name="BackupAndRestore" xml:space="preserve">
+    <value>Backup und Wiederherstellen</value>
+  </data>
+  <data name="BackupFinished" xml:space="preserve">
+    <value>Backup fertig</value>
+  </data>
+  <data name="BackupFinishedText" xml:space="preserve">
+    <value>Entfernen Sie die Ausschlussliste in der Treibersuche</value>
+  </data>
+  <data name="BackupRadioBtnTitle" xml:space="preserve">
+    <value>Backup</value>
+  </data>
+  <data name="BackupText" xml:space="preserve">
+    <value>Sichern Sie alle oder einzelne Treiber, die Sie später eventuell wiederherstellen möchten.</value>
+  </data>
+  <data name="BackupType" xml:space="preserve">
+    <value>Art des Backup</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Abbrechen</value>
+  </data>
+  <data name="CancelScan" xml:space="preserve">
+    <value>Scan abbrechen</value>
+  </data>
+  <data name="CheckBackupsFolder" xml:space="preserve">
+    <value>Bitte überprüfen Sie den Backup-Ordner in Ihren Einstellungen</value>
+  </data>
+  <data name="CheckDownloadFolder" xml:space="preserve">
+    <value>Bitte überprüfen Sie in den Einstellungen Ihren Download-Ordner</value>
+  </data>
+  <data name="CheckPreferences" xml:space="preserve">
+    <value>Einstellungen überprüfen</value>
+  </data>
+  <data name="ChooseDestination" xml:space="preserve">
+    <value>Wählen Sie das Zielverzeichnis</value>
+  </data>
+  <data name="ChooseDestinationDirectory" xml:space="preserve">
+    <value>Bitte, wählen Sie das Zielverzeichnis</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Schließen</value>
+  </data>
+  <data name="CloseButtonBehaviour" xml:space="preserve">
+    <value>Verhalten des Schließen-Buttons:</value>
+  </data>
+  <data name="ContactingServer" xml:space="preserve">
+    <value>Mit Server verbinden um nach Updates zu suchen </value>
+  </data>
+  <data name="CreateBackup" xml:space="preserve">
+    <value>Backup erstellen</value>
+  </data>
+  <data name="Day" xml:space="preserve">
+    <value>Tag:</value>
+  </data>
+  <data name="DaysAgo" xml:space="preserve">
+    <value>Tage her</value>
+  </data>
+  <data name="DownloadComplete" xml:space="preserve">
+    <value>Download abgeschlossen</value>
+  </data>
+  <data name="DownloadCompleteMessage" xml:space="preserve">
+    <value>Download abgeschlossen!</value>
+  </data>
+  <data name="DownloadDriver" xml:space="preserve">
+    <value>Treiber herunterladen</value>
+  </data>
+  <data name="DownloadingDriver" xml:space="preserve">
+    <value>Treiber herunterladen für: </value>
+  </data>
+  <data name="DriverDetails" xml:space="preserve">
+    <value>Treiberdetails</value>
+  </data>
+  <data name="DriverDownloadingAndInstallation" xml:space="preserve">
+    <value>Treiber herunterladen &amp; Installieren</value>
+  </data>
+  <data name="DriverInfo" xml:space="preserve">
+    <value>Treiberinformationen</value>
+  </data>
+  <data name="DriversBackupedSuccesfully" xml:space="preserve">
+    <value>Backup von {0} Treibern abgeschlossen.</value>
+  </data>
+  <data name="DriverScan" xml:space="preserve">
+    <value>Treiber Scan</value>
+  </data>
+  <data name="DriverScanResults" xml:space="preserve">
+    <value>Ergebnisse der Treibersuche</value>
+  </data>
+  <data name="DriversDownloaded" xml:space="preserve">
+    <value>Treiber heruntergeladen</value>
+  </data>
+  <data name="DriversRestoredSuccesfully" xml:space="preserve">
+    <value>Treiber erfolgreich wiederhergestellt</value>
+  </data>
+  <data name="DriverUpdate" xml:space="preserve">
+    <value>Treiber-Update</value>
+  </data>
+  <data name="EveryDay" xml:space="preserve">
+    <value>Täglich</value>
+  </data>
+  <data name="EveryMonth" xml:space="preserve">
+    <value>Monatlich</value>
+  </data>
+  <data name="EveryWeek" xml:space="preserve">
+    <value>Wöchentlich</value>
+  </data>
+  <data name="Exclude" xml:space="preserve">
+    <value>Ausschließen</value>
+  </data>
+  <data name="ExcludeDevice" xml:space="preserve">
+    <value>Laufwerk ausschließen</value>
+  </data>
+  <data name="ExcludeFromScans" xml:space="preserve">
+    <value>Von der Suche ausschließen</value>
+  </data>
+  <data name="FeedbackReport" xml:space="preserve">
+    <value>Feedback</value>
+  </data>
+  <data name="Finish" xml:space="preserve">
+    <value>Fertig</value>
+  </data>
+  <data name="FooterText" xml:space="preserve">
+    <value>Mehr Freemium Produkte</value>
+  </data>
+  <data name="Friday" xml:space="preserve">
+    <value>Freitag</value>
+  </data>
+  <data name="FromScans" xml:space="preserve">
+    <value>von Scans?</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>Hilfe</value>
+  </data>
+  <data name="InstallationProgress" xml:space="preserve">
+    <value>Installationsfortschritt</value>
+  </data>
+  <data name="Installed" xml:space="preserve">
+    <value>Installiert</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Sprache:</value>
+  </data>
+  <data name="LastScan" xml:space="preserve">
+    <value>Letzter Scan:</value>
+  </data>
+  <data name="LaunchAtStartup" xml:space="preserve">
+    <value>Ausführen beim Programmstart</value>
+  </data>
+  <data name="ManageScanExclusions" xml:space="preserve">
+    <value>Verwalten Sie Ihre Scan-Ausschlüsse</value>
+  </data>
+  <data name="ManageScanExclusionsText" xml:space="preserve">
+    <value>Entfernen Sie die Treiber in der Ausschlussliste</value>
+  </data>
+  <data name="ManualBackupFull" xml:space="preserve">
+    <value>Manuelles Backup (vollständig)</value>
+  </data>
+  <data name="ManualBackupSelected" xml:space="preserve">
+    <value>Manuelles Backup (ausgewählte Treiber)</value>
+  </data>
+  <data name="Minimize" xml:space="preserve">
+    <value>Minimieren</value>
+  </data>
+  <data name="MinToTray" xml:space="preserve">
+    <value>In Taskleiste minimieren</value>
+  </data>
+  <data name="Monday" xml:space="preserve">
+    <value>Montag</value>
+  </data>
+  <data name="MoreThan" xml:space="preserve">
+    <value>Mehr als</value>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>Neu</value>
+  </data>
+  <data name="NextStep" xml:space="preserve">
+    <value>Nächster Schritt</value>
+  </data>
+  <data name="NotApplicable" xml:space="preserve">
+    <value>Nicht anwendbar</value>
+  </data>
+  <data name="NowScanning" xml:space="preserve">
+    <value>Jetzt Scannen:</value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>Optionen</value>
+  </data>
+  <data name="OutdatedDriversFound" xml:space="preserve">
+    <value>veraltete Treiber gefunden</value>
+  </data>
+  <data name="PostOn" xml:space="preserve">
+    <value>Sende dies an:</value>
+  </data>
+  <data name="Preferences" xml:space="preserve">
+    <value>Einstellungen</value>
+  </data>
+  <data name="PreferencesFooter" xml:space="preserve">
+    <value>Verwalten von Anwendungseinstellungen</value>
+  </data>
+  <data name="PreferencesFooterText" xml:space="preserve">
+    <value>Sie können Anwendungen und Einstellungen aus diesem Bereich bearbeiten</value>
+  </data>
+  <data name="RebootLater" xml:space="preserve">
+    <value>Später neu starten  </value>
+  </data>
+  <data name="RebootNow" xml:space="preserve">
+    <value>Sofort neu starten </value>
+  </data>
+  <data name="RebootRequired" xml:space="preserve">
+    <value>Neustart erforderlich</value>
+  </data>
+  <data name="RemoveSelected" xml:space="preserve">
+    <value>Auswahl entfernen</value>
+  </data>
+  <data name="RestartYourComputer" xml:space="preserve">
+    <value>Computer neu starten </value>
+  </data>
+  <data name="RestoreDrivers" xml:space="preserve">
+    <value>Treiber wiederherstellen</value>
+  </data>
+  <data name="RestoreRadioBtnTitle" xml:space="preserve">
+    <value>Wiederherstellen</value>
+  </data>
+  <data name="RestoreText" xml:space="preserve">
+    <value>Wiederherstellen von System-Treiber aus einem der Backups, das Sie zuvor erstellt haben.</value>
+  </data>
+  <data name="RunOSMigrationRestoreTool" xml:space="preserve">
+    <value>Treiber wiederherstellen</value>
+  </data>
+  <data name="RunOSMigrationTool" xml:space="preserve">
+    <value>Starten Sie das OS Migration Tool</value>
+  </data>
+  <data name="Saturday" xml:space="preserve">
+    <value>Samstag</value>
+  </data>
+  <data name="SaveBackupsTo" xml:space="preserve">
+    <value>Backup in diesen Ordner sichern:</value>
+  </data>
+  <data name="SaveDownloadedTo" xml:space="preserve">
+    <value>Heruntergeladene Treiber in diesen Ordner speichern:</value>
+  </data>
+  <data name="Scan" xml:space="preserve">
+    <value>Scan:</value>
+  </data>
+  <data name="ScanAndUpdateDrivers" xml:space="preserve">
+    <value>Scan &amp; Treiber-Update</value>
+  </data>
+  <data name="ScanExclusions" xml:space="preserve">
+    <value>Von Scan ausschließen</value>
+  </data>
+  <data name="ScanFooter" xml:space="preserve">
+    <value>System regelmäßig scannen</value>
+  </data>
+  <data name="ScanFooterText" xml:space="preserve">
+    <value>Regelmäßige Wartung verbessert die Systemleistung</value>
+  </data>
+  <data name="ScanForIssues" xml:space="preserve">
+    <value>TREIBER-SCAN</value>
+  </data>
+  <data name="ScanningDevice" xml:space="preserve">
+    <value>Laufwerk scannen -</value>
+  </data>
+  <data name="ScanProgress" xml:space="preserve">
+    <value>SCAN-FORTSCHRITT</value>
+  </data>
+  <data name="SelectBackupType" xml:space="preserve">
+    <value>Art des Backups auswählen</value>
+  </data>
+  <data name="SelectBackupTypeText" xml:space="preserve">
+    <value>Bitte wählen Sie die Art des Backups um fortzufahren.</value>
+  </data>
+  <data name="SelectDevices" xml:space="preserve">
+    <value>Laufwerk auswählen</value>
+  </data>
+  <data name="SelectDevicesToRemoveFromExclude" xml:space="preserve">
+    <value>Bitte wählen Sie die Geräte aus, um sie von der Ausschlussliste zu entfernen</value>
+  </data>
+  <data name="SelectDrivers" xml:space="preserve">
+    <value>Treiberauswahl</value>
+  </data>
+  <data name="SelectDriversForBackup" xml:space="preserve">
+    <value>Treiber für Backup auswählen</value>
+  </data>
+  <data name="SelectDriversForBackupFooter" xml:space="preserve">
+    <value>Warum sollte ich Backups erstellen?</value>
+  </data>
+  <data name="SelectDriversForBackupFooterText" xml:space="preserve">
+    <value>Sie können diese Treiber später, falls nötig, wiederherstellen</value>
+  </data>
+  <data name="SelectDriversForRestore" xml:space="preserve">
+    <value>Treiber für die Wiederherstellung auswählen</value>
+  </data>
+  <data name="SelectDriversForRestoreCaption" xml:space="preserve">
+    <value>Treiber für die Wiederherstellung auswählen</value>
+  </data>
+  <data name="SelectDriversForRestoreText" xml:space="preserve">
+    <value>Bitte wählen Sie mindestens einen Treiber zur Wiederherstellung aus.</value>
+  </data>
+  <data name="SelectDriversToUpdate" xml:space="preserve">
+    <value>Bitte wählen Sie mindestens einen Treiber zum Aktualisieren aus.</value>
+  </data>
+  <data name="SelectDriversZip" xml:space="preserve">
+    <value>DriverData.zip auswählen</value>
+  </data>
+  <data name="SelectFolderForBackups" xml:space="preserve">
+    <value>
+Wählen Sie einen Ordner zum Speichern von Backup-Treibern</value>
+  </data>
+  <data name="SelectFolderForDownloads" xml:space="preserve">
+    <value>
+Wählen Sie einen Ordner für heruntergeladene Treiber</value>
+  </data>
+  <data name="SelectMigrationDriversZip" xml:space="preserve">
+    <value>Bitte DriverData.zip auswählen</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status:</value>
+  </data>
+  <data name="Sunday" xml:space="preserve">
+    <value>Sonntag</value>
+  </data>
+  <data name="Thursday" xml:space="preserve">
+    <value>Donnerstag</value>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>Zeit:</value>
+  </data>
+  <data name="TimeAndDate" xml:space="preserve">
+    <value>Zeit &amp; Datum</value>
+  </data>
+  <data name="TotalSize" xml:space="preserve">
+    <value>Gesamtgröße</value>
+  </data>
+  <data name="Tuesday" xml:space="preserve">
+    <value>Dienstag</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>version</value>
+  </data>
+  <data name="Wednesday" xml:space="preserve">
+    <value>Mittwoch</value>
+  </data>
+  <data name="WhyCreateBackups" xml:space="preserve">
+    <value>Warum sollte ich Backups erstellen?</value>
+  </data>
+  <data name="WhyCreateBackupsText" xml:space="preserve">
+    <value>Sie können diese Treiber später, falls nötig, wiederherstellen</value>
+  </data>
+  <data name="WindowsStartup" xml:space="preserve">
+    <value>Windows Startverhalten:</value>
+  </data>
+  <data name="WindowsTaskRegistrationInfo" xml:space="preserve">
+    <value>Freemium Driver Utilites Scan</value>
+  </data>
+  <data name="InstallingDriver" xml:space="preserve">
+    <value>Installation von Treiber für:</value>
+  </data>
+  <data name="OutdatedDriversUpdated" xml:space="preserve">
+    <value>veraltete Treiber wurden aktualisiert!</value>
+  </data>
+  <data name="InitialLoading" xml:space="preserve">
+    <value>Loading...</value>
+  </data>
+  <data name="OSMigrationToolPopupBackupSubTitle" xml:space="preserve">
+    <value>Version 12.03</value>
+  </data>
+  <data name="OSMigrationToolPopupBackupTitle" xml:space="preserve">
+    <value>OS Migration Tool Backup Tool</value>
+  </data>
+  <data name="OSMigrationToolPopupRestoreSubTitle" xml:space="preserve">
+    <value>Version 12.03</value>
+  </data>
+  <data name="OSMigrationToolPopupRestoreTitle" xml:space="preserve">
+    <value>OS Migration Tool Restore Tool</value>
+  </data>
+  <data name="OSMigrationToolPopupTitle" xml:space="preserve">
+    <value>OS Migration Tool</value>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>Über</value>
+  </data>
+  <data name="AllRightsReserved" xml:space="preserve">
+    <value>Alle Rechte vorbehalten.</value>
+  </data>
+  <data name="RootUrl" xml:space="preserve">
+    <value>http://freemium.com/driversgalaxy/</value>
+  </data>
+  <data name="FeedbackUrl" xml:space="preserve">
+    <value>http://de.freemium.com/kontakt/fdc/</value>
+  </data>
+  <data name="ScanCompleted" xml:space="preserve">
+    <value>Scan fertig</value>
+  </data>
+  <data name="UpdateCompleted" xml:space="preserve">
+    <value>Driver update process completed for driver</value>
+  </data>
+  <data name="UpdateStart" xml:space="preserve">
+    <value>Starting to update driver</value>
+  </data>
+  <data name="DriverDetailInfoPopupTitle" xml:space="preserve">
+    <value>Driver Information Einzelheiten</value>
+  </data>
+  <data name="DetailName" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="DetailCurrentDriverDate" xml:space="preserve">
+    <value>Datum aktuelle Version:</value>
+  </data>
+  <data name="DetailNewDriverDate" xml:space="preserve">
+    <value>Datum neue Version:</value>
+  </data>
+  <data name="FacebookLike" xml:space="preserve">
+    <value>Gefällt mir</value>
+  </data>
+  <data name="Twitter" xml:space="preserve">
+    <value>Twittern</value>
+  </data>
+  <data name="FBUrl" xml:space="preserve">
+    <value>http://www.freemium.com/fsu/facebook</value>
+  </data>
+  <data name="GooglePlusUrl" xml:space="preserve">
+    <value>http://www.freemium.com/fsu/googleplus</value>
+  </data>
+  <data name="TwitterUrl" xml:space="preserve">
+    <value>http://www.freemium.com/fsu/twitter</value>
+  </data>
+  <data name="UrlCannotBeOpenedMessage" xml:space="preserve">
+    <value>Link kann nicht automatisch geöffnet werden. Bitte öffnen Sie folgenden Link in Ihrem favorisierten Browser:</value>
+  </data>
+  <data name="UrlCannotBeOpenedTitle" xml:space="preserve">
+    <value>Link kann nicht automatisch geöffnet werden</value>
+  </data>
+  <data name="DownloadStatus" xml:space="preserve">
+    <value>Heruntergeladene {0} von {1}</value>
+  </data>
+  <data name="GoogleMargin" xml:space="preserve">
+    <value>-67</value>
+  </data>
+  <data name="TweetMargin" xml:space="preserve">
+    <value>-40</value>
+  </data>
+  <data name="UpdateFailed" xml:space="preserve">
+    <value>Treiber-Update fehlgeschlagen für Fahrer:</value>
+  </data>
+  <data name="SelectDriversToBackup" xml:space="preserve">
+    <value>Bitte wählen Sie mindestens einen Treiber zum Sichern aus.</value>
+  </data>
+  <data name="Today" xml:space="preserve">
+    <value>heute</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>Nein</value>
+  </data>
+  <data name="Ok" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Ja</value>
+  </data>
+  <data name="DriverExcluded" xml:space="preserve">
+    <value>{0} von Scans ausgeschlossen</value>
+  </data>
+  <data name="RestoreFailedCaption" xml:space="preserve">
+    <value>Wiederherstellung fehlgeschlagen</value>
+  </data>
+  <data name="RestoreFailedText" xml:space="preserve">
+    <value>Leider ist die Wiederherstellung der gewählten Treiber fehlgeschlagen.</value>
+  </data>
+  <data name="DriverListLoading" xml:space="preserve">
+    <value>Treiber-Liste wird geladen</value>
+  </data>
+  <data name="DriverListLoadingText" xml:space="preserve">
+    <value>Die Treiber-Liste wird noch im Hintergrund geladen. Bitte warten Sie einen Moment und versuchen Sie das Backup dann erneut.</value>
+  </data>
+  <data name="BeforeDriverUpdateMessage" xml:space="preserve">
+    <value>Bitte schließen Sie alle offenen Programme bevor Sie mit dem Treiber-Update fortfahren.
+Es ist möglich, dass der Bildschirm während des Updates kurzzeitig schwarz wird.</value>
+  </data>
+  <data name="Continue" xml:space="preserve">
+    <value>Fortfahren</value>
+  </data>
+  <data name="Attention" xml:space="preserve">
+    <value>Achtung: Ihre Treiber müssen aktualisiert werden!</value>
+  </data>
+  <data name="AttentionFooterText" xml:space="preserve">
+    <value>Gehen Sie auf Nummer Sicher. Drivers Galaxy hilft dabei automatisch!</value>
+  </data>
+  <data name="Subscribe" xml:space="preserve">
+    <value>Drivers Galaxy jetzt abonierren!</value>
+  </data>
+  <data name="UpgradeNow" xml:space="preserve">
+    <value>Jetzt Upgraden</value>
+  </data>
+  <data name="UpgradeFooter" xml:space="preserve">
+    <value>nur 0,99 € / Monat</value>
+  </data>
+  <data name="UpgradeFooterText" xml:space="preserve">
+    <value>You can cancel your subscription any time.</value>
+  </data>
+  <data name="AccessDriverDatabase" xml:space="preserve">
+    <value>· Zugriff auf die weltweit größe Treiber-Datenbank</value>
+  </data>
+  <data name="BestPrice" xml:space="preserve">
+    <value>· Unsere Bestpreis Garantie</value>
+  </data>
+  <data name="FastUpdate" xml:space="preserve">
+    <value>· Schnelle sichere Updates ohne Suchen</value>
+  </data>
+  <data name="HardwareRun" xml:space="preserve">
+    <value>· Für immer funktionierende Hardware</value>
+  </data>
+  <data name="KeepUpToDate" xml:space="preserve">
+    <value>Immer aktuelle Treiber dank Drivers Galaxy!</value>
+  </data>
+  <data name="YourAdvantages" xml:space="preserve">
+    <value>Ihre vorteile:</value>
+  </data>
+  <data name="AlreadyHaveKey" xml:space="preserve">
+    <value>Sie haben bereits einen gültigen Lizenzchlüssel? Bitte hier eingeben und alle Treiber aktualisieren!</value>
+  </data>
+  <data name="WrongLicenseKey" xml:space="preserve">
+    <value>Lizenzschlüssel ungültig. Bitte versuchen Sie es erneut!</value>
+  </data>
+</root>

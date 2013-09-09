@@ -1,0 +1,512 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4C08966C-3E47-478A-8DCA-231910305743}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DriversGalaxy</RootNamespace>
+    <AssemblyName>DriversGalaxy</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <Utf8Output>true</Utf8Output>
+    <ExpressionBlendVersion>4.0.20525.0</ExpressionBlendVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>DriverGalaxy.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\DriversGalaxy.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\DriversGalaxy.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.Win32.TaskScheduler, Version=1.7.4273.24968, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\Microsoft.Win32.TaskScheduler.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="mscriptable, Version=1.0.2462.23865, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\mscriptable.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ookii.Dialogs.Wpf, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0c15020868fd6249, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WPFLocalizeExtension, Version=2.1.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\WPFLocalizeExtension.dll</HintPath>
+    </Reference>
+    <Reference Include="XAMLMarkupExtensions">
+      <HintPath>Libraries\XAMLMarkupExtensions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.cs" />
+    <Compile Include="Models\BackupType.cs" />
+    <Compile Include="Models\BackupItem.cs" />
+    <Compile Include="Models\BackupStatus.cs" />
+    <Compile Include="Models\DownloadingDriverModel.cs" />
+    <Compile Include="Models\ScanStatus.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\Images.Designer.cs">
+      <DependentUpon>Images.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\Resources.de-DE.Designer.cs">
+      <DependentUpon>Resources.de-DE.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <DependentUpon>Resources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Routine\Converters\AnyPropertyEqualsToVisibilityConverter.cs" />
+    <Compile Include="Routine\Converters\BackupStatusEqualsToVisibilityConverter.cs" />
+    <Compile Include="Routine\Converters\BoolToVisibilityConverter.cs" />
+    <Compile Include="Routine\Converters\PaymentStatusEqualsToVisibilityConverter.cs" />
+    <Compile Include="Routine\Converters\ScanStatusEqualsToEnablingConverter.cs" />
+    <Compile Include="Routine\Converters\MarginConverter.cs" />
+    <Compile Include="Routine\Converters\ProgressPercentageConverter.cs" />
+    <Compile Include="Routine\Converters\PropertyEqualsToEnablingConverter.cs" />
+    <Compile Include="Routine\Converters\PropertyEqualsToVisibilityConverter.cs" />
+    <Compile Include="Routine\Converters\ScanStatusEqualsToVisibilityConverter.cs" />
+    <Compile Include="Routine\ExtensionMethods.cs" />
+    <Compile Include="Routine\messagePipe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Routine\messagePipe.designer.cs">
+      <DependentUpon>messagePipe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Routine\Script.cs" />
+    <Compile Include="Routine\TaskManager.cs" />
+    <Compile Include="Routine\UIUtils.cs" />
+    <Compile Include="Routine\VisibilityAnimation.cs" />
+    <Compile Include="Routine\WPFLocalizeExtensionHelpers.cs" />
+    <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="Views\AboutBox.xaml.cs">
+      <DependentUpon>AboutBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PanelLicenseKeyEnter.xaml.cs">
+      <DependentUpon>PanelLicenseKeyEnter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PanelPaymentNeeded.xaml.cs">
+      <DependentUpon>PanelPaymentNeeded.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DriverDetailInfoPopup.xaml.cs">
+      <DependentUpon>DriverDetailInfoPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OSMigrationToolPopup.xaml.cs">
+      <DependentUpon>OSMigrationToolPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PanelRestoreTargetsSelection.xaml.cs">
+      <DependentUpon>PanelRestoreTargetsSelection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PanelScanUpdateInProcess.xaml.cs">
+      <DependentUpon>PanelScanUpdateInProcess.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PanelRestoreFinished.xaml.cs">
+      <DependentUpon>PanelRestoreFinished.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PanelBackupTargetsSelection.xaml.cs">
+      <DependentUpon>PanelBackupTargetsSelection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PanelBackupFinished.xaml.cs">
+      <DependentUpon>PanelBackupFinished.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PanelScanUpdateNeeded.xaml.cs">
+      <DependentUpon>PanelScanUpdateNeeded.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PanelScanUpdateFinished.xaml.cs">
+      <DependentUpon>PanelScanUpdateFinished.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PanelScanInProcess.xaml.cs">
+      <DependentUpon>PanelScanInProcess.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PanelScan.xaml.cs">
+      <DependentUpon>PanelScan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PanelScanExclusions.xaml.cs">
+      <DependentUpon>PanelScanExclusions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PanelBackupAndRestore.xaml.cs">
+      <DependentUpon>PanelBackupAndRestore.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PanelPreferences.xaml.cs">
+      <DependentUpon>PanelPreferences.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RoundedProgressBar\Shapes\PiePiece.cs" />
+    <Compile Include="Views\RoundedProgressBar\Util\Utils.cs" />
+    <Compile Include="WindowsFormsApp.cs" />
+    <None Include="updater\amd64Helper\DriverUpdateHelper64.manifest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <None Include="app.manifest">
+      <SubType>Designer</SubType>
+    </None>
+    <Resource Include="Fonts\HelveticaNeueCE-Bold.otf" />
+    <Resource Include="Fonts\HelveticaNeueCE-Medium.otf" />
+    <Resource Include="Fonts\HelveticaNeueCE-Roman.otf" />
+    <Resource Include="Fonts\MyriadPro-Bold.otf" />
+    <Resource Include="Fonts\MyriadPro-Light.otf" />
+    <Page Include="Properties\DesignTimeResources.xaml" Condition="'$(DesignTime)'=='true' OR ('$(SolutionPath)'!='' AND Exists('$(SolutionPath)') AND '$(BuildingInsideVisualStudio)'!='true' AND '$(BuildingInsideExpressionBlend)'!='true')">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <ContainsDesignTimeResources>true</ContainsDesignTimeResources>
+    </Page>
+    <None Include="Themes\Blue\Theme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Themes\Green\Theme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Themes\Red\Theme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Page Include="Views\AboutBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PanelLicenseKeyEnter.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PanelPaymentNeeded.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\DriverDetailInfoPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\OSMigrationToolPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PanelRestoreTargetsSelection.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PanelScanUpdateInProcess.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PanelRestoreFinished.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PanelBackupTargetsSelection.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PanelBackupFinished.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PanelScanUpdateNeeded.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PanelScanUpdateFinished.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PanelScanInProcess.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PanelScan.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PanelScanExclusions.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PanelBackupAndRestore.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PanelPreferences.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Content Include="difxapi.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Images\icon-info.png" />
+    <Resource Include="DriverGalaxy.ico" />
+    <Resource Include="Images\DriverGalaxy.ico" />
+    <None Include="Resources\DriverGalaxy.bmp" />
+    <Content Include="stduhelper32.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="stduhelper64.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="unrar.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="updater\amd64Helper\difxapi.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="updater\amd64Helper\DriverUpdateHelper64.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="updater\extract\7z.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="updater\extract\7z.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="updater\extract\copying.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="updater\extract\History.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="updater\extract\license.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="updater\extract\readme.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\facebook.png" />
+    <Resource Include="Images\google.png" />
+    <Resource Include="Images\tw.png" />
+    <Resource Include="Images\tw_bg.png" />
+    <Resource Include="Images\DriverScoutLogo.png" />
+    <Resource Include="driver.ico" />
+    <Resource Include="Images\bg-logo-flame.png" />
+    <Resource Include="Images\bg-logo.png" />
+    <Resource Include="Images\loading.gif" />
+    <Resource Include="Images\bg-circular-gradient.jpg" />
+    <Resource Include="Images\bg-logo-small.png" />
+    <Resource Include="Images\bg-noise.png" />
+    <Resource Include="Images\icon-autoscan.png" />
+    <Resource Include="Images\icon-backup.png" />
+    <Resource Include="Images\icon-checkbox-selected.png" />
+    <Resource Include="Images\icon-checkbox-unselected.png" />
+    <Resource Include="Images\icon-error.png" />
+    <Resource Include="Images\icon-exclaim.png" />
+    <Resource Include="Images\icon-exclusions.png" />
+    <Resource Include="Images\icon-lamp.png" />
+    <Resource Include="Images\icon-logo.ico" />
+    <Resource Include="Images\icon-ok.png" />
+    <Resource Include="Images\icon-option-download.png" />
+    <Resource Include="Images\icon-option-exclude.png" />
+    <Resource Include="Images\icon-option-info.png" />
+    <Resource Include="Images\icon-preferences.png" />
+    <Resource Include="Images\icon-scan.png" />
+    <Resource Include="Images\icon-toggler-big.png" />
+    <Resource Include="Images\icon-toggler.png" />
+    <Resource Include="Images\icon-err.png" />
+    <Resource Include="Images\icon-guard.png" />
+    <Resource Include="Images\icon-option-exclude-grey.png" />
+    <Resource Include="Images\icon-exclamation.png" />
+    <Resource Include="Images\icon-OSMigrationTool.Backup.png" />
+    <Resource Include="Images\icon-OSMigrationTool.Restore.png" />
+    <Resource Include="Images\icon-question.png" />
+    <Resource Include="Images\icon-app.png" />
+    <Content Include="Libraries\Ookii.Dialogs.Wpf.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Libraries\System.Tuples.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="Routine\messagePipe.resx">
+      <DependentUpon>messagePipe.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Images.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Images.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.de-DE.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.de-DE.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <Content Include="Libraries\Common Tools.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Libraries\Interop.IWshRuntimeLibrary.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Libraries\Microsoft.Win32.TaskScheduler.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Libraries\mscriptable.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\Icon.ico" />
+    <None Include="Resources\desktop_icon.ico" />
+    <None Include="freemium.cfg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DriversGalaxy.Infrastructure\DriversGalaxy.Infrastructure.csproj">
+      <Project>{0F189452-C6DC-4F4B-8F61-97965DF89F6C}</Project>
+      <Name>DriversGalaxy.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FreemiumUtil\FreemiumUtil.csproj">
+      <Project>{627DA6B0-C19A-47FB-8173-DBDBBD445938}</Project>
+      <Name>FreemiumUtil</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- <Import Project="$(MSBuildExtensionsPath)\Microsoft\Expression\Blend\.NETFramework\v4.0\Microsoft.Expression.Blend.WPF.targets" />
+  To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,193 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+	<!-- Brushes used in Styling of ScrollViewer -->
+	<SolidColorBrush x:Key="ThumbBackground"
+					 Color="#249445" />
+	<SolidColorBrush x:Key="ThumbBorder"
+					 Color="#50a96a" />
+	<SolidColorBrush x:Key="ScrollBackground"
+						Color="#000000"/>
+	<SolidColorBrush x:Key="ScrollBorder"
+					 Color="#0b0b0b" />
+
+	<Style x:Key="ThumbTextBlock"
+		   TargetType="{x:Type TextBlock}">
+		<Setter Property="Margin"
+				Value="0,-10,0,-3" />
+		<Setter Property="HorizontalAlignment"
+				Value="Center" />
+		<Setter Property="Foreground"
+				Value="#0189A4" />
+		<Setter Property="FontFamily"
+				Value="Segoe UI" />
+		<Setter Property="Effect">
+			<Setter.Value>
+				<DropShadowEffect BlurRadius="1"
+								  Direction="90"
+								  Color="#ECF6F8"
+								  ShadowDepth="1" />
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	<!-- ScrollViewer ScrollBar Thumb, that part that can be dragged
+            up/down or left/right Buttons -->
+	<Style x:Key="ScrollBarThumb"
+		   TargetType="{x:Type Thumb}">
+		<Setter Property="SnapsToDevicePixels"
+				Value="True" />
+		<Setter Property="OverridesDefaultStyle"
+				Value="true" />
+		<Setter Property="IsTabStop"
+				Value="false" />
+		<Setter Property="Focusable"
+				Value="false" />
+		<Setter Property="Margin"
+				Value="5" />
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type Thumb}">
+					<Border CornerRadius="4"
+							BorderBrush="{TemplateBinding Background}"
+							BorderThickness="1">
+						<Border CornerRadius="4"
+								Background="{TemplateBinding Background}"
+								BorderBrush="{TemplateBinding BorderBrush}"
+								BorderThickness="1">
+							<StackPanel VerticalAlignment="Center">
+								<TextBlock Style="{StaticResource ThumbTextBlock}">.</TextBlock>
+								<TextBlock Style="{StaticResource ThumbTextBlock}">.</TextBlock>
+								<TextBlock Style="{StaticResource ThumbTextBlock}">.</TextBlock>
+							</StackPanel>
+						</Border>
+					</Border>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	<ControlTemplate x:Key="VerticalScrollBar"
+					 TargetType="{x:Type ScrollBar}">
+		<Border Background="{StaticResource MainAreaBackGround}"
+				Margin="0,30,-4,0">
+			<Grid Background="{StaticResource ElementBackground}"
+				  Margin="0,0,2,0">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="0.00001*" />
+				</Grid.RowDefinitions>
+				<Border BorderBrush="{StaticResource ScrollBorder}"
+						BorderThickness="0,0,1,0">
+					<Border Margin="5,5,4,5"
+							CornerRadius="4"
+							Background="{StaticResource ScrollBackground}"
+							BorderThickness="1"
+							BorderBrush="{StaticResource ScrollBorder}" />
+				</Border>
+				<Track Name="PART_Track"
+					   IsDirectionReversed="true">
+					<Track.Resources>
+						<!-- Thumb's minimum height is half of this metric -->
+						<sys:Double x:Key="{x:Static SystemParameters.VerticalScrollBarButtonHeightKey}">
+							100
+						</sys:Double>
+					</Track.Resources>
+					<Track.Thumb>
+						<Thumb Style="{StaticResource ScrollBarThumb}"
+							   Background="{StaticResource ThumbBackground}"
+							   BorderBrush="{StaticResource ThumbBorder}" />
+					</Track.Thumb>
+				</Track>
+			</Grid>
+		</Border>
+	</ControlTemplate>
+
+	<ControlTemplate x:Key="TreeviewVerticalScrollBar"
+					 TargetType="{x:Type ScrollBar}">
+		<Border Background="{StaticResource MainAreaBackGround}"
+				Margin="0,0,-4,0">
+			<Grid Background="{StaticResource ElementBackground}"
+				  Margin="0,0,2,0">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="0.00001*" />
+				</Grid.RowDefinitions>
+				<Border BorderBrush="{StaticResource ScrollBorder}"
+						BorderThickness="0,0,1,0">
+					<Border Margin="5,5,4,5"
+							CornerRadius="4"
+							Background="{StaticResource ScrollBackground}"
+							BorderThickness="1"
+							BorderBrush="{StaticResource ScrollBorder}" />
+				</Border>
+				<Track Name="PART_Track"
+					   IsDirectionReversed="true">
+					<Track.Resources>
+						<!-- Thumb's minimum height is half of this metric -->
+						<sys:Double x:Key="{x:Static SystemParameters.VerticalScrollBarButtonHeightKey}">
+							100
+						</sys:Double>
+					</Track.Resources>
+					<Track.Thumb>
+						<Thumb Style="{StaticResource ScrollBarThumb}"
+							   Background="{StaticResource ThumbBackground}"
+							   BorderBrush="{StaticResource ThumbBorder}" />
+					</Track.Thumb>
+				</Track>
+			</Grid>
+		</Border>
+	</ControlTemplate>
+
+	<!-- HorizontalScrollBar Template using the previously created Templates -->
+	<ControlTemplate x:Key="HorizontalScrollBar"
+					 TargetType="{x:Type ScrollBar}">
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="0.00001*" />
+			</Grid.ColumnDefinitions>
+			<Border Margin="5"
+					CornerRadius="4"
+					Background="{StaticResource ScrollBackground}"
+					BorderThickness="1"
+					BorderBrush="{StaticResource ScrollBorder}" />
+			<Track Name="PART_Track"
+				   IsDirectionReversed="False">
+				<Track.Thumb>
+					<Thumb Style="{StaticResource ScrollBarThumb}"
+						   Background="{StaticResource ThumbBackground}"
+						   BorderBrush="{StaticResource ThumbBorder}" />
+				</Track.Thumb>
+			</Track>
+		</Grid>
+	</ControlTemplate>
+
+	<!-- Style for overall ScrollBar -->
+	<Style x:Key="{x:Type ScrollBar}"
+		   TargetType="{x:Type ScrollBar}">
+		<Setter Property="SnapsToDevicePixels"
+				Value="True" />
+		<Setter Property="OverridesDefaultStyle"
+				Value="true" />
+		<Style.Triggers>
+			<Trigger Property="Orientation"
+					 Value="Horizontal">
+				<Setter Property="Width"
+						Value="Auto" />
+				<Setter Property="Height"
+						Value="17" />
+				<Setter Property="Template"
+						Value="{StaticResource HorizontalScrollBar}" />
+			</Trigger>
+			<Trigger Property="Orientation"
+					 Value="Vertical">
+				<Setter Property="Width"
+						Value="17" />
+				<Setter Property="Height"
+						Value="Auto" />
+				<Setter Property="Template"
+						Value="{StaticResource VerticalScrollBar}" />
+			</Trigger>
+		</Style.Triggers>
+	</Style>
+
+</ResourceDictionary>

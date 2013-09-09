@@ -1,0 +1,13 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<ResourceDictionary.MergedDictionaries>
+		<ResourceDictionary Source="/DriversGalaxy.Infrastructure;component/CommonStyles/WindowStyles.xaml" />
+		<ResourceDictionary Source="/DriversGalaxy.Infrastructure;component/CommonStyles/ControlStyles.xaml" />
+		<ResourceDictionary Source="/DriversGalaxy.Infrastructure;component/CommonStyles/ScrollViewerStyles.xaml" />
+		<ResourceDictionary Source="/DriversGalaxy.Infrastructure;component/CommonStyles/ProgressBarStyles.xaml" />
+		<ResourceDictionary Source="/DriversGalaxy.Infrastructure;component/CommonStyles/SocialButtonStyles.xaml" />
+		<ResourceDictionary Source="/DriversGalaxy.Infrastructure;component/WPFMessageBox/Themes/Generic.xaml" />
+	</ResourceDictionary.MergedDictionaries>
+	<!-- Resource dictionary entries should be defined here. -->
+</ResourceDictionary>

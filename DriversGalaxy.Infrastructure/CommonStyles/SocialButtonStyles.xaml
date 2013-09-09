@@ -1,0 +1,143 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="SocialButton" TargetType="{x:Type Button}">
+        <Setter Property="MinWidth" Value="40" />
+        <Setter Property="Height" Value="27" />
+        <Setter Property="Control.HorizontalAlignment" Value="Left" />
+        <Setter Property="Control.VerticalAlignment" Value="Top" />
+        <Setter Property="Control.HorizontalContentAlignment" Value="Left" />
+        <Setter Property="Control.VerticalContentAlignment" Value="Top" />
+        <Setter Property="TextElement.FontFamily" Value="/FreemiumUtilities;component/Fonts/#Helvetica Neue CE 55" />
+        <Setter Property="TextElement.FontSize" Value="11.7" />
+        <Setter Property="Foreground" Value="#FFFFFF" />
+        <Setter Property="Border.BorderThickness" Value="1" />
+    </Style>
+
+    <Style x:Key="FacebookButton" BasedOn="{StaticResource SocialButton}" TargetType="{x:Type Button}">
+
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Margin="{TemplateBinding FrameworkElement.Margin}" Background="{TemplateBinding Panel.Background}"
+						BorderBrush="{TemplateBinding Border.BorderBrush}" BorderThickness="{TemplateBinding Border.BorderThickness}"
+						CornerRadius="2">
+                        <Border BorderThickness="1,1,1,1" CornerRadius="2">
+                            <Border>
+                                <ContentPresenter Margin="{TemplateBinding Control.Padding}"
+											  HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}"
+											  VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}"
+											  TextElement.FontSize="{TemplateBinding TextElement.FontSize}"
+											  >
+
+                                </ContentPresenter>
+                            </Border>
+                        </Border>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Background" Value="#FFECEEF5"/>
+        <Setter Property="BorderBrush" Value="#FFCAD4E7"/>
+        <Setter Property="Foreground" Value="#FF39599C"/>
+        <Setter Property="Width" Value="Auto"/>
+        <Setter Property="Height" Value="Auto"/>
+        <Setter Property="MinHeight" Value="20"/>
+        <Setter Property="MinWidth" Value="30"/>
+        <Setter Property="Content" Value="Button"/>
+        <Setter Property="FontFamily" Value="Microsoft Sans Serif"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="Padding" Value="10,2.5,0,0"/>
+        <Setter Property="FontWeight" Value="Normal"/>
+        <Setter Property="FontStretch" Value="Normal"/>
+        <Setter Property="FontStyle" Value="Normal"/>
+    </Style>
+    <Style x:Key="TwitterButton" BasedOn="{StaticResource SocialButton}" TargetType="{x:Type Button}">
+
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Margin="{TemplateBinding FrameworkElement.Margin}" Background="{TemplateBinding Panel.Background}"
+						BorderBrush="{TemplateBinding Border.BorderBrush}" BorderThickness="0"
+						CornerRadius="2">
+                        <Border BorderThickness="1,1,1,1" BorderBrush="#CCCCCC" CornerRadius="2">
+                            <Border>
+
+                                <ContentPresenter Margin="{TemplateBinding Control.Padding}"
+											  HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}"
+											  VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}"
+											  TextElement.FontSize="{TemplateBinding TextElement.FontSize}"
+											  TextElement.Foreground="#343434">
+
+                                </ContentPresenter>
+                            </Border>
+                        </Border>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="MinHeight" Value="20"/>
+        <Setter Property="MinWidth" Value="32"/>
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush ImageSource="..\Images\tw_bg.png" Stretch="Fill" TileMode="Tile"/>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="BorderBrush" Value="#FFCCCCCC"/>
+        <Setter Property="Foreground" Value="#FF343434"/>
+        <Setter Property="FontFamily" Value="Verdana"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="FontSize" Value="10.667"/>
+        <Setter Property="Height" Value="Auto"/>
+    </Style>
+
+    <Style x:Key="GooglePlusButton" BasedOn="{StaticResource SocialButton}" TargetType="{x:Type Button}">
+        <Setter Property="Border.BorderBrush" Value="#343434" />
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Margin="{TemplateBinding FrameworkElement.Margin}" Background="{TemplateBinding Panel.Background}"
+						BorderBrush="{TemplateBinding Border.BorderBrush}" BorderThickness="0"
+						CornerRadius="2">
+                        <Border BorderThickness="0,0,0,0" CornerRadius="2">
+                            <Border.BorderBrush>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Offset="1" Color="Transparent" />
+                                    <GradientStop Color="Transparent" />
+                                </LinearGradientBrush>
+                            </Border.BorderBrush>
+                            <Border BorderThickness="0,0,0,0">
+                                <Border.Background>
+                                    <!--<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+									<GradientStop Offset="1" Color="#ffffff" />
+									<GradientStop Color="#ffffff"  />
+								</LinearGradientBrush>-->
+                                    <ImageBrush ImageSource="..\Images\google.png" TileMode="FlipX" Stretch="None" />
+                                </Border.Background>
+                                <ContentPresenter Margin="{TemplateBinding Control.Padding}"
+											  HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}"
+											  VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}"
+											  TextElement.FontSize="{TemplateBinding TextElement.FontSize}"
+											  TextElement.Foreground="{TemplateBinding TextElement.Foreground}">
+                                    <ContentPresenter.Effect>
+                                        <DropShadowEffect BlurRadius="0" Direction="-90" Opacity="0.3" ShadowDepth="1" Color="#000000" />
+                                    </ContentPresenter.Effect>
+                                </ContentPresenter>
+                            </Border>
+                        </Border>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Width" Value="32"/>
+        <Setter Property="Height" Value="20"/>
+        <Setter Property="Background" Value="{x:Null}"/>
+        <Setter Property="Foreground" Value="{x:Null}"/>
+        <Setter Property="BorderBrush" Value="{x:Null}"/>
+        <Setter Property="MinWidth" Value="32"/>
+        <Setter Property="MinHeight" Value="20"/>
+        <Setter Property="OpacityMask" Value="{x:Null}"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+    </Style>
+</ResourceDictionary>

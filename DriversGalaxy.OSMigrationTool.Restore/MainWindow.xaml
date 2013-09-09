@@ -1,0 +1,206 @@
+﻿<Window x:Class="DriversGalaxy.OSMigrationTool.Restore.MainWindow"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:routine="clr-namespace:DriversGalaxy.OSMigrationTool.Restore.Routine"
+		xmlns:views="clr-namespace:DriversGalaxy.OSMigrationTool.Restore.Views"
+		xmlns:models="clr-namespace:DriversGalaxy.OSMigrationTool.Restore.Models"
+		xmlns:lex="clr-namespace:WPFLocalizeExtension.Extensions;assembly=WPFLocalizeExtension"
+		Style="{StaticResource MainWindowStyle}"
+		WindowStartupLocation="CenterScreen"
+		Width="716"
+		Height="576"
+		Title="OS Migration Tool Backup"
+		SizeToContent="WidthAndHeight">
+	<Window.Resources>
+		<routine:PropertyEqualsToVisibilityConverter x:Key="PropertyEqualsToVisibilityConverter" />
+		<routine:AnyPropertyEqualsToVisibilityConverter x:Key="AnyPropertyEqualsToVisibilityConverter" />
+	</Window.Resources>
+	<Border MouseLeftButtonDown="DragWindow"
+			Style="{StaticResource WindowBorder}">
+		<Border Style="{StaticResource WindowInnerBorder}">
+
+			<Grid>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="94" />
+					<RowDefinition Height="67" />
+					<RowDefinition Height="368" />
+					<RowDefinition Height="31" />
+				</Grid.RowDefinitions>
+
+				<!--
+					*****************************************************************************
+					
+					Header
+					
+					*****************************************************************************
+					-->
+
+				<Border CornerRadius="6,6,0,0"
+						Background="{StaticResource ContentBackGround}">
+					<DockPanel HorizontalAlignment="Stretch"
+							   VerticalAlignment="Top">
+                        <Image Margin="12,11,0,0"
+							   Source="Images/bg-logo.png"
+							   Stretch="Uniform"
+                               Width="255"
+                               Height="63"
+							   HorizontalAlignment="Left"
+							   VerticalAlignment="Top" />
+                        <TextBlock FontFamily="/DriversGalaxy.Infrastructure;component/Fonts/#Ubuntu"
+								   FontWeight="Medium"
+								   FontSize="12"
+								   Margin="-190,55,0,0"
+								   Foreground="#747474">						
+						OS MIGRATION TOOL</TextBlock>                        												
+						<DockPanel VerticalAlignment="Top"
+								   Margin="8,10,10,0"
+								   HorizontalAlignment="Right"
+								   DockPanel.Dock="Right">
+                            <Button Style="{StaticResource HelpButton}"
+                                    Click="OpenAboutBox"
+									FontFamily="/DriversGalaxy.Infrastructure;component/Fonts/#Helvetica Neue CE 55">
+								<TextBlock Text="i"
+										   FontFamily="Segoe UI"
+										   FontSize="12"
+										   FontWeight="Bold" />
+								<Button.ToolTip>
+									<ToolTip Style="{x:Null}"
+											 Content="{lex:LocText DriversGalaxy.OSMigrationTool.Restore:Resources:About}" />
+								</Button.ToolTip>
+							</Button>
+							<Button Style="{StaticResource MinimizeButton}"
+									Click="MinimizeApp">
+								<Button.ToolTip>
+									<ToolTip Style="{x:Null}"
+											 Content="{lex:LocText DriversGalaxy.OSMigrationTool.Restore:Resources:Minimize}" />
+								</Button.ToolTip>
+							</Button>
+							<Button Style="{StaticResource CloseButton}"
+									Click="CloseApp">
+								<Button.ToolTip>
+									<ToolTip Style="{x:Null}"
+											 Content="{lex:LocText DriversGalaxy.OSMigrationTool.Restore:Resources:Close}" />
+								</Button.ToolTip>
+							</Button>
+						</DockPanel>
+					</DockPanel>
+				</Border>
+
+				<!--
+					*****************************************************************************
+					
+					Title
+					
+					*****************************************************************************
+					-->
+
+				<Border Grid.Row="1"
+						Background="{StaticResource MainAreaBackGround}"
+						ClipToBounds="True"
+						Panel.ZIndex="10">
+					<Grid Width="700"
+						  Height="67"
+						  ClipToBounds="True"
+						  VerticalAlignment="Top"
+						  HorizontalAlignment="Left">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="115" />
+							<ColumnDefinition Width="585" />
+						</Grid.ColumnDefinitions>
+						<Grid.OpacityMask>
+							<VisualBrush Visual="{Binding ElementName=Shape}"
+										 Stretch="None" />
+						</Grid.OpacityMask>
+						<Path x:Name="Shape"
+							  Style="{StaticResource PanelTitleFigure}"
+							  Stroke="#000000"
+							  Stretch="Fill"
+							  Width="710"
+							  VerticalAlignment="Top"
+							  Margin="-5,0"
+							  ClipToBounds="True"
+							  Grid.ColumnSpan="2"
+							  Fill="{DynamicResource TitlePanelsBackgroundColor}">
+						</Path>
+						<Path Style="{StaticResource PanelTitleFigure}"
+							  Stroke="#000000"
+							  Stretch="Fill"
+							  VerticalAlignment="Top"
+							  Fill="{StaticResource NoiseBrush}"
+							  Width="710"
+							  Margin="-5,0"
+							  ClipToBounds="True"
+							  Grid.ColumnSpan="2">
+						</Path>
+						<Path Style="{StaticResource PanelTitleFigure}"
+							  Stroke="#000000"
+							  Stretch="Fill"
+							  Width="710"
+							  VerticalAlignment="Top"
+							  Margin="-5,0"
+							  ClipToBounds="True"
+							  Grid.ColumnSpan="2">
+							<Path.Effect>
+								<DropShadowEffect ShadowDepth="0"
+												  BlurRadius="4"
+												  Color="#000000" />
+							</Path.Effect>
+						</Path>
+
+						<TextBlock Name="PanelScanHeader"
+								   Text="{Binding PanelScanHeader}"
+								   Style="{StaticResource PanelTitleText}"
+								   Visibility="Visible"
+								   Grid.ColumnSpan="2"
+								   Margin="30,15,0,0" />
+					</Grid>
+				</Border>
+
+				<Grid Grid.Row="2"
+					  Margin="30,0,0,0">
+
+					<views:PanelDriversToinstallSelection HorizontalAlignment="Left"
+														  VerticalAlignment="Top"
+														  Visibility="{Binding Path=Status, Converter={StaticResource PropertyEqualsToVisibilityConverter}, ConverterParameter={x:Static models:InstallStatus.NotStarted}}" />
+
+					<views:PanelInstalling HorizontalAlignment="Left"
+										   VerticalAlignment="Top"
+										   Visibility="{Binding Path=Status, Converter={StaticResource PropertyEqualsToVisibilityConverter}, ConverterParameter={x:Static models:InstallStatus.Started}}"
+										   Height="335" />
+
+					<views:PanelInstallFinished HorizontalAlignment="Left"
+												VerticalAlignment="Top"
+												Visibility="{Binding Path=Status, Converter={StaticResource PropertyEqualsToVisibilityConverter}, ConverterParameter={x:Static models:InstallStatus.Finished}}" />
+
+				</Grid>
+
+				<!--
+					*****************************************************************************
+					
+					Footer
+					
+					*****************************************************************************
+					-->
+
+				<Grid Grid.Row="3">
+					<Border Style="{StaticResource PanelFooterBorder}">
+						<Border Style="{StaticResource PanelFooterBorderNoisy}">
+							<DockPanel LastChildFill="True">
+								<Image Style="{StaticResource PanelSwitcherImage}"
+									   Width="77"
+									   HorizontalAlignment="Right"
+									   DockPanel.Dock="Right"
+									   Margin="2,8,215,0"
+									   Source="Images/bg-logo-small.png" />
+								<TextBlock Style="{StaticResource PanelFooterText}"
+										   Text="{lex:LocText DriversGalaxy.OSMigrationTool.Restore:Resources:FooterText}" />
+							</DockPanel>
+						</Border>
+					</Border>
+				</Grid>
+
+			</Grid>
+
+		</Border>
+	</Border>
+</Window>
