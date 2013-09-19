@@ -1,0 +1,63 @@
+<SmartAssemblyProject ProjectId="{885abb5a-1ec6-4f07-8089-f2d888c3baf8}" Version="2.0">
+    <MainAssemblyFileName>.\DriversGalaxy\bin\Release\DriversGalaxy.exe</MainAssemblyFileName>
+    <FriendlyName>DriversGalaxy</FriendlyName>
+    <CompanyName>[Unknown company]</CompanyName>
+    <Configuration Name="Release">
+        <Options>
+            <ExceptionReporting ReportExceptions="0" Template="res:{SmartExceptions}.1033.dll" />
+            <FeatureUsageReporting Template="res:SmartUsageWithUIConsentFirstRun1033.dll" />
+            <StringsEncoding />
+            <StrongNameSigning />
+            <OtherOptimizations />
+            <Obfuscation FieldsNameMangling="2" NameMangling="3" />
+            <OtherProtections />
+            <Debugging />
+        </Options>
+        <ApplicationName>DriversGalaxy</ApplicationName>
+        <Destination DestinationFileName=".\DriversGalaxy\bin\Release\obfuscated\DriversGalaxy.exe" />
+        <Assemblies>
+            <Assembly AssemblyName="DriversGalaxy, Culture=neutral, PublicKeyToken=null">
+                <Embedding />
+                <Merging>
+                    <ResourcesCompression />
+                    <MemberRefsProxy />
+                    <Pruning />
+                    <Obfuscation />
+                    <ControlFlow />
+                </Merging>
+            </Assembly>
+            <Assembly AssemblyName="DriversGalaxy.Infrastructure, Culture=neutral, PublicKeyToken=null">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="System.Tuples, Culture=neutral, PublicKeyToken=null">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="WPFLocalizeExtension, Culture=neutral, PublicKeyToken=null">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="XAMLMarkupExtensions, Culture=neutral, PublicKeyToken=null">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="mscriptable, Culture=neutral, PublicKeyToken=null">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="Microsoft.Win32.TaskScheduler, Culture=neutral, PublicKeyToken=null">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="Ookii.Dialogs.Wpf, Culture=neutral, PublicKeyToken=0c15020868fd6249">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="FreemiumUtil, Culture=neutral, PublicKeyToken=null">
+                <Merging />
+                <Embedding />
+            </Assembly>
+        </Assemblies>
+    </Configuration>
+</SmartAssemblyProject>
