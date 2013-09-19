@@ -150,14 +150,7 @@
 							   Foreground="#FFFFFF"
 							   FontFamily="/DriversGalaxy.Infrastructure;component/Fonts/#Helvetica Neue CE 75"
 							   FontSize="26"
-							   Text="{Binding InstallFinishTitle}" TextWrapping="Wrap">
-						<TextBlock.Effect>
-							<DropShadowEffect BlurRadius="1"
-											  Direction="90"
-											  Color="#7AB442"
-											  Opacity=".8"
-											  ShadowDepth="1" />
-						</TextBlock.Effect>
+							   Text="{Binding InstallFinishTitle}" TextWrapping="Wrap">						
                     </TextBlock>
                     <TextBlock Grid.Column="1"
 							   Grid.Row="1"
@@ -166,14 +159,7 @@
 							   Foreground="#FFFFFF"
 							   FontFamily="/DriversGalaxy.Infrastructure;component/Fonts/#Helvetica Neue CE 75"
 							   FontSize="17"
-							   Text="{lex:LocText DriversGalaxy.OSMigrationTool.Restore:Resources:PostOn}">
-						<TextBlock.Effect>
-							<DropShadowEffect BlurRadius="1"
-											  Direction="90"
-											  Color="#7AB442"
-											  Opacity=".8"
-											  ShadowDepth="1" />
-						</TextBlock.Effect>
+							   Text="{lex:LocText DriversGalaxy.OSMigrationTool.Restore:Resources:PostOn}">						
                     </TextBlock>
                     <Button Grid.Column="1" Grid.Row="2" Padding="0,0,0,0" Click="Click_Facebook" Margin="-25,0,0,0" 
                             Style="{StaticResource FacebookButton}" HorizontalAlignment="Left"  MinWidth="20" Height="20">

@@ -140,14 +140,7 @@
 							   Foreground="#FFFFFF"
 							   FontFamily="/DriversGalaxy.Infrastructure;component/Fonts/#Helvetica Neue CE 75"
 							   FontSize="26"
-							   Text="{Binding BackupFinishTitle}" TextWrapping="Wrap">
-						<TextBlock.Effect>
-							<DropShadowEffect BlurRadius="1"
-											  Direction="90"
-											  Color="#7AB442"
-											  Opacity=".8"
-											  ShadowDepth="1" />
-						</TextBlock.Effect>
+							   Text="{Binding BackupFinishTitle}" TextWrapping="Wrap">					
 					</TextBlock>
 
 				</Grid>

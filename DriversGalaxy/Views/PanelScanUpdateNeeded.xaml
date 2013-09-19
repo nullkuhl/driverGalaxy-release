@@ -200,14 +200,7 @@
 							   FontSize="20"
 							   Text="{Binding ScanFinishTitle}"
 							   VerticalAlignment="Top"
-							   HorizontalAlignment="Left">
-						<TextBlock.Effect>
-							<DropShadowEffect BlurRadius="1"
-											  Direction="90"
-											  Color="#000000"
-											  Opacity=".3"
-											  ShadowDepth="1" />
-						</TextBlock.Effect>
+							   HorizontalAlignment="Left">					
 					</TextBlock>
 					<Button Style="{StaticResource GreenRoundedButton}"
 							Grid.Column="3"

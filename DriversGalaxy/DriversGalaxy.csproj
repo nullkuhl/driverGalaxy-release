@@ -115,7 +115,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Libraries\WPFLocalizeExtension.dll</HintPath>
     </Reference>
-    <Reference Include="XAMLMarkupExtensions">
+    <Reference Include="XAMLMarkupExtensions, Version=1.1.6.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>Libraries\XAMLMarkupExtensions.dll</HintPath>
     </Reference>
   </ItemGroup>
@@ -243,20 +244,10 @@
       <SubType>Designer</SubType>
       <ContainsDesignTimeResources>true</ContainsDesignTimeResources>
     </Page>
-    <None Include="Themes\Blue\Theme.xaml">
+    <None Include="Theme.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Themes\Green\Theme.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Themes\Red\Theme.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <Page Include="Views\AboutBox.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -343,12 +334,6 @@
     <Resource Include="DriverGalaxy.ico" />
     <Resource Include="Images\DriverGalaxy.ico" />
     <None Include="Resources\DriverGalaxy.bmp" />
-    <Content Include="stduhelper32.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="stduhelper64.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="unrar.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

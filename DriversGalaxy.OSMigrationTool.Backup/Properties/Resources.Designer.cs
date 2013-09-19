@@ -288,7 +288,7 @@ namespace DriversGalaxy.OSMigrationTool.Backup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Downloaded {{0}} of {{1}}.
+        ///   Looks up a localized string similar to Downloaded {0} of {1}.
         /// </summary>
         internal static string DownloadStatus {
             get {

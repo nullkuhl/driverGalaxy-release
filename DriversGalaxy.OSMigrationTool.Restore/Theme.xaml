@@ -13,16 +13,16 @@
 	<LinearGradientBrush x:Key="MouseOverColor"
 							StartPoint="0.5,0"
 							EndPoint="0.5,1">
-		<GradientStop Color="#0AA0BE"
+        <GradientStop Color="#515151"
 						Offset="0" />
-		<GradientStop Color="LightBlue"
+        <GradientStop Color="#3d3d3d"
 						Offset="1" />
-	</LinearGradientBrush>
+    </LinearGradientBrush>
 	<LinearGradientBrush x:Key="TitlePanelsBackgroundColor" EndPoint="0.5,1"
 						 StartPoint="0.5,0">
-		<GradientStop Color="#FF00B72D"
+        <GradientStop Color="#3e3e3e"
 					  Offset="0" />
-		<GradientStop Color="#FF14A700"
+        <GradientStop Color="#3d3d3d"
 					  Offset="1" />
-	</LinearGradientBrush>
+    </LinearGradientBrush>
 </ResourceDictionary>

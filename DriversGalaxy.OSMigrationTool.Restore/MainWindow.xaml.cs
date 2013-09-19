@@ -1,12 +1,11 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Markup;
-using DriversGalaxy.OSMigrationTool.Restore.ViewModels;
-using DriversGalaxy.OSMigrationTool.Restore.Infrastructure;
-using System.Diagnostics;
 using System.Windows.Media.Animation;
+using DriversGalaxy.OSMigrationTool.Restore.Infrastructure;
 
 namespace DriversGalaxy.OSMigrationTool.Restore
 {
@@ -17,10 +16,8 @@ namespace DriversGalaxy.OSMigrationTool.Restore
 	{
 		public MainWindow()
 		{
-			InitializeComponent();
-
-			string path = String.Format(@"Themes/{0}/Theme.xaml", "Blue");
-			using (var fs = new FileStream(path, FileMode.Open))
+			InitializeComponent();            
+            using (var fs = new FileStream("Theme.xaml", FileMode.Open))
 			{
 				var dic = (ResourceDictionary)XamlReader.Load(fs);
 				Application.Current.MainWindow.Resources.MergedDictionaries.Clear();

@@ -438,9 +438,6 @@
   <data name="SelectBackupTypeText" xml:space="preserve">
     <value>Please, select backup type to proceed.</value>
   </data>
-  <data name="SelectDriversForRestore" xml:space="preserve">
-    <value>SELECT DRIVERS FOR RESTORE</value>
-  </data>
   <data name="RestoreDrivers" xml:space="preserve">
     <value>Restore drivers</value>
   </data>
@@ -651,8 +648,11 @@ It is possible that the screen may turn black during this update for a short per
   <data name="WrongLicenseKey" xml:space="preserve">
     <value>License key not valid. Please try again!</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="DriverGalaxy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\DriverGalaxy.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectDriversForRestore" xml:space="preserve">
+    <value>SELECT DRIVERS FOR RESTORE</value>
   </data>
 </root>

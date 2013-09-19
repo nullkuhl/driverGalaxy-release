@@ -36,9 +36,8 @@ namespace DriversGalaxy
             string culture = CfgFile.Get("Lang");
             LocalizeDictionary.Instance.Culture = CultureInfo.GetCultureInfo(culture);
             Thread.CurrentThread.CurrentUICulture = LocalizeDictionary.Instance.Culture;
-
-            string path = String.Format(@"Themes/{0}/Theme.xaml", CfgFile.Get("Theme"));
-            using (var fs = new FileStream(path, FileMode.Open))
+            
+            using (var fs = new FileStream("Theme.xaml", FileMode.Open))
             {
                 var dic = (ResourceDictionary)XamlReader.Load(fs);
                 Application.Current.MainWindow.Resources.MergedDictionaries.Clear();

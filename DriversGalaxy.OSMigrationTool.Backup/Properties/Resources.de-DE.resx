@@ -258,7 +258,7 @@ Bitte drücken Sie "Erstelle Datenbank" um die Treiber für die Migration auf Ih
     <value>Download abgeschlossen</value>
   </data>
   <data name="DownloadStatus" xml:space="preserve">
-    <value>Heruntergeladene {{0}} von {{1}}</value>
+    <value>Heruntergeladene {0} von {1}</value>
   </data>
   <data name="GoogleMargin" xml:space="preserve">
     <value>-67</value>

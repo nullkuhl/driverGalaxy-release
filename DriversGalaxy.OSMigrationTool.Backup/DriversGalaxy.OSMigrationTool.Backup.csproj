@@ -87,9 +87,12 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="WPFLocalizeExtension, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="WPFLocalizeExtension, Version=2.1.4.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
+      <HintPath>Libraries\WPFLocalizeExtension.dll</HintPath>
+    </Reference>
+    <Reference Include="XAMLMarkupExtensions">
+      <HintPath>Libraries\XAMLMarkupExtensions.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -137,6 +140,11 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <None Include="Theme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <Page Include="Views\AboutBox.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -161,21 +169,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <None Include="Themes\Blue\Theme.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Themes\Green\Theme.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Themes\Red\Theme.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <Page Include="Views\PanelScanFinished.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -220,13 +213,14 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Libraries\XAMLMarkupExtensions.dll" />
     <Resource Include="Images\bg-logo.png" />
     <Resource Include="Images\bg-logo-small.png" />
     <Resource Include="Images\icon-lamp.png" />
     <Resource Include="Images\icon-scan.png" />
     <Resource Include="Images\icon-update.png" />
     <Resource Include="Images\icon-ok.png" />
-    <Resource Include="driver.ico" />
+    <Resource Include="Views\driver.ico" />
     <Resource Include="Images\facebook.png" />
     <Resource Include="Images\google.png" />
     <Resource Include="Images\tw.png" />
@@ -258,7 +252,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy "$(TargetDir)*" "$(SolutionDir)DriversGalaxy\$(OutDir)OSMigrationTool\" /Y /S</PostBuildEvent>
+    <PostBuildEvent>xcopy "$(TargetDir)*" "$(SolutionDir)DriversGalaxy\$(OutDir)"  /Y /S /I /R</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

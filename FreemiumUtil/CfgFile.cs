@@ -160,11 +160,10 @@ namespace FreemiumUtil
                         writer.WriteLine("[DriversGalaxy Config File]");
                         writer.WriteLine("Version=1.0");
                         writer.WriteLine("Lang=" + CultureInfo.CurrentCulture.ToString());
-                        writer.WriteLine("FirstRun=1");
-                        writer.WriteLine("Theme=Blue");
+                        writer.WriteLine("FirstRun=1");                        
                         writer.WriteLine("MinimizeToTray=1");
-                        writer.WriteLine("DriverDownloadsFolder=Utilites%5CTemp%5CDriverDownloads");
-                        writer.WriteLine("BackupsFolder=Utilites%5CTemp%5CBackups");
+                        writer.WriteLine("DriverDownloadsFolder=Drivers Galaxy%5CTemp%5CDriverDownloads");
+                        writer.WriteLine("BackupsFolder=Drivers Galaxy%5CTemp%5CBackups");
                         writer.WriteLine("LastScanDate=22/01/2012");
                     }
                     configFileValid = true;

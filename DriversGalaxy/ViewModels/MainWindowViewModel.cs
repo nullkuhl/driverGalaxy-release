@@ -26,6 +26,7 @@ using FreemiumUtilites;
 using MessageBoxUtils;
 using Microsoft.Win32;
 using WPFLocalizeExtension.Engine;
+using System.Diagnostics;
 
 namespace DriversGalaxy.ViewModels
 {
@@ -67,6 +68,11 @@ namespace DriversGalaxy.ViewModels
             enterLicenseKeyCommand = new SimpleCommand
             {
                 ExecuteDelegate = x => EnterLicenseKey()
+            };
+
+            subscribeCommand = new SimpleCommand
+            {
+                ExecuteDelegate = x => Subscribe()
             };
 
             verifyLicenseKeyCommand = new SimpleCommand
@@ -256,6 +262,7 @@ namespace DriversGalaxy.ViewModels
         readonly ICommand showScanCommand;
         readonly ICommand checkDevicesForUpdateCommand;
         readonly ICommand checkDeviceForUpdateCommand;
+        readonly ICommand subscribeCommand;
         readonly ICommand verifyLicenseKeyCommand;
         readonly ICommand enterLicenseKeyCommand;
         readonly ICommand updateCommand;
@@ -284,6 +291,11 @@ namespace DriversGalaxy.ViewModels
         public ICommand CheckDeviceForUpdateCommand
         {
             get { return checkDeviceForUpdateCommand; }
+        }
+
+        public ICommand SubscribeCommand
+        {
+            get { return subscribeCommand; }
         }
 
         public ICommand EnterLicenseKeyCommand
@@ -473,6 +485,10 @@ namespace DriversGalaxy.ViewModels
             if (backupItem != null)
             {
                 RunSelectDriversToRestore((BackupItem)backupItem);
+            }
+            else
+            {
+                WPFMessageBox.Show(Application.Current.MainWindow, LocalizeDictionary.Instance.Culture, WPFLocalizeExtensionHelpers.GetUIString("SelectBackupTypeText"), WPFLocalizeExtensionHelpers.GetUIString("SelectDrivers"), WPFMessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 
@@ -1764,6 +1780,12 @@ namespace DriversGalaxy.ViewModels
             }
         }
 
+
+        void Subscribe()
+        {
+            Process.Start(new ProcessStartInfo("https://www.cleverbridge.com/825/?scope=checkout&cart=128826"));            
+        }
+
         void VerifyLicenseKey()
         {
             var licenseKeyTextBlock = UIUtils.FindChild<TextBox>(Application.Current.MainWindow, "LicenseKey");
@@ -1778,7 +1800,7 @@ namespace DriversGalaxy.ViewModels
                 else
                 {
                     WPFMessageBox.Show(Application.Current.MainWindow, LocalizeDictionary.Instance.Culture, WPFLocalizeExtensionHelpers.GetUIString("WrongLicenseKey"),
-                                      "", WPFMessageBoxButton.OKCancel, MessageBoxImage.Warning);
+                                      "", WPFMessageBoxButton.OK, MessageBoxImage.Warning);
                 }
             }
         }
@@ -2094,6 +2116,7 @@ namespace DriversGalaxy.ViewModels
             int restoredDriversCount = 0;
             int selectedDriversCount = currentBackupItem.GroupedDrivers.Sum
                 (su => su.Devices.Where(wh => wh.SelectedForRestore == true).Count());
+
             Progress = 0;
             foreach (DevicesGroup group in currentBackupItem.GroupedDrivers)
             {

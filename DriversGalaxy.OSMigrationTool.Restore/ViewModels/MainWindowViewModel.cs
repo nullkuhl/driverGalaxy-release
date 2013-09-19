@@ -151,7 +151,7 @@ namespace DriversGalaxy.OSMigrationTool.Restore.ViewModels
 
         StringBuilder szAppDataLoc;
         StringBuilder szTempLoc;
-        StringBuilder szProductKey = new StringBuilder().Append("18546-16122-13463");
+        StringBuilder szProductKey = new StringBuilder().Append("46288-11183-23588");
         StringBuilder szRegistryLoc = new StringBuilder().Append("Software\\DriversGalaxy");
         StringBuilder szRestorePointName = new StringBuilder().Append("DriversGalaxy");
 

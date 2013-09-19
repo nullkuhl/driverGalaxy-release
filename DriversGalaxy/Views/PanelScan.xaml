@@ -31,13 +31,7 @@
 					   HorizontalAlignment="Left"
 					   VerticalAlignment="Top"
 					   TextWrapping="WrapWithOverflow"
-					   Text="{lex:LocText DriversGalaxy:Resources:LastScan}">
-				<TextBlock.Effect>
-					<DropShadowEffect BlurRadius="1"
-									  Direction="-90"
-									  Color="#898989"
-									  ShadowDepth="1" />
-				</TextBlock.Effect>
+					   Text="{lex:LocText DriversGalaxy:Resources:LastScan}">				
 			</TextBlock>
 			<Grid Margin="6,8,0,0"
 				  HorizontalAlignment="Left"

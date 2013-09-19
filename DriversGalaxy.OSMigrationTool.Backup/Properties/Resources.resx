@@ -258,7 +258,7 @@ Now press the Compose button below to create a drivers installation utility for 
     <value>Download Completed </value>
   </data>
   <data name="DownloadStatus" xml:space="preserve">
-    <value>Downloaded {{0}} of {{1}}</value>
+    <value>Downloaded {0} of {1}</value>
   </data>
   <data name="GoogleMargin" xml:space="preserve">
     <value>-77</value>

@@ -1,5 +1,5 @@
 ﻿<Window x:Class="DriversGalaxy.OSMigrationTool.Backup.MainWindow"
-		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 		xmlns:routine="clr-namespace:DriversGalaxy.OSMigrationTool.Backup.Routine"
 		xmlns:views="clr-namespace:DriversGalaxy.OSMigrationTool.Backup.Views"
@@ -11,22 +11,22 @@
 		Height="576"
 		Title="OS Migration Tool Backup"
 		SizeToContent="WidthAndHeight">
-	<Window.Resources>
-		<routine:PropertyEqualsToVisibilityConverter x:Key="PropertyEqualsToVisibilityConverter" />
-		<routine:AnyPropertyEqualsToVisibilityConverter x:Key="AnyPropertyEqualsToVisibilityConverter" />
-	</Window.Resources>
-	<Border MouseLeftButtonDown="DragWindow"
+    <Window.Resources>
+        <routine:PropertyEqualsToVisibilityConverter x:Key="PropertyEqualsToVisibilityConverter" />
+        <routine:AnyPropertyEqualsToVisibilityConverter x:Key="AnyPropertyEqualsToVisibilityConverter" />
+    </Window.Resources>
+    <Border MouseLeftButtonDown="DragWindow"
 			Style="{StaticResource WindowBorder}">
-		<Border Style="{StaticResource WindowInnerBorder}">
+        <Border Style="{StaticResource WindowInnerBorder}">
 
-			<Grid>
-				<Grid.RowDefinitions>
-					<RowDefinition Height="94" />
-					<RowDefinition Height="67" />
-					<RowDefinition Height="399" />					
-				</Grid.RowDefinitions>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="94" />
+                    <RowDefinition Height="67" />
+                    <RowDefinition Height="399" />
+                </Grid.RowDefinitions>
 
-				<!--
+                <!--
 					*****************************************************************************
 					
 					Header
@@ -34,11 +34,11 @@
 					*****************************************************************************
 					-->
 
-				<Border CornerRadius="6,6,0,0"
+                <Border CornerRadius="6,6,0,0"
 						Background="{StaticResource ContentBackGround}">
-					<DockPanel HorizontalAlignment="Stretch"
+                    <DockPanel HorizontalAlignment="Stretch"
 							   VerticalAlignment="Top">
-						<Image Margin="12,11,0,0"
+                        <Image Margin="12,11,0,0"
 							   Source="Images/bg-logo.png"
 							   Stretch="Uniform"
                                Width="255"
@@ -56,34 +56,33 @@
                             <Button Style="{StaticResource HelpButton}"
                                     Click="OpenAboutBox"
 									FontFamily="/DriversGalaxy.Infrastructure;component/Fonts/#Helvetica Neue CE 55">
-								<TextBlock Text="i"
+                                <TextBlock Text="i"
 										   FontFamily="Segoe UI"
 										   FontSize="12"
 										   FontWeight="Bold" />
-								<Button.ToolTip>
-									<ToolTip Style="{x:Null}"
-											 Content="{lex:LocText DriversGalaxy.OSMigrationTool.Backup:Resources:About}" />
-								</Button.ToolTip>
-							</Button>
-							<Button Style="{StaticResource MinimizeButton}"
+                                <Button.ToolTip>
+                                    <ToolTip Style="{x:Null}" Content="{lex:LocText DriversGalaxy.OSMigrationTool.Backup:Resources:About}" />
+                                </Button.ToolTip>
+                            </Button>
+                            <Button Style="{StaticResource MinimizeButton}"
 									Click="MinimizeApp">
-								<Button.ToolTip>
-									<ToolTip Style="{x:Null}"
+                                <Button.ToolTip>
+                                    <ToolTip Style="{x:Null}"
 											 Content="{lex:LocText DriversGalaxy.OSMigrationTool.Backup:Resources:Minimize}" />
-								</Button.ToolTip>
-							</Button>
-							<Button Style="{StaticResource CloseButton}"
+                                </Button.ToolTip>
+                            </Button>
+                            <Button Style="{StaticResource CloseButton}"
 									Click="CloseApp">
-								<Button.ToolTip>
-									<ToolTip Style="{x:Null}"
+                                <Button.ToolTip>
+                                    <ToolTip Style="{x:Null}"
 											 Content="{lex:LocText DriversGalaxy.OSMigrationTool.Backup:Resources:Close}" />
-								</Button.ToolTip>
-							</Button>
-						</DockPanel>
-					</DockPanel>
-				</Border>
+                                </Button.ToolTip>
+                            </Button>
+                        </DockPanel>
+                    </DockPanel>
+                </Border>
 
-				<!--
+                <!--
 					*****************************************************************************
 					
 					Title
@@ -91,24 +90,24 @@
 					*****************************************************************************
 					-->
 
-				<Border Grid.Row="1"
+                <Border Grid.Row="1"
 						Background="{StaticResource MainAreaBackGround}"
 						ClipToBounds="True"
 						Panel.ZIndex="10">
-					<Grid Width="700"
+                    <Grid Width="700"
 						  Height="67"
 						  ClipToBounds="True"
 						  VerticalAlignment="Top"
 						  HorizontalAlignment="Left">
-						<Grid.ColumnDefinitions>
-							<ColumnDefinition Width="115" />
-							<ColumnDefinition Width="585" />
-						</Grid.ColumnDefinitions>
-						<Grid.OpacityMask>
-							<VisualBrush Visual="{Binding ElementName=Shape}"
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="115" />
+                            <ColumnDefinition Width="585" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.OpacityMask>
+                            <VisualBrush Visual="{Binding ElementName=Shape}"
 										 Stretch="None" />
-						</Grid.OpacityMask>
-						<Path x:Name="Shape"
+                        </Grid.OpacityMask>
+                        <Path x:Name="Shape"
 							  Style="{StaticResource PanelTitleFigure}"
 							  Stroke="#000000"
 							  Stretch="Fill"
@@ -118,8 +117,8 @@
 							  ClipToBounds="True"
 							  Grid.ColumnSpan="2"
 							  Fill="{DynamicResource TitlePanelsBackgroundColor}">
-						</Path>
-						<Path Style="{StaticResource PanelTitleFigure}"
+                        </Path>
+                        <Path Style="{StaticResource PanelTitleFigure}"
 							  Stroke="#000000"
 							  Stretch="Fill"
 							  VerticalAlignment="Top"
@@ -128,8 +127,8 @@
 							  Margin="-5,0"
 							  ClipToBounds="True"
 							  Grid.ColumnSpan="2">
-						</Path>
-						<Path Style="{StaticResource PanelTitleFigure}"
+                        </Path>
+                        <Path Style="{StaticResource PanelTitleFigure}"
 							  Stroke="#000000"
 							  Stretch="Fill"
 							  Width="710"
@@ -137,71 +136,70 @@
 							  Margin="-5,0"
 							  ClipToBounds="True"
 							  Grid.ColumnSpan="2">
-							<Path.Effect>
-								<DropShadowEffect ShadowDepth="0"
+                            <Path.Effect>
+                                <DropShadowEffect ShadowDepth="0"
 												  BlurRadius="4"
 												  Color="#000000" />
-							</Path.Effect>
-						</Path>
+                            </Path.Effect>
+                        </Path>
 
-						<TextBlock Name="PanelScanHeader"
+                        <TextBlock Name="PanelScanHeader"
 								   Text="{Binding PanelScanHeader}"
 								   Style="{StaticResource PanelTitleText}"
 								   Visibility="Visible"
 								   Grid.ColumnSpan="2"
 								   Margin="30,15,0,0" />
-					</Grid>
-				</Border>
+                    </Grid>
+                </Border>
 
-				<Grid Grid.Row="2"
+                <Grid Grid.Row="2"
 					  Margin="30,0,0,0">
 
-					<views:PanelScan HorizontalAlignment="Left"
+                    <views:PanelScan HorizontalAlignment="Left"
 									 VerticalAlignment="Top"
 									 Visibility="{Binding Path=Status, Converter={StaticResource PropertyEqualsToVisibilityConverter}, ConverterParameter={x:Static models:ScanStatus.NotStarted}}" />
 
-					<views:PanelScanning HorizontalAlignment="Left"
+                    <views:PanelScanning HorizontalAlignment="Left"
 											  VerticalAlignment="Top"
 											  Visibility="{Binding Path=Status, Converter={StaticResource PropertyEqualsToVisibilityConverter}, ConverterParameter={x:Static models:ScanStatus.ScanStarted}}"
 											  Height="335" />
 
-					<views:PanelDriversToDownloadSelection HorizontalAlignment="Left"
+                    <views:PanelDriversToDownloadSelection HorizontalAlignment="Left"
 														   VerticalAlignment="Top"
 														   Visibility="{Binding Path=Status, Converter={StaticResource PropertyEqualsToVisibilityConverter}, ConverterParameter={x:Static models:ScanStatus.ScanFinishedDriversFound}}" />
 
-					<views:PanelDownloading HorizontalAlignment="Left"
+                    <views:PanelDownloading HorizontalAlignment="Left"
 											VerticalAlignment="Top"
 											Tag="{x:Static models:ScanStatus.DownloadStarted}">
-						<views:PanelDownloading.Visibility>
-							<MultiBinding Converter="{StaticResource AnyPropertyEqualsToVisibilityConverter}"
+                        <views:PanelDownloading.Visibility>
+                            <MultiBinding Converter="{StaticResource AnyPropertyEqualsToVisibilityConverter}"
 										  ConverterParameter="{x:Static models:ScanStatus.DownloadFinished}">
-								<Binding Path="Tag"
+                                <Binding Path="Tag"
 										 RelativeSource="{RelativeSource Mode=Self}" />
-								<Binding Path="Status" />
-							</MultiBinding>
-						</views:PanelDownloading.Visibility>
-					</views:PanelDownloading>
+                                <Binding Path="Status" />
+                            </MultiBinding>
+                        </views:PanelDownloading.Visibility>
+                    </views:PanelDownloading>
 
-					<views:PanelComposing HorizontalAlignment="Left"
+                    <views:PanelComposing HorizontalAlignment="Left"
 										 VerticalAlignment="Top"
 										  Visibility="{Binding Path=Status, Converter={StaticResource PropertyEqualsToVisibilityConverter}, ConverterParameter={x:Static models:ScanStatus.ComposeStarted}}"
 										 Height="335" />
 
-					<views:PanelScanFinished HorizontalAlignment="Left"
+                    <views:PanelScanFinished HorizontalAlignment="Left"
 											 VerticalAlignment="Top"
 											 Tag="{x:Static models:ScanStatus.ScanFinishedNoDrivers}">
-						<views:PanelScanFinished.Visibility>
-							<MultiBinding Converter="{StaticResource AnyPropertyEqualsToVisibilityConverter}"
+                        <views:PanelScanFinished.Visibility>
+                            <MultiBinding Converter="{StaticResource AnyPropertyEqualsToVisibilityConverter}"
 										  ConverterParameter="{x:Static models:ScanStatus.ComposeFinished}">
-								<Binding Path="Tag"
+                                <Binding Path="Tag"
 										 RelativeSource="{RelativeSource Mode=Self}" />
-								<Binding Path="Status" />
-							</MultiBinding>
-						</views:PanelScanFinished.Visibility>
-					</views:PanelScanFinished>
-
-				</Grid>
+                                <Binding Path="Status" />
+                            </MultiBinding>
+                        </views:PanelScanFinished.Visibility>
+                    </views:PanelScanFinished>
+                </Grid>
             </Grid>
-		</Border>
-	</Border>
+        </Border>
+    </Border>
 </Window>
