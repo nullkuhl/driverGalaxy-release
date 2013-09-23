@@ -1874,7 +1874,7 @@
         <Setter Property="Height"
 				Value="40" />
         <Setter Property="Width"
-				Value="460" />
+				Value="300" />
         <Setter Property="Margin"
 				Value="0,0,0,0" />
         <Setter Property="BorderThickness"

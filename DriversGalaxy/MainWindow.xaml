@@ -192,7 +192,7 @@
 								   Style="{StaticResource PanelTitleText}"
 								   Visibility="Hidden"
 								   Grid.ColumnSpan="2"
-								   Margin="30,15,0,0" />                        
+								   Margin="30,15,0,0" />
                         <TextBlock Name="PanelPreferencesHeader"
 								   Loaded="ElementLoaded"
 								   Text="{lex:LocText DriversGalaxy:Resources:Preferences}"
@@ -231,7 +231,7 @@
                         <views:PanelScanUpdateNeeded HorizontalAlignment="Left"
 													 VerticalAlignment="Top"
 													 Visibility="{Binding Path=Status, Converter={StaticResource PropertyEqualsToVisibilityConverter}, ConverterParameter={x:Static models:ScanStatus.ScanFinishedError}}" />
-                        
+
                         <views:PanelScanUpdateInProcess HorizontalAlignment="Left"
 														VerticalAlignment="Top"
 														Visibility="{Binding Path=Status, Converter={StaticResource PropertyEqualsToVisibilityConverter}, ConverterParameter={x:Static models:ScanStatus.UpdateStarted}}" />
@@ -397,14 +397,17 @@
                 
 					*****************************************************************************
 					-->
-                <Grid  Grid.Row="2" Grid.RowSpan="2" Grid.ColumnSpan="2">
+
+
+                <Grid  Grid.Row="2" Grid.RowSpan="3" Grid.ColumnSpan="2">
                     <Grid x:Name="PanelLicense"
 						  Loaded="ElementLoaded"
 						  Visibility="{Binding Path=Status, Converter={StaticResource PaymentStatusToVisibilityConverter}}"
 						  HorizontalAlignment="Left"
 						  VerticalAlignment="Top">
 
-                        <views:PanelPaymentNeeded HorizontalAlignment="Left"
+                        <views:PanelPaymentNeeded x:Name="PanelPaymentNeeded"
+                                                  HorizontalAlignment="Left"
                                                   Loaded="ElementLoaded"
 											      VerticalAlignment="Top"
 											      Visibility="{Binding Path=Status, Converter={StaticResource PropertyEqualsToVisibilityConverter}, ConverterParameter={x:Static models:ScanStatus.PaymentNeeded}}" />
@@ -416,10 +419,34 @@
                 
 					    *****************************************************************************
 				    -->
-                        <views:PanelLicenseKeyEnter HorizontalAlignment="Left"
+                        <views:PanelLicenseKeyEnter x:Name="PanelLicenseKeyEnter"
+                                                    HorizontalAlignment="Left"
                                                     Loaded="ElementLoaded"
 											        VerticalAlignment="Top"
 											        Visibility="{Binding Path=Status, Converter={StaticResource PropertyEqualsToVisibilityConverter}, ConverterParameter={x:Static models:ScanStatus.LicenseKeyEnter}}" />
+
+                    </Grid>
+                </Grid>
+
+                <!--
+	    				*****************************************************************************
+					
+				        Panel Preferences2
+                
+					    *****************************************************************************
+				    -->
+
+                <Grid  Grid.Row="2" Grid.RowSpan="3" Grid.ColumnSpan="2">
+                    <Grid x:Name="PanelLicensePreferences"
+						  Loaded="ElementLoaded"
+						  Visibility="Hidden"
+						  HorizontalAlignment="Left"
+						  VerticalAlignment="Top">
+
+                        <views:PanelPreferences2 Loaded="ElementLoaded"											 
+											 HorizontalAlignment="Left"
+											 VerticalAlignment="Top" 
+                                            />
                     </Grid>
                 </Grid>
             </Grid>

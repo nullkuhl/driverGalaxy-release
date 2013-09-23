@@ -36,7 +36,7 @@ namespace DriversGalaxy
             string culture = CfgFile.Get("Lang");
             LocalizeDictionary.Instance.Culture = CultureInfo.GetCultureInfo(culture);
             Thread.CurrentThread.CurrentUICulture = LocalizeDictionary.Instance.Culture;
-            
+
             using (var fs = new FileStream("Theme.xaml", FileMode.Open))
             {
                 var dic = (ResourceDictionary)XamlReader.Load(fs);
@@ -68,6 +68,8 @@ namespace DriversGalaxy
                 Directory.CreateDirectory(backupsPath);
                 var panelPreferences = (PanelPreferences)Application.Current.MainWindow.FindName("PanelPreferences");
                 panelPreferences.driverDownloadsFolder.Text = downloadsPath;
+                var panelPreferences2 = (PanelPreferences2)Application.Current.MainWindow.FindName("PanelPreferences2");
+                panelPreferences2.driverDownloadsFolder.Text = downloadsPath;
                 CfgFile.Set("DriverDownloadsFolder", Uri.EscapeUriString(downloadsPath));
                 panelPreferences.backupsFolder.Text = backupsPath;
                 CfgFile.Set("BackupsFolder", Uri.EscapeUriString(backupsPath));
@@ -154,7 +156,8 @@ namespace DriversGalaxy
                 (PanelPreferences.Margin.Top == 0 || PanelPreferences.Margin.Top == -337) &&
                 (PanelScanExclusions.Margin.Top == 0 || PanelScanExclusions.Margin.Top == -337) &&
                 (PanelBackupAndRestore.Margin.Top == 0 || PanelBackupAndRestore.Margin.Top == -337) &&
-                (PanelLicense.Margin.Top == 0 || PanelLicense.Margin.Top == -576);
+                (PanelLicense.Margin.Top == 0 || PanelLicense.Margin.Top == -576) &&
+                (PanelLicensePreferences.Margin.Top == 0 || PanelLicensePreferences.Margin.Top == -576);
         }
 
         void HideCurrentPanel()
@@ -163,11 +166,13 @@ namespace DriversGalaxy
             if (PanelPreferences.IsVisible) { currentPanel = PanelPreferences; };
             if (PanelScan.IsVisible) { currentPanel = PanelScan; };
             if (PanelScanExclusions.IsVisible) { currentPanel = PanelScanExclusions; };
-            if (PanelBackupAndRestore.IsVisible) { currentPanel = PanelBackupAndRestore; };
-            if (PanelLicense.IsVisible) {
+            if (PanelBackupAndRestore.IsVisible) { currentPanel = PanelBackupAndRestore; };            
+            if (PanelLicense.IsVisible)
+            {
                 PanelScan.Visibility = Visibility.Hidden;
-                currentPanel = PanelLicense; 
+                currentPanel = PanelLicense;
             };
+            if (PanelLicensePreferences.IsVisible) { currentPanel = PanelLicensePreferences; };
             currentPanel.Visibility = Visibility.Hidden;
         }
 
@@ -189,8 +194,22 @@ namespace DriversGalaxy
             }
         }
 
+        void ShowPanelPreferences2()
+        {
+            if (AllAnimationsComplete() && PanelLicensePreferences.Visibility != Visibility.Visible)
+            {
+                HideCurrentPanel();
+                PanelLicensePreferences.Visibility = Visibility.Visible;
+
+                PanelScanHeader.Visibility = Visibility.Hidden;
+                PanelScanExclusionsHeader.Visibility = Visibility.Hidden;
+                PanelBackupAndRestoreHeader.Visibility = Visibility.Hidden;
+                PanelPreferencesHeader.Visibility = Visibility.Visible;
+            }
+        }
+
         public void ShowPanelScan(object sender, RoutedEventArgs e)
-        {            
+        {
             if (AllAnimationsComplete() && (PanelScan.Visibility != Visibility.Visible))
             {
                 HideCurrentPanel();
@@ -207,13 +226,35 @@ namespace DriversGalaxy
                 LinkPanelScan.Style = navigationButtonFirstSelectedStyle;
                 LinkPanelScanExclusions.Style = navigationButtonStyle;
                 LinkPanelBackupAndRestore.Style = navigationButtonStyle;
-            }         
+            }
+        }
+
+        public void ShowPanelLicense(object sender, RoutedEventArgs e)
+        {
+            if (AllAnimationsComplete() && (PanelLicense.Visibility != Visibility.Visible))
+            {
+                HideCurrentPanel();
+                PanelScan.Visibility = Visibility.Visible;
+                PanelLicense.Visibility = Visibility.Visible;
+
+                var scrollPanel = new ThicknessAnimation { Duration = TimeSpan.FromSeconds(0), To = new Thickness(0, 0, 0, 0) };
+                PanelLicense.BeginAnimation(MarginProperty, scrollPanel, HandoffBehavior.SnapshotAndReplace);
+
+                PanelPreferencesHeader.Visibility = Visibility.Hidden;
+                PanelScanExclusionsHeader.Visibility = Visibility.Hidden;
+                PanelBackupAndRestoreHeader.Visibility = Visibility.Hidden;
+                PanelScanHeader.Visibility = Visibility.Visible;
+
+                LinkPanelScan.Style = navigationButtonFirstSelectedStyle;
+                LinkPanelScanExclusions.Style = navigationButtonStyle;
+                LinkPanelBackupAndRestore.Style = navigationButtonStyle;
+            }
         }
 
         void ShowPanelScanExclusions(object sender, RoutedEventArgs e)
         {
             if (AllAnimationsComplete() && PanelScanExclusions.Visibility != Visibility.Visible)
-            {                
+            {
                 HideCurrentPanel();
                 PanelScanExclusions.Visibility = Visibility.Visible;
 
@@ -238,8 +279,8 @@ namespace DriversGalaxy
                 HideCurrentPanel();
                 PanelBackupAndRestore.Visibility = Visibility.Visible;
 
-                var scrollPanel = new ThicknessAnimation { Duration = TimeSpan.FromSeconds(0), To = new Thickness(0, 0, 0, 0) };
-                PanelBackupAndRestore.BeginAnimation(MarginProperty, scrollPanel, HandoffBehavior.SnapshotAndReplace);
+                //var scrollPanel = new ThicknessAnimation { Duration = TimeSpan.FromSeconds(0), To = new Thickness(0, 0, 0, 0) };
+                //PanelBackupAndRestore.BeginAnimation(MarginProperty, scrollPanel, HandoffBehavior.SnapshotAndReplace);
 
                 PanelPreferencesHeader.Visibility = Visibility.Hidden;
                 PanelScanHeader.Visibility = Visibility.Hidden;
@@ -264,7 +305,14 @@ namespace DriversGalaxy
             var context = (ComboBox)sender;
             if (context.SelectedIndex == 0)
             {
-                ShowPanelPreferences();
+                if (PanelLicense.Visibility == Visibility.Visible)
+                {
+                    ShowPanelPreferences2();
+                }
+                else
+                {
+                    ShowPanelPreferences();
+                }
             }
             if (context.SelectedIndex == 1)
             {

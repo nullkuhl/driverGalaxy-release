@@ -50,6 +50,16 @@ namespace DriversGalaxy.ViewModels
                 ExecuteDelegate = x => CancelScan()
             };
 
+            сancelEnterLicenseKeyCommand = new SimpleCommand
+            {
+                ExecuteDelegate = x => СancelEnterLicenseKey()
+            };
+
+            cancelVerifyLicenseKeyCommand = new SimpleCommand
+            {
+                ExecuteDelegate = x => CancelVerifyLicenseKey()
+            };
+
             showScanCommand = new SimpleCommand
             {
                 ExecuteDelegate = x => ShowScan()
@@ -259,6 +269,8 @@ namespace DriversGalaxy.ViewModels
 
         readonly ICommand scanCommand;
         readonly ICommand cancelScanCommand;
+        readonly ICommand сancelEnterLicenseKeyCommand;
+        readonly ICommand cancelVerifyLicenseKeyCommand;
         readonly ICommand showScanCommand;
         readonly ICommand checkDevicesForUpdateCommand;
         readonly ICommand checkDeviceForUpdateCommand;
@@ -276,6 +288,16 @@ namespace DriversGalaxy.ViewModels
         public ICommand CancelScanCommand
         {
             get { return cancelScanCommand; }
+        }
+
+        public ICommand CancelEnterLicenseKeyCommand
+        {
+            get { return сancelEnterLicenseKeyCommand; }
+        }
+
+        public ICommand CancelVerifyLicenseKeyCommand
+        {
+            get { return cancelVerifyLicenseKeyCommand; }
         }
 
         public ICommand ShowScanCommand
@@ -321,6 +343,17 @@ namespace DriversGalaxy.ViewModels
         void CancelScan()
         {
             RunCancelScan();
+        }
+
+        void СancelEnterLicenseKey()
+        {
+            PanelScanHeader = WPFLocalizeExtensionHelpers.GetUIString("DriverScanResults");
+            Status = ScanStatus.ScanFinishedError;
+        }
+
+        void CancelVerifyLicenseKey()
+        {
+            Status = ScanStatus.PaymentNeeded;
         }
 
         void ShowScan()
@@ -1783,7 +1816,7 @@ namespace DriversGalaxy.ViewModels
 
         void Subscribe()
         {
-            Process.Start(new ProcessStartInfo("https://www.cleverbridge.com/825/?scope=checkout&cart=128826"));            
+            Process.Start(new ProcessStartInfo("https://www.cleverbridge.com/825/?scope=checkout&cart=128826"));
         }
 
         void VerifyLicenseKey()

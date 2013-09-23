@@ -1,0 +1,151 @@
+﻿<UserControl x:Class="DriversGalaxy.Views.PanelPreferences2"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 xmlns:lex="clr-namespace:WPFLocalizeExtension.Extensions;assembly=WPFLocalizeExtension"
+             xmlns:routine="clr-namespace:DriversGalaxy.Routine"
+             xmlns:models="clr-namespace:DriversGalaxy.Models"
+			 mc:Ignorable="d"
+			 d:DesignHeight="399"
+			 d:DesignWidth="645"
+			 Height="576"
+			 Width="700"
+             Background="{StaticResource MainAreaBackGround}">
+    <UserControl.Resources>
+        <routine:ScanStatusEqualsToEnablingConverter x:Key="ScanStatusEqualsToEnablingConverter" />                
+        <routine:ScanStatusToVisibilityConverter x:Key="ScanStatusToVisibilityConverter"/>
+    </UserControl.Resources>    
+	<Grid Background="{StaticResource MainAreaBackGround}" Width="645">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="200" />
+			<ColumnDefinition Width="240" />
+			<ColumnDefinition />
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="35" />
+            <RowDefinition Height="32"/>
+			<RowDefinition Height="27" />
+			<RowDefinition Height="32" />
+			<RowDefinition Height="22" />
+			<RowDefinition Height="42" />
+			<RowDefinition Height="117" />
+			<RowDefinition Height="72" />
+		</Grid.RowDefinitions>
+		<TextBlock Text="{lex:LocText DriversGalaxy:Resources:Language}"
+				   Style="{StaticResource ElementCaption}" />
+        <ComboBox Margin="0,3,0,0"
+				  Grid.Row="1"
+				  Width="180"
+				  SelectionChanged="LanguageChanged"
+				  Name="LanguagesList"  IsEnabled="{Binding Path=Status, Converter={StaticResource ScanStatusEqualsToEnablingConverter}}">
+            <ComboBoxItem Content="English"></ComboBoxItem>
+			<ComboBoxItem Content="German"></ComboBoxItem>
+		</ComboBox>
+		<TextBlock Text="{lex:LocText DriversGalaxy:Resources:WindowsStartup}"
+				   Style="{StaticResource ElementCaption}"
+				   Grid.Column="1" />
+		<Border Style="{StaticResource CustomCheckBoxWrapSmall}"
+                Background="#3d3d3d"
+				Width="225"
+				Grid.Column="1"
+				Grid.Row="1"
+                IsEnabled="{Binding Path=Status, Converter={StaticResource ScanStatusEqualsToEnablingConverter}}">
+			<CheckBox Style="{StaticResource CustomCheckBox}"
+					  Margin="6,6,0,0"
+					  Name="StartUpAction"
+					  Checked="LaunchAtStartup"
+					  Unchecked="DoNotLaunchAtStartup"
+					  Content="{lex:LocText DriversGalaxy:Resources:LaunchAtStartup}"
+                      IsEnabled="{Binding Path=Status, Converter={StaticResource ScanStatusEqualsToEnablingConverter}}"></CheckBox>
+		</Border>
+		<TextBlock Text="{lex:LocText DriversGalaxy:Resources:CloseButtonBehaviour}"
+				   Style="{StaticResource ElementCaption}"
+				   Grid.Column="2" />
+		<Border Style="{StaticResource CustomCheckBoxWrapSmall}"
+                Background="#3d3d3d"
+				Grid.Column="2"
+				Grid.Row="1"
+                IsEnabled="{Binding Path=Status, Converter={StaticResource ScanStatusEqualsToEnablingConverter}}">
+			<CheckBox Style="{StaticResource CustomCheckBox}"
+					  Margin="6,6,0,0"
+					  Checked="MinToTrayOnClose"
+					  Unchecked="ShutdownOnClose"
+					  Name="MinToTray"
+					  Content="{lex:LocText DriversGalaxy:Resources:MinToTray}"
+                      IsEnabled="{Binding Path=Status, Converter={StaticResource ScanStatusEqualsToEnablingConverter}}"></CheckBox>
+		</Border>
+
+		<TextBlock Text="{lex:LocText DriversGalaxy:Resources:SaveDownloadedTo}"
+				   Style="{StaticResource ElementCaption}"
+				   Margin="0,12,0,0"
+				   Grid.Row="2"
+				   Grid.ColumnSpan="3" />
+		<StackPanel Grid.ColumnSpan="3"
+					Grid.Row="3"
+					HorizontalAlignment="Left"
+					Margin="0,2,0,0"
+					VerticalAlignment="Top"
+					Orientation="Horizontal">
+			<TextBox Margin="0,1,0,0"
+					 Width="612"
+					 Name="driverDownloadsFolder"
+					 TextChanged="driverDownloadsFolder_TextChanged"
+                     IsEnabled="{Binding Path=Status, Converter={StaticResource ScanStatusEqualsToEnablingConverter}}"></TextBox>
+			<Button Style="{StaticResource GreenButton}"
+					Name="selectDriverDownloadsFolder"
+					Click="selectDriverDownloadsFolder_Click"
+                    IsEnabled="{Binding Path=Status, Converter={StaticResource ScanStatusEqualsToEnablingConverter}}">...</Button>
+		</StackPanel>
+
+		<TextBlock Text="{lex:LocText DriversGalaxy:Resources:SaveBackupsTo}"
+				   Style="{StaticResource ElementCaption}"
+				   Margin="0,7,0,0"
+				   Grid.Row="4"
+				   Grid.ColumnSpan="3" />
+
+		<StackPanel Grid.ColumnSpan="3"
+					Grid.Row="5"
+					HorizontalAlignment="Left"
+					Margin="0,2,0,0"
+					VerticalAlignment="Top"
+					Orientation="Horizontal"
+                    IsEnabled="{Binding Path=Status, Converter={StaticResource ScanStatusEqualsToEnablingConverter}}">
+			<TextBox Margin="0,1,0,0"
+					 Width="612"
+					 Name="backupsFolder"
+					 TextChanged="backupsFolder_TextChanged"></TextBox>
+			<Button Style="{StaticResource GreenButton}"
+					Name="selectBackupsFolder"
+					Click="selectBackupsFolder_Click"
+                    IsEnabled="{Binding Path=Status, Converter={StaticResource ScanStatusEqualsToEnablingConverter}}">...</Button>
+		</StackPanel>
+
+		<Border Grid.Row="7"
+				Grid.ColumnSpan="3"
+				Margin="0 3 0 0"
+				Style="{StaticResource BottomPanel}">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="48" />
+					<ColumnDefinition Width="432" />
+					<ColumnDefinition Width="162" />
+				</Grid.ColumnDefinitions>
+				<Image Style="{StaticResource FunctionalButtonImage}"
+					   Margin="2,2,0,0"
+					   Source="../Images/icon-lamp.png" />
+				<Grid Grid.Column="1"
+					  VerticalAlignment="Top">
+					<TextBlock Style="{StaticResource BottomPanelTitle}"
+							   Text="{lex:LocText DriversGalaxy:Resources:PreferencesFooter}"></TextBlock>
+					<TextBlock Style="{StaticResource BottomPanelText}"
+							   Text="{lex:LocText DriversGalaxy:Resources:PreferencesFooterText}"></TextBlock>
+				</Grid>
+				<Button Style="{StaticResource GreenRoundedButton}"
+						Grid.Column="2"
+						Click="ShowPanelLicense"
+						Content="{lex:LocText DriversGalaxy:Resources:Close}" Margin="1,4,0,0" Width="152"></Button>
+			</Grid>
+		</Border>
+    </Grid>
+</UserControl>

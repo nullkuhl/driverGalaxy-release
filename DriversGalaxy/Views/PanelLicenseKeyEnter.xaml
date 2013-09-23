@@ -126,7 +126,8 @@
                 Grid.ColumnSpan="2">
 				<Grid>
 					<Grid.ColumnDefinitions>                    
-                    <ColumnDefinition Width="480" />
+                    <ColumnDefinition Width="318" />
+                    <ColumnDefinition Width="162" />
                     <ColumnDefinition Width="162" />
                 </Grid.ColumnDefinitions>                    
                 <Grid Grid.Column="0" VerticalAlignment="Top">                                       
@@ -136,9 +137,16 @@
                     </TextBox>                    
                 </Grid>
                 <Button Style="{StaticResource GreenRoundedButton}"
-							Grid.Column="1"							
+							Grid.Column="2"
 							Command="{Binding VerifyLicenseKeyCommand}"
 							Content="{lex:LocText DriversGalaxy:Resources:Ok}"
+                            Margin="3,3,0,0"
+                            Width="149"
+                            />
+                <Button Style="{StaticResource GreenRoundedButton}"
+							Grid.Column="1"
+							Command="{Binding CancelVerifyLicenseKeyCommand}"
+							Content="{lex:LocText DriversGalaxy:Resources:Cancel}"
                             Margin="3,3,0,0"
                             Width="149"
                             />              
