@@ -10,9 +10,9 @@ using System.Windows;
 [assembly: AssemblyTitle("DriversGalaxy")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("PallySoft")]
 [assembly: AssemblyProduct("DriversGalaxy")]
-[assembly: AssemblyCopyright("Copyright ©  2013")]
+[assembly: AssemblyCopyright("Copyright © PallySoft 2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

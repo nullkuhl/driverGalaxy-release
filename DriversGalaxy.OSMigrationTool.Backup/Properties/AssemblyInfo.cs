@@ -10,9 +10,9 @@ using System.Windows;
 [assembly: AssemblyTitle("DriversGalaxy.OSMigrationTool.Backup")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Microsoft")]
+[assembly: AssemblyCompany("PallySoft")]
 [assembly: AssemblyProduct("DriversGalaxy.OSMigrationTool.Backup")]
-[assembly: AssemblyCopyright("Copyright © Microsoft 2012")]
+[assembly: AssemblyCopyright("Copyright © PallySoft 2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
