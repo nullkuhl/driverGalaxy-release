@@ -84,8 +84,8 @@
 								   Padding="0 0 0 5"
 								   Text="DriversGalaxy"
 								   HorizontalAlignment="Center" />
-						<TextBlock Style="{StaticResource FunctionalButtonText}"
-								   Text="Version 1.0.0"
+                        <TextBlock Name="VersionText" Style="{StaticResource FunctionalButtonText}"
+								   Text="Version "
 								   HorizontalAlignment="Center" />
 						<Button Style="{StaticResource TransparentButton}"
 								Margin="56,5,0,5"
@@ -95,7 +95,7 @@
 								Content="{lex:LocText DriversGalaxy.OSMigrationTool.Restore:Resources:RootUrl}">
 						</Button>
 						<TextBlock Style="{StaticResource FunctionalButtonText}"
-								   Text="Copyright © 2011-2013 Covus Freemium GmbH"
+								   Text="Copyright © 2011-2013 PallySoft"
 								   HorizontalAlignment="Center" />
 						<TextBlock Style="{StaticResource FunctionalButtonText}"
 								   Text="{lex:LocText DriversGalaxy.OSMigrationTool.Restore:Resources:AllRightsReserved}"

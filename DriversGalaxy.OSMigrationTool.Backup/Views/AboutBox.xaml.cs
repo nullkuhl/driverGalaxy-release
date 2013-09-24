@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Media.Animation;
+using System.Reflection;
 
 namespace DriversGalaxy.OSMigrationTool.Backup
 {
@@ -22,6 +23,10 @@ namespace DriversGalaxy.OSMigrationTool.Backup
 			Loaded += AboutBox_Loaded;
 			Unloaded += AboutBox_Unloaded;
 			clickContext = this;
+
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            Version version = assembly.GetName().Version;
+            VersionText.Text += version.Major + "." + version.Minor + "." + version.Build;
 		}
 
 		/// <summary>

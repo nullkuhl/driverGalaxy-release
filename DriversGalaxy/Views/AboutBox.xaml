@@ -95,7 +95,7 @@
 								Content="{lex:LocText DriversGalaxy:Resources:RootUrl}">
 						</Button>
 						<TextBlock Style="{StaticResource FunctionalButtonText}"
-								   Text="Copyright © 2011-2013 Covus Freemium GmbH"
+								   Text="Copyright © 2011-2013 PallySoft"
 								   HorizontalAlignment="Center" />
 						<TextBlock Style="{StaticResource FunctionalButtonText}"
 								   Text="{lex:LocText DriversGalaxy:Resources:AllRightsReserved}"

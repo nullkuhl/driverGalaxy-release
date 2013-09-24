@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("PallySoft")]
 [assembly: AssemblyProduct("DriversGalaxy.Infrastructure")]
-[assembly: AssemblyCopyright("Copyright © PallySoft 2013")]
+[assembly: AssemblyCopyright("Copyright © PallySoft 2011-2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

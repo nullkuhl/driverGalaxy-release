@@ -12,7 +12,7 @@ using System.Windows;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("PallySoft")]
 [assembly: AssemblyProduct("DriversGalaxy")]
-[assembly: AssemblyCopyright("Copyright © PallySoft 2013")]
+[assembly: AssemblyCopyright("Copyright © PallySoft 2011-2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
