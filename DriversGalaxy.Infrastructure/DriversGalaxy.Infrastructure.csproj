@@ -230,7 +230,7 @@
     <PostBuildEvent>xcopy "$(TargetPath)" "$(SolutionDir)DriversGalaxy\$(OutDir)Libraries\" /Y
 copy "$(SolutionDir)DriversGalaxy.Infrastructure\stduhelper64.dll" "$(SolutionDir)DriversGalaxy\$(OutDir)stduhelper64.dll"
 copy "$(SolutionDir)DriversGalaxy.Infrastructure\stduhelper32.dll" "$(SolutionDir)DriversGalaxy\$(OutDir)stduhelper32.dll"
-if "$(ConfigurationName)" == "Debug" or "$(ConfigurationName)" == "Release" (
+if "$(ConfigurationName)" == "Debug" (
   if "$(PROCESSOR_ARCHITEW6432)" == "AMD64" (
     copy "$(SolutionDir)DriversGalaxy.Infrastructure\stduhelper64.dll" "$(SolutionDir)DriversGalaxy.Infrastructure\$(OutDir)stduhelper.dll"
     copy "$(SolutionDir)DriversGalaxy.Infrastructure\stduhelper64.dll" "$(SolutionDir)DriversGalaxy\$(OutDir)stduhelper.dll"
