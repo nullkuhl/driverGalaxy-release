@@ -42,7 +42,10 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Management" />
-    <Reference Include="System.Tuples, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="System.Tuples, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\System.Tuples.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
     <Reference Include="WPFLocalizeExtension, Version=2.1.3.0, Culture=neutral, processorArchitecture=MSIL">
@@ -94,6 +97,9 @@
     <Compile Include="WPFPopupWindow\ModalDialogPopup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Libraries\System.Tuples.dll" />
+    <Content Include="Libraries\WPFLocalizeExtension.dll" />
+    <Content Include="Libraries\XAMLMarkupExtensions.dll" />
     <Content Include="stduhelper32.dll" />
     <Content Include="stduhelper64.dll" />
     <Content Include="unrar.dll" />
@@ -171,7 +177,6 @@
     <Resource Include="Images\google.png" />
     <Resource Include="Images\tw.png" />
     <Resource Include="Images\tw_bg.png" />
-    <Content Include="Libraries\System.Tuples.dll" />
     <Page Include="CommonStyles\ControlStyles.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -227,8 +232,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy "$(TargetPath)" "$(SolutionDir)DriversGalaxy\$(OutDir)Libraries\" /Y
-copy "$(SolutionDir)DriversGalaxy.Infrastructure\stduhelper64.dll" "$(SolutionDir)DriversGalaxy\$(OutDir)stduhelper64.dll"
+    <PostBuildEvent>copy "$(SolutionDir)DriversGalaxy.Infrastructure\stduhelper64.dll" "$(SolutionDir)DriversGalaxy\$(OutDir)stduhelper64.dll"
 copy "$(SolutionDir)DriversGalaxy.Infrastructure\stduhelper32.dll" "$(SolutionDir)DriversGalaxy\$(OutDir)stduhelper32.dll"
 if "$(ConfigurationName)" == "Debug" (
   if "$(PROCESSOR_ARCHITEW6432)" == "AMD64" (

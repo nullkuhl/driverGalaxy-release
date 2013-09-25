@@ -203,15 +203,8 @@
     <Resource Include="Images\tw_bg.png" />
     <Resource Include="DriverGalaxy.ico" />
     <Resource Include="Images\icon-app.png" />
-    <Content Include="Libraries\Ionic.Zip.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Libraries\System.Tuples.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Libraries\WPFLocalizeExtension.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Libraries\Ionic.Zip.dll" />
+    <Content Include="Libraries\WPFLocalizeExtension.dll" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DriversGalaxy.Infrastructure\DriversGalaxy.Infrastructure.csproj">

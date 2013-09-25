@@ -92,7 +92,6 @@
     <Reference Include="Microsoft.Win32.TaskScheduler, Version=1.7.4273.24968, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Libraries\Microsoft.Win32.TaskScheduler.dll</HintPath>
-      <Private>False</Private>
     </Reference>
     <Reference Include="mscriptable, Version=1.0.2462.23865, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -405,12 +404,7 @@
     <Resource Include="Images\icon-OSMigrationTool.Restore.png" />
     <Resource Include="Images\icon-question.png" />
     <Resource Include="Images\icon-app.png" />
-    <Content Include="Libraries\Ookii.Dialogs.Wpf.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Libraries\System.Tuples.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Libraries\Ookii.Dialogs.Wpf.dll" />
     <EmbeddedResource Include="Routine\messagePipe.resx">
       <DependentUpon>messagePipe.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -438,18 +432,10 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-    <Content Include="Libraries\Common Tools.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Libraries\Interop.IWshRuntimeLibrary.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Libraries\Microsoft.Win32.TaskScheduler.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Libraries\mscriptable.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Libraries\Common Tools.dll" />
+    <Content Include="Libraries\Interop.IWshRuntimeLibrary.dll" />
+    <Content Include="Libraries\Microsoft.Win32.TaskScheduler.dll" />
+    <Content Include="Libraries\mscriptable.dll" />
     <None Include="Resources\Icon.ico" />
     <None Include="Resources\desktop_icon.ico" />
     <None Include="freemium.cfg">
