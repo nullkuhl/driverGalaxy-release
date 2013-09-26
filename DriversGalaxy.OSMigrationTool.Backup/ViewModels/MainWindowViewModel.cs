@@ -22,6 +22,7 @@ using FreemiumUtil;
 using Ionic.Zip;
 using MessageBoxUtils;
 using Microsoft.Win32;
+using WPFLocalizeExtension.Engine;
 
 namespace DriversGalaxy.OSMigrationTool.Backup.ViewModels
 {
@@ -115,6 +116,11 @@ namespace DriversGalaxy.OSMigrationTool.Backup.ViewModels
             {
                 if (Status == ScanStatus.NotStarted)
                 {
+                    if (GetOsIdFromComboBox() == -1)
+                    {
+                        WPFMessageBox.Show(Application.Current.MainWindow, LocalizeDictionary.Instance.Culture, WPFLocalizeExtensionHelpers.GetUIString("SelectOSToScan"), WPFLocalizeExtensionHelpers.GetUIString("SelectOS"), WPFMessageBoxButton.OK, MessageBoxImage.Warning);
+                        return;
+                    }
                     // Update device collections in the UI thread
                     if (CurrentDispatcher.Thread != null)
                     {
@@ -291,6 +297,8 @@ namespace DriversGalaxy.OSMigrationTool.Backup.ViewModels
         {
             get
             {
+                if (string.IsNullOrEmpty(destinationDirectory))
+                    destinationDirectory = @"C:\";
                 return destinationDirectory;
             }
             set
@@ -653,7 +661,14 @@ namespace DriversGalaxy.OSMigrationTool.Backup.ViewModels
         /// <returns></returns>
         int GetOsIdFromComboBox()
         {
-            return Convert.ToInt32(((KeyValuePair<object, object>)DestinationOS).Value);
+            if (DestinationOS.Key == null && DestinationOS.Value == null)
+            {
+                return -1;
+            }
+            else
+            {
+                return Convert.ToInt32(((KeyValuePair<object, object>)DestinationOS).Value);
+            }
         }
 
 
@@ -664,7 +679,7 @@ namespace DriversGalaxy.OSMigrationTool.Backup.ViewModels
                 bgScan.CancelAsync();
 
             cancelEvtArgs.Set();
-            
+
             PanelScanHeader = WPFLocalizeExtensionHelpers.GetUIString("ScanDrivers");
             Status = ScanStatus.NotStarted;
             ScanStatusTitle = string.Empty;
@@ -954,6 +969,9 @@ namespace DriversGalaxy.OSMigrationTool.Backup.ViewModels
         {
             foreach (MigrationDeviceInfo device in AllDevices)
             {
+                if (!device.IsDestOSDriverAvailable)
+                    continue;
+
                 MigrationDevicesGroup migrationDevicesGroup = GroupedDevices.Where(g => g.DeviceClass == device.DeviceClass).FirstOrDefault();
                 if (migrationDevicesGroup == null)
                 {
@@ -967,15 +985,8 @@ namespace DriversGalaxy.OSMigrationTool.Backup.ViewModels
 
             foreach (var deviceGroup in GroupedDevices)
             {
-                if (deviceGroup.Devices.Where(d => !d.IsDestOSDriverAvailable).Count() == deviceGroup.Devices.Count)
-                {
-                    deviceGroup.IsDestOSDriversAvailable = false;
-                }
-                else
-                {
-                    deviceGroup.GroupChecked = true;
-                    deviceGroup.IsDestOSDriversAvailable = true;
-                }
+                deviceGroup.GroupChecked = true;
+                deviceGroup.IsDestOSDriversAvailable = true;
             }
 
             OrderedDeviceGroups = CollectionViewSource.GetDefaultView(GroupedDevices);

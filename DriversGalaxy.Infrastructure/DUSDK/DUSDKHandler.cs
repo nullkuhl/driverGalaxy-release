@@ -616,8 +616,6 @@ namespace DUSDK_for.NET
 
     public enum DU_SUPPORTED_OS_NAMES
     {
-        [Description("Default Os")]
-        DEFAULT_OS = -1,
         [Description("Windows XP 32 bit")]
         WIN_XP_INTEL = 0,		// Windows XP 32 bit
         [Description("Windows XP 64 bit")]

@@ -172,7 +172,7 @@
     <value>OS mismatch</value>
   </data>
   <data name="OSMismatchText" xml:space="preserve">
-    <value>You are trying to install the drivers for {{0}} at the {{1}}.
+    <value>You are trying to install the drivers for {0} at the {1}.
 Please, generate the drivers migration package for the correct OS version.</value>
   </data>
   <data name="PostOn" xml:space="preserve">
@@ -215,6 +215,6 @@ Please, generate the drivers migration package for the correct OS version.</valu
     <value>All rights reserved.</value>
   </data>
   <data name="RootUrl" xml:space="preserve">
-    <value>http://freemium.com/driversgalaxy/</value>
+    <value>http://pallysoft.com/driversgalaxy/</value>
   </data>
 </root>

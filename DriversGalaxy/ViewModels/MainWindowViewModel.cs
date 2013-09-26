@@ -27,6 +27,7 @@ using MessageBoxUtils;
 using Microsoft.Win32;
 using WPFLocalizeExtension.Engine;
 using System.Diagnostics;
+using System.Xml;
 
 namespace DriversGalaxy.ViewModels
 {
@@ -607,7 +608,7 @@ namespace DriversGalaxy.ViewModels
                     SaveExcludedDevicesToXML();
                     WPFMessageBox.Show(Application.Current.MainWindow, LocalizeDictionary.Instance.Culture, String.Format(WPFLocalizeExtensionHelpers.GetUIString("DriverExcluded"), device.DeviceName), "Device excluded", WPFMessageBoxButton.OK, MessageBoxImage.Information);
 
-                    ScanFinishTitle = String.Format("{{0}} " + WPFLocalizeExtensionHelpers.GetUIString("OutdatedDriversFound"), DevicesForScanning.Count(d => d.NeedsUpdate));
+                    ScanFinishTitle = String.Format("{0} " + WPFLocalizeExtensionHelpers.GetUIString("OutdatedDriversFound"), DevicesForScanning.Count(d => d.NeedsUpdate));
 
                     if (DevicesThatNeedsUpdate.IsEmpty)
                     {
@@ -1803,7 +1804,7 @@ namespace DriversGalaxy.ViewModels
                 sr.Close();
 
                 Out = Out.Replace("\"", "");
-                DateTime dt = DateTime.ParseExact(Out, "yyyy-MM-ddThh:mm:ss", null);
+                DateTime dt = XmlConvert.ToDateTime(Out);                
 
                 return (dt >= DateTime.Now);
             }
@@ -1816,7 +1817,7 @@ namespace DriversGalaxy.ViewModels
 
         void Subscribe()
         {
-            Process.Start(new ProcessStartInfo("https://www.cleverbridge.com/825/?scope=checkout&cart=128826"));
+            Process.Start(new ProcessStartInfo("https://www.cleverbridge.com/825/?scope=checkout&cart=s3757"));
         }
 
         void VerifyLicenseKey()

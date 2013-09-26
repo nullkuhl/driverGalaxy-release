@@ -7,6 +7,10 @@ using System.Windows.Markup;
 using System.Windows.Media.Animation;
 using DriversGalaxy.OSMigrationTool.Backup.Infrastructure;
 using DriversGalaxy.OSMigrationTool.Backup.ViewModels;
+using WPFLocalizeExtension.Engine;
+using FreemiumUtil;
+using System.Threading;
+using System.Globalization;
 
 namespace DriversGalaxy.OSMigrationTool.Backup
 {
@@ -18,6 +22,10 @@ namespace DriversGalaxy.OSMigrationTool.Backup
         public MainWindow()
         {
             InitializeComponent();
+
+            string culture = CfgFile.Get("Lang");
+            LocalizeDictionary.Instance.Culture = CultureInfo.GetCultureInfo(culture);
+            Thread.CurrentThread.CurrentUICulture = LocalizeDictionary.Instance.Culture;
 
             using (var fs = new FileStream("Theme.xaml", FileMode.Open))
             {

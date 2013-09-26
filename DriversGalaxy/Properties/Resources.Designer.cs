@@ -630,7 +630,7 @@ namespace DriversGalaxy.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to http://freemium.com/contact/fdc/.
+        ///   Looks up a localized string similar to http://pallysoft.com/contact/.
         /// </summary>
         internal static string FeedbackUrl {
             get {
@@ -1107,7 +1107,7 @@ namespace DriversGalaxy.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to http://freemium.com/driversgalaxy/.
+        ///   Looks up a localized string similar to http://pallysoft.com/driversgalaxy/.
         /// </summary>
         internal static string RootUrl {
             get {

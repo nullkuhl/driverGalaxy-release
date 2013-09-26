@@ -100,9 +100,6 @@
     <Content Include="Libraries\System.Tuples.dll" />
     <Content Include="Libraries\WPFLocalizeExtension.dll" />
     <Content Include="Libraries\XAMLMarkupExtensions.dll" />
-    <Content Include="stduhelper32.dll" />
-    <Content Include="stduhelper64.dll" />
-    <Content Include="unrar.dll" />
     <Content Include="updater\amd64Helper\difxapi.dll" />
     <Content Include="updater\amd64Helper\DriverUpdateHelper64.exe" />
     <Content Include="updater\extract\7z.dll" />
@@ -232,21 +229,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy "$(SolutionDir)DriversGalaxy.Infrastructure\stduhelper64.dll" "$(SolutionDir)DriversGalaxy\$(OutDir)stduhelper64.dll"
-copy "$(SolutionDir)DriversGalaxy.Infrastructure\stduhelper32.dll" "$(SolutionDir)DriversGalaxy\$(OutDir)stduhelper32.dll"
-if "$(ConfigurationName)" == "Debug" (
-  if "$(PROCESSOR_ARCHITEW6432)" == "AMD64" (
-    copy "$(SolutionDir)DriversGalaxy.Infrastructure\stduhelper64.dll" "$(SolutionDir)DriversGalaxy.Infrastructure\$(OutDir)stduhelper.dll"
-    copy "$(SolutionDir)DriversGalaxy.Infrastructure\stduhelper64.dll" "$(SolutionDir)DriversGalaxy\$(OutDir)stduhelper.dll"
-    copy "$(SolutionDir)DriversGalaxy.Infrastructure\stduhelper64.dll" "$(SolutionDir)DriversGalaxy.OSMigrationTool.Backup\$(OutDir)stduhelper.dll"
-    copy "$(SolutionDir)DriversGalaxy.Infrastructure\stduhelper64.dll" "$(SolutionDir)DriversGalaxy.OSMigrationTool.Restore\$(OutDir)stduhelper.dll"
-  ) else (
-    copy "$(SolutionDir)DriversGalaxy.Infrastructure\stduhelper32.dll" "$(SolutionDir)DriversGalaxy.Infrastructure\$(OutDir)stduhelper.dll"
-    copy "$(SolutionDir)DriversGalaxy.Infrastructure\stduhelper32.dll" "$(SolutionDir)DriversGalaxy\$(OutDir)stduhelper.dll"
-    copy "$(SolutionDir)DriversGalaxy.Infrastructure\stduhelper32.dll" "$(SolutionDir)DriversGalaxy.OSMigrationTool.Backup\$(OutDir)stduhelper.dll"
-    copy "$(SolutionDir)DriversGalaxy.Infrastructure\stduhelper32.dll" "$(SolutionDir)DriversGalaxy.OSMigrationTool.Restore\$(OutDir)stduhelper.dll"
-  )
-)</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

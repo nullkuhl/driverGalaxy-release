@@ -36,7 +36,8 @@
 								   FontSize="18.39"
 								   FontFamily="/DriversGalaxy.Infrastructure;component/Fonts/#Helvetica Neue CE 75"
 								   Foreground="#FFFFFF"
-								   FontWeight="Bold">Scan your system</TextBlock>
+								   FontWeight="Bold"
+                                   Text="{lex:LocText DriversGalaxy.OSMigrationTool.Backup:Resources:ScanSystem}"></TextBlock>
 					</Border>
 					<Grid HorizontalAlignment="Stretch"
 						  Background="{StaticResource ElementBackground}"
@@ -52,7 +53,7 @@
 						<TextBlock Grid.ColumnSpan="2"
 								   TextWrapping="Wrap"
 								   Margin="19,10,19,0"
-								   Text="this tool should do is scan the users drivers and download the matching driver from our database, but not for his current os, instead it will be for the os that he migrates to"
+								   Text="{lex:LocText DriversGalaxy.OSMigrationTool.Backup:Resources:ToolDescription}"
 								   Style="{StaticResource ComboboxCaption}" />
 						<TextBlock Grid.Row="1"
 								   Margin="19,10,0,0"

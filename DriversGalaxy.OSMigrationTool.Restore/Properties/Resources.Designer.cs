@@ -250,7 +250,7 @@ namespace DriversGalaxy.OSMigrationTool.Restore.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You are trying to install the drivers for {{0}} at the {{1}}.
+        ///   Looks up a localized string similar to You are trying to install the drivers for {0} at the {1}.
         ///Please, generate the drivers migration package for the correct OS version..
         /// </summary>
         internal static string OSMismatchText {
@@ -269,7 +269,7 @@ namespace DriversGalaxy.OSMigrationTool.Restore.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to http://freemium.com/driversgalaxy/.
+        ///   Looks up a localized string similar to http://pallysoft.com/driversgalaxy/.
         /// </summary>
         internal static string RootUrl {
             get {

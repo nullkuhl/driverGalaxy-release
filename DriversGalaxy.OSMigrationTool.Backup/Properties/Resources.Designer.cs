@@ -261,7 +261,7 @@ namespace DriversGalaxy.OSMigrationTool.Backup.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to Drivers downloaded.
-        ///Now press the Compose button below to create a drivers installation utility for the destination OS, which will be saved in a place that you&apos;ve choosed..
+        ///Now press the Compose button below to create a drivers installation utility for the destination OS, which will be saved in a place that you&apos;ve choosen..
         /// </summary>
         internal static string DownloadFinishedPressCompose {
             get {
@@ -423,7 +423,7 @@ namespace DriversGalaxy.OSMigrationTool.Backup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to http://freemium.com/driversgalaxy/.
+        ///   Looks up a localized string similar to http://pallysoft.com/driversgalaxy/.
         /// </summary>
         internal static string RootUrl {
             get {
@@ -504,6 +504,15 @@ namespace DriversGalaxy.OSMigrationTool.Backup.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Scan your system.
+        /// </summary>
+        internal static string ScanSystem {
+            get {
+                return ResourceManager.GetString("ScanSystem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please, select at least one driver to download.
         /// </summary>
         internal static string SelectAtLeastOneDriver {
@@ -540,11 +549,38 @@ namespace DriversGalaxy.OSMigrationTool.Backup.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Select OS.
+        /// </summary>
+        internal static string SelectOS {
+            get {
+                return ResourceManager.GetString("SelectOS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please, select at least one operation system..
+        /// </summary>
+        internal static string SelectOSToScan {
+            get {
+                return ResourceManager.GetString("SelectOSToScan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Starting downloading drivers.
         /// </summary>
         internal static string StartingDriversDownload {
             get {
                 return ResourceManager.GetString("StartingDriversDownload", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to this tool should do is scan the users drivers and download the matching driver from our database, but not for his current os, instead it will be for the os that he migrates to.
+        /// </summary>
+        internal static string ToolDescription {
+            get {
+                return ResourceManager.GetString("ToolDescription", resourceCulture);
             }
         }
         

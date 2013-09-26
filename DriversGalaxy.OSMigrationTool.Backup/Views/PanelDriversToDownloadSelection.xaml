@@ -54,7 +54,7 @@
 													   Stretch="None"
 													   HorizontalAlignment="Left"
 													   Source="{Binding DeviceClassImageSmall}" />
-												<TextBlock Text="{Binding DeviceClassName}" />
+                                                <TextBlock Text="{Binding DeviceClassName}" Foreground="#FF808080" />
 											</StackPanel>
 										</CheckBox>
 
@@ -79,7 +79,7 @@
 																	   HorizontalAlignment="Left"
 																	   Source="{Binding DeviceClassImageSmall}" />
 																<TextBlock Grid.Column="2"
-																		   Text="{Binding DeviceName}" />
+																		   Text="{Binding DeviceName}" Foreground="#FF808080" />
 															</StackPanel>
 														</CheckBox>
 													</StackPanel>

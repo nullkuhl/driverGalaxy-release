@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Globalization;
 using System.IO;
+using System.Threading;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Markup;
 using System.Windows.Media.Animation;
 using DriversGalaxy.OSMigrationTool.Restore.Infrastructure;
+using FreemiumUtil;
+using WPFLocalizeExtension.Engine;
 
 namespace DriversGalaxy.OSMigrationTool.Restore
 {
@@ -16,7 +20,12 @@ namespace DriversGalaxy.OSMigrationTool.Restore
 	{
 		public MainWindow()
 		{
-			InitializeComponent();            
+			InitializeComponent();
+
+            string culture = CfgFile.Get("Lang");
+            LocalizeDictionary.Instance.Culture = CultureInfo.GetCultureInfo(culture);
+            Thread.CurrentThread.CurrentUICulture = LocalizeDictionary.Instance.Culture;
+
             using (var fs = new FileStream("Theme.xaml", FileMode.Open))
 			{
 				var dic = (ResourceDictionary)XamlReader.Load(fs);
