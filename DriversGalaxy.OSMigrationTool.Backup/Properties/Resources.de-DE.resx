@@ -130,7 +130,7 @@
     <value>Scan abbrechen</value>
   </data>
   <data name="CheckDownloadFolder" xml:space="preserve">
-    <value>Auf temporäres Downloadverzeichnis - Documents/Freemium Utilites/Downloads
+    <value>Auf temporäres Downloadverzeichnis - Dokumente/PallySoft/Downloads
  kann nicht zugegriffen werden. Bitte starten Sie dieses Programm mit Adminrechten.</value>
   </data>
   <data name="CheckPreferences" xml:space="preserve">
@@ -152,7 +152,7 @@
     <value>Wählen Sie die zu downloadenden Treiber aus</value>
   </data>
   <data name="ChooseOS" xml:space="preserve">
-    <value>Wählen Sie das Betriebssystem</value>
+    <value>Zielbetriebssystem wählen</value>
   </data>
   <data name="Close" xml:space="preserve">
     <value>Schließen</value>
@@ -176,14 +176,14 @@
     <value>Download</value>
   </data>
   <data name="DownloadFinishedPressCompose" xml:space="preserve">
-    <value>Heruntergeladene Treiber.
-Bitte drücken Sie "Erstelle Datenbank" um die Treiber für die Migration auf Ihr neues Betriebssystem zusammen zu stellen</value>
+    <value>Treiber heruntergeladen:
+Bitte drücken Sie "Erstelle Datenbank", um die Treiber für die Migration auf Ihr neues Betriebssystem zusammen zu stellen.</value>
   </data>
   <data name="DownloadingDriver" xml:space="preserve">
-    <value>Lade Treiber herunter für: </value>
+    <value>Downloade Treiber: </value>
   </data>
   <data name="DownloadingDrivers" xml:space="preserve">
-    <value>Lade Treiber herunter</value>
+    <value>Downloade Treiber</value>
   </data>
   <data name="DriverScan" xml:space="preserve">
     <value>Treiber Scan</value>
@@ -195,7 +195,7 @@ Bitte drücken Sie "Erstelle Datenbank" um die Treiber für die Migration auf Ih
     <value>Treiber fertig zum Download</value>
   </data>
   <data name="FooterText" xml:space="preserve">
-    <value>Mehr Freemium Produkte</value>
+    <value>Mehr PallySoft Produkte</value>
   </data>
   <data name="Help" xml:space="preserve">
     <value>Hilfe</value>
@@ -213,10 +213,10 @@ Bitte drücken Sie "Erstelle Datenbank" um die Treiber für die Migration auf Ih
     <value>Scan läuft:</value>
   </data>
   <data name="PostOn" xml:space="preserve">
-    <value>Werde Freund:</value>
+    <value>Poste auf:</value>
   </data>
   <data name="SaveDriversTo" xml:space="preserve">
-    <value>Speichere Treiber nach</value>
+    <value>Erstelle Treiber-Datenbank nach:</value>
   </data>
   <data name="ScanDrivers" xml:space="preserve">
     <value>Treiberscan</value>
@@ -228,7 +228,7 @@ Bitte drücken Sie "Erstelle Datenbank" um die Treiber für die Migration auf Ih
     <value>Systemscan</value>
   </data>
   <data name="ScanFooterText" xml:space="preserve">
-    <value>Klick Sie auf scan um die Treiber zu sehen die Sie sichern können</value>
+    <value>Klicken Sie auf "Scan", um nach Treibern zu scannen.</value>
   </data>
   <data name="ScanForIssues" xml:space="preserve">
     <value>Scan</value>
@@ -243,10 +243,10 @@ Bitte drücken Sie "Erstelle Datenbank" um die Treiber für die Migration auf Ih
     <value>Bitte wählen Sie mindestens einen Treiber aus.</value>
   </data>
   <data name="SelectDriversToDownloadFooter" xml:space="preserve">
-    <value>Klicken Sie "Download" um den Download der Treiber zu starten</value>
+    <value>"Download" startet den Treiber-Download.</value>
   </data>
   <data name="SelectDriversToDownloadFooterText" xml:space="preserve">
-    <value>Klicken Sie auf "Download" um die Treiber für Ihr Zielbetriebssystem zu laden</value>
+    <value>"Download" startet den Treiber-Download für das Zielbetriebssystem.</value>
   </data>
   <data name="SelectFolderForDownloads" xml:space="preserve">
     <value>Wählen Sie ein Zielverzeichnis</value>
@@ -258,7 +258,7 @@ Bitte drücken Sie "Erstelle Datenbank" um die Treiber für die Migration auf Ih
     <value>Download abgeschlossen</value>
   </data>
   <data name="DownloadStatus" xml:space="preserve">
-    <value>Heruntergeladene {0} von {1}</value>
+    <value>Download {0} von {1}</value>
   </data>
   <data name="GoogleMargin" xml:space="preserve">
     <value>-67</value>
@@ -270,16 +270,16 @@ Bitte drücken Sie "Erstelle Datenbank" um die Treiber für die Migration auf Ih
     <value>Gefällt mir</value>
   </data>
   <data name="FBUrl" xml:space="preserve">
-    <value>http://www.freemium.com/fsu/facebook</value>
+    <value>http://pallysoft.com/facebook</value>
   </data>
   <data name="GooglePlusUrl" xml:space="preserve">
-    <value>http://www.freemium.com/fsu/googleplus</value>
+    <value>http://pallysoft.com/googleplus</value>
   </data>
   <data name="Twitter" xml:space="preserve">
     <value>Twittern</value>
   </data>
   <data name="TwitterUrl" xml:space="preserve">
-    <value>http://www.freemium.com/fsu/twitter</value>
+    <value>http://pallysoft.com/twitter</value>
   </data>
   <data name="UrlCannotBeOpenedMessage" xml:space="preserve">
     <value>Link kann nicht automatisch geöffnet werden. Bitte öffnen Sie folgenden Link in Ihrem favorisierten Browser:</value>
@@ -297,7 +297,7 @@ Bitte drücken Sie "Erstelle Datenbank" um die Treiber für die Migration auf Ih
     <value>http://pallysoft.com/driversgalaxy/</value>
   </data>
   <data name="SelectOS" xml:space="preserve">
-    <value>Wählen Betriebssystem</value>
+    <value>Betriebssystem wählen</value>
   </data>
   <data name="SelectOSToScan" xml:space="preserve">
     <value>Bitte wählen Sie mindestens ein Betriebssystem.</value>
@@ -306,6 +306,6 @@ Bitte drücken Sie "Erstelle Datenbank" um die Treiber für die Migration auf Ih
     <value>Scannen Sie Ihr System</value>
   </data>
   <data name="ToolDescription" xml:space="preserve">
-    <value>dieses Tool tun sollten, ist die Benutzer-Treiber zum Scannen und laden Sie den passenden Treiber aus unserer Datenbank, aber nicht für seine aktuelle os, sondern es wird für die os sein, dass er wandert</value>
+    <value>Dieses Tool scannt nach Treibern und downloadet die passenden Treiber aus unserer Datenbank. Jedoch nicht für Ihr aktuelles Betriebssystem, sondern für das system, auf welches Sie wechseln wollen.</value>
   </data>
 </root>

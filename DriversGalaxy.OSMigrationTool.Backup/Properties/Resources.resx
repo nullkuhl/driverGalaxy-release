@@ -170,8 +170,8 @@
     <value>Download</value>
   </data>
   <data name="DownloadFinishedPressCompose" xml:space="preserve">
-    <value>Drivers downloaded.
-Now press the Compose button below to create a drivers installation utility for the destination OS, which will be saved in a place that you've choosen.</value>
+    <value>Drivers downloaded:
+now press the Compose button below to create a drivers installation utility for the destination OS, which will be saved in a place that you've choosen.</value>
   </data>
   <data name="DownloadingDriver" xml:space="preserve">
     <value>Downloading driver for: </value>
@@ -210,7 +210,7 @@ Now press the Compose button below to create a drivers installation utility for 
     <value>Post this on:</value>
   </data>
   <data name="SaveDriversTo" xml:space="preserve">
-    <value>Save drivers to</value>
+    <value>Compose drivers to:</value>
   </data>
   <data name="ScanDrivers" xml:space="preserve">
     <value>Scan drivers</value>
@@ -306,6 +306,6 @@ Now press the Compose button below to create a drivers installation utility for 
     <value>Scan your system</value>
   </data>
   <data name="ToolDescription" xml:space="preserve">
-    <value>this tool should do is scan the users drivers and download the matching driver from our database, but not for his current os, instead it will be for the os that he migrates to</value>
+    <value>This tool scans for drivers and downloads the matching drivers from our database. But not for your current operating system, instead they will be downloaded for the system you want to migrate to.</value>
   </data>
 </root>

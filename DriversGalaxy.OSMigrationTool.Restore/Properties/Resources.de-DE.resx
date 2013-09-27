@@ -136,7 +136,7 @@
     <value>Gefällt mir</value>
   </data>
   <data name="FBUrl" xml:space="preserve">
-    <value>http://www.freemium.com/fsu/facebook</value>
+    <value>http://pallysoft.com/facebook</value>
   </data>
   <data name="FileNotFound" xml:space="preserve">
     <value>Datei nicht gefunden</value>
@@ -148,7 +148,7 @@
     <value>-67</value>
   </data>
   <data name="GooglePlusUrl" xml:space="preserve">
-    <value>http://www.freemium.com/fsu/googleplus</value>
+    <value>http://pallysoft.com/googleplus</value>
   </data>
   <data name="Help" xml:space="preserve">
     <value>Hilfe</value>
@@ -172,11 +172,11 @@
     <value>falsches Betriebssystem</value>
   </data>
   <data name="OSMismatchText" xml:space="preserve">
-    <value>You are trying to install the drivers for {0} at the {1}.
-Please, generate the drivers migration package for the correct OS version.</value>
+    <value>Sie versuchen die Treiber für {0} auf {1} zu installieren.
+Bitte generieren Sie das Treiber-Paket für die korrekte Betriebssystemversion.</value>
   </data>
   <data name="PostOn" xml:space="preserve">
-    <value>Freund werden:</value>
+    <value>Veröffentlichen auf:</value>
   </data>
   <data name="SelectAtLeastOneDriver" xml:space="preserve">
     <value>Bitte wählen Sie mindestens einen Treiber aus.</value>
@@ -185,10 +185,10 @@ Please, generate the drivers migration package for the correct OS version.</valu
     <value>Wählen Sie die zu installierenden Treiber</value>
   </data>
   <data name="SelectDriversToInstallFooter" xml:space="preserve">
-    <value>Klicken Sie "Installieren" um die Installation der Treiber zu starten</value>
+    <value>Klicken Sie "Installieren", um die Installation der Treiber zu starten</value>
   </data>
   <data name="SelectDriversToInstallFooterText" xml:space="preserve">
-    <value>Klicken Sie "Installieren" um die Treiber für das Zielbetriebssystem zu installieren</value>
+    <value>Klicken Sie "Installieren", um die Treiber für das Zielbetriebssystem zu installieren</value>
   </data>
   <data name="TweetMargin" xml:space="preserve">
     <value>-40</value>
@@ -197,7 +197,7 @@ Please, generate the drivers migration package for the correct OS version.</valu
     <value>Twittern</value>
   </data>
   <data name="TwitterUrl" xml:space="preserve">
-    <value>http://www.freemium.com/fsu/twitter</value>
+    <value>http://pallysoft.com/twitter</value>
   </data>
   <data name="UrlCannotBeOpenedMessage" xml:space="preserve">
     <value>Link kann nicht automatisch geöffnet werden. Bitte öffnen Sie folgenden Link in Ihrem favorisierten Browser:</value>
