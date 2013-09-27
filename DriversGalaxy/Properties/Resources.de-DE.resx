@@ -373,7 +373,7 @@
     <value>Scan &amp; Treiber-Update</value>
   </data>
   <data name="ScanExclusions" xml:space="preserve">
-    <value>Von Scan ausschließen</value>
+    <value>Von Scan ausgeschlossen</value>
   </data>
   <data name="ScanFooter" xml:space="preserve">
     <value>System regelmäßig scannen</value>
