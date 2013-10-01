@@ -72,6 +72,7 @@ namespace DriversGalaxy
                 panelPreferences2.driverDownloadsFolder.Text = downloadsPath;
                 CfgFile.Set("DriverDownloadsFolder", Uri.EscapeUriString(downloadsPath));
                 panelPreferences.backupsFolder.Text = backupsPath;
+                panelPreferences2.backupsFolder.Text = backupsPath;
                 CfgFile.Set("BackupsFolder", Uri.EscapeUriString(backupsPath));
                 CfgFile.Set("FirstRun", "0");
             }

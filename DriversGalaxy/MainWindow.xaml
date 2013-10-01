@@ -443,7 +443,8 @@
 						  HorizontalAlignment="Left"
 						  VerticalAlignment="Top">
 
-                        <views:PanelPreferences2 Loaded="ElementLoaded"											 
+                        <views:PanelPreferences2 x:Name="PanelPreferences2"
+                                             Loaded="ElementLoaded"											 
 											 HorizontalAlignment="Left"
 											 VerticalAlignment="Top" 
                                             />

@@ -162,8 +162,8 @@ namespace FreemiumUtil
                         writer.WriteLine("Lang=" + CultureInfo.CurrentCulture.ToString());
                         writer.WriteLine("FirstRun=1");                        
                         writer.WriteLine("MinimizeToTray=1");
-                        writer.WriteLine("DriverDownloadsFolder=Drivers Galaxy%5CTemp%5CDriverDownloads");
-                        writer.WriteLine("BackupsFolder=Drivers Galaxy%5CTemp%5CBackups");
+                        writer.WriteLine("DriverDownloadsFolder=DriversGalaxy%5CTemp%5CDriverDownloads");
+                        writer.WriteLine("BackupsFolder=DriversGalaxy%5CTemp%5CBackups");
                         writer.WriteLine("LastScanDate=22/01/2012");
                     }
                     configFileValid = true;
