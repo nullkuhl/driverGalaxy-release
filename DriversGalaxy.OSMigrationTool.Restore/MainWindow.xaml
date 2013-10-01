@@ -10,7 +10,7 @@
 		Width="716"
 		Height="576"
 		Title="OS Migration Tool Backup"
-		SizeToContent="WidthAndHeight">
+		SizeToContent="WidthAndHeight" Icon="/DriversGalaxy.OSMigrationTool.Restore;component/DriverGalaxy.ico">
 	<Window.Resources>
 		<routine:PropertyEqualsToVisibilityConverter x:Key="PropertyEqualsToVisibilityConverter" />
 		<routine:AnyPropertyEqualsToVisibilityConverter x:Key="AnyPropertyEqualsToVisibilityConverter" />

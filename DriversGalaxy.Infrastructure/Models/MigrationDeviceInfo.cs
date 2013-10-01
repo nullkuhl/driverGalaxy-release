@@ -13,6 +13,14 @@ namespace DriversGalaxy.Models
 
 		public MigrationDeviceInfo(string deviceClass, string deviceClassName, string deviceName, string infName, string version, string id, string hardwareID, string compatID)
 		{
+            if (string.IsNullOrEmpty(deviceClass) && !string.IsNullOrEmpty(deviceClassName))
+            {
+                if (deviceClassNames.ContainsKey(deviceClassName))
+                {
+                    deviceClass = deviceClassNames[deviceClassName];
+                }
+            }
+
 			DeviceClass = deviceClass != null ? deviceClass : "null";
 			DeviceClassName = deviceClassName != null ? deviceClassName : "null";
 			DeviceName = deviceName != null ? deviceName : "null";

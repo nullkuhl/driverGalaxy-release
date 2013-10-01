@@ -192,7 +192,7 @@
 					<Image Style="{StaticResource FunctionalButtonImage}"
 						   Margin="11,10,0,0"
 						   Source="../Images/icon-exclaim.png" />
-					<TextBlock Margin="0,11,0,0"
+					<TextBlock Margin="10,11,0,0"
                                Name="ScanResult"
 							   Grid.Column="1"
 							   Foreground="Black"

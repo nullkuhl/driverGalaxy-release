@@ -279,9 +279,7 @@ namespace DriversGalaxy.OSMigrationTool.Backup.ViewModels
         #region Properties
 
         private ManualResetEvent cancelEvtArgs;
-        private Boolean scanCancelled = false;
-
-        readonly RegistryKey deviceClasses = Registry.LocalMachine.OpenSubKey(@"SYSTEM\CurrentControlSet\Control\Class\", true);
+        private Boolean scanCancelled = false;        
 
         BackgroundWorker DownloadingBackgroundWorker = new BackgroundWorker();
         BackgroundWorker ComposingBackgroundWorker = new BackgroundWorker();
@@ -972,7 +970,7 @@ namespace DriversGalaxy.OSMigrationTool.Backup.ViewModels
                 if (!device.IsDestOSDriverAvailable)
                     continue;
 
-                MigrationDevicesGroup migrationDevicesGroup = GroupedDevices.Where(g => g.DeviceClass == device.DeviceClass).FirstOrDefault();
+                MigrationDevicesGroup migrationDevicesGroup = GroupedDevices.Where(g => g.DeviceClassName == device.DeviceClassName).FirstOrDefault();
                 if (migrationDevicesGroup == null)
                 {
                     GroupedDevices.Add(new MigrationDevicesGroup(device.DeviceClass, device.DeviceClassName, device.DeviceClassImageSmall, new List<MigrationDeviceInfo> { device }));
