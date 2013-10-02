@@ -613,7 +613,7 @@ Es ist möglich, dass der Bildschirm während des Updates kurzzeitig schwarz wir
     <value>Achtung: Ihre Treiber müssen aktualisiert werden!</value>
   </data>
   <data name="AttentionFooterText" xml:space="preserve">
-    <value>Gehen Sie auf Nummer Sicher. Drivers Galaxy hilft dabei automatisch!</value>
+    <value>Gehen Sie auf Nummer sicher. Drivers Galaxy hilft dabei automatisch!</value>
   </data>
   <data name="Subscribe" xml:space="preserve">
     <value>Drivers Galaxy jetzt abonnieren!</value>
@@ -625,10 +625,10 @@ Es ist möglich, dass der Bildschirm während des Updates kurzzeitig schwarz wir
     <value>nur 0,99 € / Monat</value>
   </data>
   <data name="UpgradeFooterText" xml:space="preserve">
-    <value>Sie können das Abo jederzeit kündigen.</value>
+    <value>Sie können das Abonnement jederzeit kündigen.</value>
   </data>
   <data name="AccessDriverDatabase" xml:space="preserve">
-    <value>· Zugriff auf die weltweit größe Treiber-Datenbank</value>
+    <value>· Zugriff auf die weltweit größte Treiber-Datenbank</value>
   </data>
   <data name="BestPrice" xml:space="preserve">
     <value>· Unsere Bestpreis Garantie</value>
