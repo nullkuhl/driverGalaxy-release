@@ -232,7 +232,7 @@
     <value>Launch at startup</value>
   </data>
   <data name="ManageScanExclusions" xml:space="preserve">
-    <value>Manage your Scan Exclusions</value>
+    <value>Manage your scan exclusions</value>
   </data>
   <data name="ManageScanExclusionsText" xml:space="preserve">
     <value>Remove the exclusions you created in the Driver Scan</value>
@@ -277,13 +277,13 @@
     <value>Post this on:</value>
   </data>
   <data name="Preferences" xml:space="preserve">
-    <value>Preferences</value>
+    <value>Settings</value>
   </data>
   <data name="PreferencesFooter" xml:space="preserve">
     <value>Manage application settings</value>
   </data>
   <data name="PreferencesFooterText" xml:space="preserve">
-    <value>You can edit applications preferences and settings from this panel</value>
+    <value>From this panel the application‘s settings can be adjusted.</value>
   </data>
   <data name="RebootLater" xml:space="preserve">
     <value>Reboot later</value>
@@ -295,7 +295,7 @@
     <value>Reboot required</value>
   </data>
   <data name="RemoveSelected" xml:space="preserve">
-    <value>Remove selected</value>
+    <value>Remove Selection</value>
   </data>
   <data name="RestartYourComputer" xml:space="preserve">
     <value>Restart your computer</value>
@@ -328,7 +328,7 @@
     <value>Scan your system regularly</value>
   </data>
   <data name="ScanFooterText" xml:space="preserve">
-    <value>Regular maintenance will help to improve system performance</value>
+    <value>Regular maintenance helps improve the performance of your system.</value>
   </data>
   <data name="ScanForIssues" xml:space="preserve">
     <value>SCAN FOR ISSUES</value>
@@ -622,7 +622,7 @@ It is possible that the screen may turn black during this update for a short per
     <value>Only € 0,99 / month</value>
   </data>
   <data name="UpgradeFooterText" xml:space="preserve">
-    <value>You can cancel your subscription any time.</value>
+    <value>You can cancel your subscription anytime.</value>
   </data>
   <data name="AccessDriverDatabase" xml:space="preserve">
     <value>· Access to the world's largest driver database</value>

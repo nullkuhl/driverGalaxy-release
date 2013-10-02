@@ -222,7 +222,7 @@ now press the Compose button below to create a drivers installation utility for 
     <value>Scan your system</value>
   </data>
   <data name="ScanFooterText" xml:space="preserve">
-    <value>Press scan to see the drivers that can be backuped</value>
+    <value>Press Scan to see a list of drivers that can be backuped.</value>
   </data>
   <data name="ScanForIssues" xml:space="preserve">
     <value>Scan</value>
@@ -306,6 +306,6 @@ now press the Compose button below to create a drivers installation utility for 
     <value>Scan your system</value>
   </data>
   <data name="ToolDescription" xml:space="preserve">
-    <value>This tool scans for drivers and downloads the matching drivers from our database. But not for your current operating system, instead they will be downloaded for the system you want to migrate to.</value>
+    <value>The OS migration tool scans you computer for drivers that can be successfully transferred to an operation system of your choice.  These drivers are then downloaded and compressed, so that you can comfortably back them up on an external device and use them, while arranging your new Windows.</value>
   </data>
 </root>

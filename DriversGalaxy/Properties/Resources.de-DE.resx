@@ -361,7 +361,7 @@
     <value>Samstag</value>
   </data>
   <data name="SaveBackupsTo" xml:space="preserve">
-    <value>Backup in diesen Ordner sichern:</value>
+    <value>Backup in diesem Ordner sichern:</value>
   </data>
   <data name="SaveDownloadedTo" xml:space="preserve">
     <value>Heruntergeladene Treiber in diesen Ordner speichern:</value>
@@ -616,7 +616,7 @@ Es ist möglich, dass der Bildschirm während des Updates kurzzeitig schwarz wir
     <value>Gehen Sie auf Nummer Sicher. Drivers Galaxy hilft dabei automatisch!</value>
   </data>
   <data name="Subscribe" xml:space="preserve">
-    <value>Drivers Galaxy jetzt abonierren!</value>
+    <value>Drivers Galaxy jetzt abonnieren!</value>
   </data>
   <data name="UpgradeNow" xml:space="preserve">
     <value>Jetzt Upgraden</value>
@@ -625,7 +625,7 @@ Es ist möglich, dass der Bildschirm während des Updates kurzzeitig schwarz wir
     <value>nur 0,99 € / Monat</value>
   </data>
   <data name="UpgradeFooterText" xml:space="preserve">
-    <value>You can cancel your subscription any time.</value>
+    <value>Sie können das Abo jederzeit kündigen.</value>
   </data>
   <data name="AccessDriverDatabase" xml:space="preserve">
     <value>· Zugriff auf die weltweit größe Treiber-Datenbank</value>
@@ -643,7 +643,7 @@ Es ist möglich, dass der Bildschirm während des Updates kurzzeitig schwarz wir
     <value>Immer aktuelle Treiber dank Drivers Galaxy!</value>
   </data>
   <data name="YourAdvantages" xml:space="preserve">
-    <value>Ihre vorteile:</value>
+    <value>Ihre Vorteile:</value>
   </data>
   <data name="AlreadyHaveKey" xml:space="preserve">
     <value>Sie haben bereits einen gültigen Lizenzchlüssel? Bitte hier eingeben und alle Treiber aktualisieren!</value>
