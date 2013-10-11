@@ -155,6 +155,7 @@
 							   FontSize="26"
 							   Text="{Binding ScanFinishTitle}" TextWrapping="Wrap">						
                     </TextBlock>
+                    <!-- #social buttons removed  
                     <TextBlock Grid.Column="1"
 							   Grid.Row="1"
 							   Grid.ColumnSpan="3"
@@ -197,6 +198,7 @@
                                 Margin="{Binding Converter={StaticResource MarginConverter}, ConverterParameter=GoogleMargin}">
                         </Button>
                     </Grid>
+                   -->
                 </Grid>
             </Border>
         </Border>
