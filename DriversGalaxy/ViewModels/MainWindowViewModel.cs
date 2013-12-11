@@ -1817,7 +1817,7 @@ namespace DriversGalaxy.ViewModels
 
         void Subscribe()
         {
-            Process.Start(new ProcessStartInfo("https://www.cleverbridge.com/825/?scope=checkout&cart=s3757"));
+            Process.Start(new ProcessStartInfo("http://driversgalaxy.com/shop/"));
         }
 
         void VerifyLicenseKey()
