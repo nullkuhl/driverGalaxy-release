@@ -26,11 +26,11 @@
                     <ControlFlow />
                 </Merging>
             </Assembly>
-            <Assembly AssemblyName="DriversGalaxy.Infrastructure, Culture=neutral, PublicKeyToken=null" HintPath=".\Libraries\DriversGalaxy.Infrastructure.dll">
+            <Assembly AssemblyName="DriversGalaxy.Infrastructure, Culture=neutral, PublicKeyToken=null" HintPath=".\DriversGalaxy\bin\Release\Libraries\DriversGalaxy.Infrastructure.dll">
                 <Merging />
                 <Embedding />
             </Assembly>
-            <Assembly AssemblyName="System.Tuples, Culture=neutral, PublicKeyToken=null" HintPath=".\Libraries\System.Tuples.dll">
+            <Assembly AssemblyName="System.Tuples, Culture=neutral, PublicKeyToken=null" HintPath=".\DriversGalaxy\bin\Release\Libraries\System.Tuples.dll">
                 <Merging />
                 <Embedding />
             </Assembly>
@@ -42,19 +42,19 @@
                 <Merging />
                 <Embedding />
             </Assembly>
-            <Assembly AssemblyName="mscriptable, Culture=neutral, PublicKeyToken=null" HintPath=".\Libraries\mscriptable.dll">
+            <Assembly AssemblyName="mscriptable, Culture=neutral, PublicKeyToken=null" HintPath=".\DriversGalaxy\bin\Release\Libraries\mscriptable.dll">
                 <Merging />
                 <Embedding />
             </Assembly>
-            <Assembly AssemblyName="Microsoft.Win32.TaskScheduler, Culture=neutral, PublicKeyToken=null" HintPath=".\Libraries\Microsoft.Win32.TaskScheduler.dll">
+            <Assembly AssemblyName="Microsoft.Win32.TaskScheduler, Culture=neutral, PublicKeyToken=null" HintPath=".\DriversGalaxy\bin\Release\Libraries\Microsoft.Win32.TaskScheduler.dll">
                 <Merging />
                 <Embedding />
             </Assembly>
-            <Assembly AssemblyName="Ookii.Dialogs.Wpf, Culture=neutral, PublicKeyToken=0c15020868fd6249" HintPath=".\Libraries\Ookii.Dialogs.Wpf.dll">
+            <Assembly AssemblyName="Ookii.Dialogs.Wpf, Culture=neutral, PublicKeyToken=0c15020868fd6249" HintPath=".\DriversGalaxy\bin\Release\Libraries\Ookii.Dialogs.Wpf.dll">
                 <Merging />
                 <Embedding />
             </Assembly>
-            <Assembly AssemblyName="FreemiumUtil, Culture=neutral, PublicKeyToken=null" HintPath=".\Libraries\FreemiumUtil.dll">
+            <Assembly AssemblyName="FreemiumUtil, Culture=neutral, PublicKeyToken=null" HintPath=".\DriversGalaxy\bin\Release\Libraries\FreemiumUtil.dll">
                 <Merging />
                 <Embedding />
             </Assembly>
