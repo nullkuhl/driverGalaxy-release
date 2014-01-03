@@ -619,7 +619,7 @@ It is possible that the screen may turn black during this update for a short per
     <value>Upgrade Now</value>
   </data>
   <data name="UpgradeFooter" xml:space="preserve">
-    <value>Only € 0,99 / month</value>
+    <value>The cheapest driver tool in the market.</value>
   </data>
   <data name="UpgradeFooterText" xml:space="preserve">
     <value>You can cancel your subscription anytime.</value>
