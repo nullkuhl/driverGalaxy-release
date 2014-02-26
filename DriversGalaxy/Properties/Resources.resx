@@ -613,7 +613,7 @@ It is possible that the screen may turn black during this update for a short per
     <value>Play it safe. Driver Galaxy helps update your drivers, automatically!</value>
   </data>
   <data name="Subscribe" xml:space="preserve">
-    <value>SUBSCRIBE TO DRIVERS GALAXY NOW</value>
+    <value>BUY TO DRIVERS GALAXY NOW</value>
   </data>
   <data name="UpgradeNow" xml:space="preserve">
     <value>Upgrade Now</value>
@@ -622,7 +622,7 @@ It is possible that the screen may turn black during this update for a short per
     <value>The cheapest driver tool on the market.</value>
   </data>
   <data name="UpgradeFooterText" xml:space="preserve">
-    <value>You can cancel your subscription anytime.</value>
+    <value></value>
   </data>
   <data name="AccessDriverDatabase" xml:space="preserve">
     <value>· Access to the world's largest driver database</value>

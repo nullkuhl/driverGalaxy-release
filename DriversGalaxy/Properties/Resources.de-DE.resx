@@ -616,7 +616,7 @@ Es ist möglich, dass der Bildschirm während des Updates kurzzeitig schwarz wir
     <value>Gehen Sie auf Nummer sicher. Drivers Galaxy hilft dabei automatisch!</value>
   </data>
   <data name="Subscribe" xml:space="preserve">
-    <value>Drivers Galaxy jetzt abonnieren!</value>
+    <value>Jetzt Drivers Galaxy kaufen!</value>
   </data>
   <data name="UpgradeNow" xml:space="preserve">
     <value>Jetzt Upgraden</value>
@@ -625,7 +625,7 @@ Es ist möglich, dass der Bildschirm während des Updates kurzzeitig schwarz wir
     <value>Das günstigste Treibertool auf dem Markt.</value>
   </data>
   <data name="UpgradeFooterText" xml:space="preserve">
-    <value>Sie können das Abonnement jederzeit kündigen.</value>
+    <value></value>
   </data>
   <data name="AccessDriverDatabase" xml:space="preserve">
     <value>· Zugriff auf die weltweit größte Treiber-Datenbank</value>
